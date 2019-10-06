@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+    <iframe src="components/heade.html"  frameborder="0"></iframe> 
+<head>
+    <title>个人中心</title>
+    <meta name="description" content="河南大学广告节">
+    <meta name="keywords" content="河广节,河南大学大学生,河南大学生,广告节">
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/assets/detepicker/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="../public/assets/swiper/swiper.min.css">
+    <link rel="stylesheet" href="../public/styles/base.css">
+    <link rel="stylesheet" href="../public/styles/common.css">
+    <link rel="stylesheet" href="../public/styles/index.css">
+    <link rel="stylesheet" href="../public/styles/header.css">
+    <link rel="stylesheet" href="../public/styles/footer.css">
+    <link rel="stylesheet" href="../public/styles/upload.css">
+    <script src="../public/assets/jquery-3.2.1.js"></script>
+    <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../public/assets/detepicker/bootstrap-datepicker.js"></script>
+    <script src="../public/assets/detepicker/bootstrap-datepicker.zh-CN.js"></script>
+    <script src="../public/assets/swiper/swiper.min.js"></script>
+    <script src="../public/assets/layer/layer.js"></script> 
+    <script src="../public/utils/render.request.js"></script>
+    <script src="../public/utils/render.utils.js"></script>
+    <script src="../public/assets/baiduTemplate.js"></script>
+    <script src="../public/utils/common.js"></script>
+    <script src="../public/script/common.js"></script>
+</head>
+<body>
+    <!--头部导航-->
+    <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="../images/logo.png" class="navbar-brand" onclick="navTo('../index')" alt="">
+            </div>
+            <nav id="bs-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                            <li onclick="" name="index" >
+                                    <a href="../index.html">首页</a>
+                                </li>
+                         
+                                <li onclick="" name="about">
+                                    <a href="about.html">关于大广节</a>                       
+                                </li>
+                                <li onclick="" name="news" class="active">
+                                    <a href="moreNews.html">新闻动态</a>
+                                </li>
+                                <li onclick="" name="judgesIntroduce">
+                                    <a href="JudgesIntroduce.html">评审介绍</a>
+                                </li>
+                                
+                                <li onclick="" name="linkus">
+                                    <a href="contact.html">联系我们</a>
+                                </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right" id="unLogin">
+                            <!-- <li onclick=""><a href="../pages/login.html">登录</a>
+                            </li>
+                            <li onclick=""><a href="../pages/register.html">注册</a>
+                            </li> -->
+
+                    </ul>
+                <div class="nav navbar-nav navbar-right" id="userPic" style="" onmouseleave="hideUserImgList(event)">
+                    <img id="user-image" onmouseenter="getUserCenterList(event)" src="../images/touxiang.jpg" width="40" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div id="user-navbar" class="hideList">
+                        <div class="navbar-content">
+                                <a href="../pages/user-info.html"> <div class="navbar-item" onclick="" name="user-info">个人信息</div></a>
+                                <a href="../pages/upload.html"> <div class="navbar-item active" onclick="" name="upload">作品上传</div></a>
+                                 <a href="../pages/mycreation.html"> <div class="navbar-item" onclick="" name="mycreation">我的作品</div></a>
+                                <a href="../pages/changePassword.html"> <div class="navbar-item" onclick="" name="changePassword">修改密码</div></a>
+                                 <a href="../heguangjie/pages/login.html"></a><div class="navbar-item" onclick="">安全退出</div></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    <div class="upload_main container">
+            <div class="control_left"><div class="control_left UserCenterMenu">
+                    <div class="title">
+                        <p>个人中心</p>
+                        <p>PERSONAL CENTER</p>
+                    </div>
+                    <ul class="nav">
+                            <a href="../pages/user-info.html"> <li onclick="" name="user-info" >个人信息</li></a>
+                            <a href="../pages/upload.html"><li onclick="" name="upload" class="active">作品上传</li></a>
+                             <a href="../pages/mycreation.html"><li onclick="" name="mycreation">我的作品</li></a>
+                             <a href="../pages/myAward.html"></a><li name="myAward" onclick="">我的获奖</li></a>
+                             <a href="../pages/changePassword.html"> <li name="changePassword" onclick="">修改密码</li></a>
+                    </ul>
+                    </div></div>
+        <div class="upload_content">
+            <div class="upload_head">
+                <span class="upload_title">作品上传</span>
+                <div class="right_part">
+                    <a class="right_btn" href="javascript:void(0);" onclick="navTo('know')">参赛须知</a>
+                    <span class="split_line">|</span>
+                    <a class="right_btn" id="copyRightBtnTop" data-toggle="modal" data-target="#copyRightModal">版权说明</a>
+                </div>
+            </div>
+            <!-- 提交的内容部分 -->
+            <div class="form_information">
+                <!-- 筛选项部分 -->
+                <div class="upload_select">
+                    <div class="select_item">
+                        <div class="select_name">类型：</div>
+                        <div class="select_main" id="changeType">
+                            <div class="btn active_btn" onclick="changeType(0)">命题类</div>
+                            <div class="btn" onclick="changeType(1)">非命题类</div>
+                        </div>
+                    </div>
+                    <!-- 非命题 -->
+                    <div id="NotTopicList"></div>
+                    <!-- 命题 -->
+                    <div id="TopicList"></div>
+                    <!-- 作品格式 -->
+                    <div id="ProductionFormat"></div>
+                </div>
+                <div class="write_info">
+                    <!-- 作品信息 work information -->
+                    <div class="work_information info_items">
+                        <div class="info_head">作品信息/Work information</div>
+                        <div class="info_content">
+                            <div class="info_item">
+                                <div class="item_name require">作品名称/Title of work</div>
+                                <input class="input_box" id="production_name" type="text" oninput="limitLength(value, 20, event)" placeholder="为你的优秀作品想一个大气的名字吧（20字内）">
+                            </div>
+                            <div class="info_item">
+                                <div class="item_name require">作品简介/Brief intruction</div>
+                                <textarea class="input_box textarea_box" id="production_intro" placeholder="快速让评委get作品的主要内容（300字内）" oninput="limitLength(value, 300, event)"></textarea>
+                            </div>
+                            <div class="info_item">
+                                <div class="item_name require">作品诉求/Works appeal</div>
+                                <textarea class="input_box textarea_box" id="productio_purpose" placeholder="简要说明你的作品想要达到的目的及效果（200字内）" oninput="limitLength(value, 200, event)"></textarea>
+                            </div>
+                            <div class="info_item">
+                                <div class="item_name require">作品创意亮点说明/creative highlights</div>
+                                <textarea class="input_box textarea_box" id="productio_lightspot" placeholder="你对这个作品感觉最自豪之处（200字内）" oninput="limitLength(value, 200, event)"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 作品上传 upload works -->
+                    <div class="upload_work info_items">
+                        <div class="info_head">作品上传/Upload works</div>
+                        <div class="info_content">
+                            <div class="info_item">
+                                <div class="item_name require">上传封面/Upload cover</div>
+                                <div class="upload">
+                                    <div class="upload_box upload_homepage" id="upload_homepage">
+                                        <div class="upload_need">
+                                            <div class="upload_icon"></div>
+                                            <span class="upload_txt">上传封面</span>
+                                        </div>
+                                        <input id="uploadHomePage" type="file">
+                                        <img id="homePagePic" src="" alt="">
+                                        <div id="homePagePicCover"></div>
+                                    </div>
+                                    <span class="size_tips">尺寸限定220px*160px（宽*高），最大不超过2M，仅支持jpg、png格式，不得包含参赛个人、学校等相关信息。</span>
+                                </div>
+                            </div>
+                            <div class="info_item">
+                                <div class="item_name">上传作品/Upload works</div>
+                                <div id="uploadProduction"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 主创人员 creative staff -->
+                    <div class="creative_staf info_items">
+                        <div class="info_head">主创人员/Creative staff</div>
+                        <div class="info_content" id="CreativeStaf"></div>
+                        <div class="info_item_row operate_btn">
+                            <div class="left_tips">最多可添加<span class="theme_red">5</span>名主创人员</div>
+                            <div class="right_btn">
+                                <div class="btns btn_del" onclick="deleteCreativeStaf()">删除主创人员</div>
+                                <div class="btns btn_add" onclick="addCreativeStaf()">添加主创人员</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 指导老师 guidance teacher -->
+                    <div class="others info_items">
+                        <div class="info_head">指导老师/Guidance teacher</div>
+                        <div class="info_content" id="GuidanceTeacher"></div>
+                        <div class="info_item_row operate_btn">
+                            <div class="left_tips">最多可添加<span class="theme_red">2</span>名指导老师</div>
+                            <div class="right_btn">
+                                <div class="btns btn_del" onclick="deleteGuidanceTeacher()">删除指导老师</div>
+                                <div class="btns btn_add" onclick="addGuidanceTeacher()">添加指导老师</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 其他 others -->
+                    <div class="others info_items">
+                        <div class="info_head">其他/Others</div>
+                        <div class="info_content">
+                            <div class="info_item_row person_info">
+                                <div class="info_item item_row" id="startDateContainer">
+                                    <div class="item_name require">创作开始时间/Start time</div>
+                                    <input type="text" class="input_box" id="startDatePicker" data-provide="datepicker" placeholder="请选择创作开始时间">
+                                    <span class="date_icon"></span>
+                                </div>
+                                <div class="info_item item_row" id="endDateContainer">
+                                    <div class="item_name require">创作结束时间/End time</div>
+                                    <input type="text" class="input_box" id="endDatePicker" data-provide="datepicker" placeholder="请选择创作结束时间">
+                                    <span class="date_icon"></span>
+                                </div>
+                            </div>
+                            <div class="info_item_row person_info">
+                                <div class="info_item item_row">
+                                    <div class="item_name require">作品是否发表过/Has the word been published?</div>
+                                    <div class="radio_btn" id="isPublishedItem">
+                                        <div class="radios radio_yes active_btn" onclick="isWorkPublic(0)">是</div>
+                                        <div class="radios radio_no" onclick="isWorkPublic(1)">否</div>
+                                    </div>
+                                    <div class="published_box" id="publishInput">
+                                        <input type="text" class="input_box link_radio" id="productio_publishedplace" placeholder="作品发表在哪里？">
+                                    </div>
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">作品是否获过奖/Has the word Won an award?</div>
+                                    <div class="radio_btn" id="isWonAwardItem">
+                                        <div class="radios radio_yes active_btn" onclick="isWordWonAward(0)">是</div>
+                                        <div class="radios radio_no" onclick="isWordWonAward(1)">否</div>
+                                    </div>
+                                    <div class="published_box" id="awardInput">
+                                        <input type="text" class="input_box link_radio" id="productioAwardContent" placeholder="获得什么奖？">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info_item">
+                                <div class="item_name require">作品若进入后续环节，您是否参与本届网络投票/If the work enters the follow-up
+                                    link,will you participate in this online voting?</div>
+                                <span class="small_tips">（建议选择“是”，如选“否”您的作品将不会展示在投票中，也将视您自动放弃网络投票，只能有评委票/It is suggested
+                                    to choose "yes"if"no"your work will not be displayed in the voting,and it will be
+                                    considered that you will automatically give up the online voting, only the judges
+                                    can vote.）</span>
+                                <div class="radio_btn" id="isVoting">
+                                    <div class="radios radio_yes active_btn" onclick="isVoting(0)">是</div>
+                                    <div class="radios radio_no" onclick="isVoting(1)">否</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload_copy_right">
+                    <div class="checkbox_icon" onclick="selectCopyRight()" id="copyRightBtn"></div>
+                    <span class="copyright_txt" id="coptRightBtn" data-toggle="modal" data-target="#copyRightModal">版权声明</span>/Copyright notice
+                </div>
+            </div>
+            <div class="upload_submit_btn" style="display: none;">
+                <div class="submit_btn confirm_submit active_btn" onclick="submitProductionInfo(2)">提交作品</div>
+                <div class="submit_btn save_box" onclick="submitProductionInfo(1)">存入草稿箱</div>
+               
+            </div>
+            <div class="footer_tips" id="already-start" style="display: none;">
+                征稿正在进行中，如有疑问请联系：<span class="theme_blue">021-61102103</span>
+            </div>
+            <div class="footer_tips" id="no-start">
+                尚未开始征集作品，敬请期待。
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="myModal" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document" style="width: 450px;">
+            <div class="modal-content">
+                <img src="../images/zyxf.jpg"  width="100%" alt="">
+            </div>
+        </div>
+    </div>
+    <!--loading遮罩层-->
+    <div class="modal fade" id="loadingModal" backdrop="static" keyboard="false">
+        　　<div class="loadingContent">
+               
+        　　　　<div class="" style="margin-bottom: 0;background-color: transparent;width: 200px;height: 22px;border-radius: 2px;overflow: hidden;margin-bottom: 20px;">
+        　　　　　　<div class="" id="progressBar" style="height: 22px;background-color: #2d8ef8;line-height:22px;color: #fff;"></div>
+        　　　　</div>
+        　　　　<h5 id="loadText" style="color: #fff;">文件上传中，请耐心等候...</h5>
+        　　</div>
+        </div>
+        <!--loading方法-->
+    <div id="copyRightModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" style="text-align: center;font-size:24px;font-weight:500;color: #192035;">版权声明</h4>
+                </div>
+                <div class="modal-body body-self">
+                    <p class="right-txt">(1) 参赛作品均须为参赛者本人或团队自行创意的原创作品，为参赛者所有；如参赛作品系依据其他作品改编或引用其他作品，参赛者应保证其已合法享有原作品的改编权或使用权，并保证大赛组委会及合作单位亦合法拥有对参赛作品的使用权。</p>
+                    <p class="right-txt">(2)大赛组委会不负责核实参赛作品的所有权。若参赛作品发生任何侵犯第三方人身权、知识产权的行为，参赛者和参赛作品将被立即取消参赛或得奖资格，并且由此引发的一切责任和损失（包括对大赛组委会、大赛组委会指定品牌方、大赛组委会合作单位造成的损失）均应由参赛者自行承担。</p>
+                    <p class="right-txt">(3)参赛者在此不可撤销同意并无偿授权，大赛组委会及合作单位合法拥有对参赛作品的如下权利：</p>
+                    <p class="right-txt">a. 为了推广本项赛事，进行公关播送、公开传播、复印、复制、出版或在一切相关活动中进行展示利用；</p>
+                    <p class="right-txt">b. 将参赛作品编制成光碟或任何形式的专辑，进行营利或非营利推广；</p>
+                    <p class="right-txt">c. 将所有参赛作品授予传播媒体，进行报道刊载播放；</p>
+                    <p class="right-txt">d. 大赛组委会指定的品牌方为自身宣传需要将参赛作品进行展示和传播（需注明“第十八届上海国际大学生广告节参赛作品”及“参赛作者姓名”），期限为自本次大赛闭幕起的一年内。</p>
+                    <p class="right-txt">(1) the entries must be original works for the participants themselves and all the competitors themselves. If the entries are adapted or quoted on the basis of other works, the contestant should guarantee the right of adaptation or use of the original work, and ensure that the Organizing Committee and the cooperative unit also have the right to participate in the competition. The right to use the work.</p>
+                    <p class="right-txt">(2) the organizing committee is not responsible for verifying the ownership of the entries. In the event of any infringement of the third party's personal rights and intellectual property rights, the participants and the entries will be immediately cancelled or eligible for the award, and all the responsibilities and losses arising therefrom (including losses to the organizing committee, the designated brand Party of the organizing committee, the cooperation unit of the organizing Committee) It should be taken by the participants on their own. </p>
+                    <p class="right-txt">(3) the contestants hereby irrevocable consent and free authorization. The competition organizing committee and the cooperative unit legally have the following rights to the entries:</p> 
+                    <p class="right-txt">A. in order to promote this event, public relations broadcast, public dissemination, photocopying, copying, publishing or display in all related activities; </p>
+                    <p class="right-txt">B. compiling entries into compact discs or any form of album for profit or non-profit promotion; </p>
+                    <p class="right-txt">C. will give all the entries to the media for reporting and broadcasting; The </p>
+                    <p class="right-txt">D. competition organization committee designated the brand for its own publicity needs to display and disseminate the entries ("the eighteenth Shanghai International College Students Advertising Festival entries" and "the name of the author of the competition"), the period from the closing of the competition within a year.</p>
+                </div>
+                <div class="modal-footer self-footer" style="text-align: center;">
+                    <button type="button" class="btn btn-default btn-self-close" data-dismiss="modal">关闭</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- 底部 -->
+    <div id="commonFooter"> <footer>
+            <div class="container content">
+                <div class="row">
+                    <div class="col-md-7 right">
+                        <div class="meun">
+                            <ul>
+                                <li><a href="pages/about.html" onclick="">关于河广节</a></li>
+                                <li><a href="pages/moreNews.html" onclick="">新闻动态</a></li>
+                                <li><a href="pages/JudgesIntroduce.html" onclick="">评审介绍</a></li>
+                                <li><a href="pages/contact.html" onclick="navTo('contact')">联系我们</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="about-us" id="CompanyList">
+                            <p> <span>指导单位:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈啊哈哈哈哈</a> <span style="color: #fff">、</span> <a href=""
+                                        style="color: #fff">哈哈哈哈啊哈哈哈哈会</a> <span style="color: #fff">、</span> <a href=""
+                                        style="color: #fff">哈哈哈哈啊哈哈</a> <span style="color: #fff"></span> </span> </p>
+                            <p> <span>主办单位:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈啊</a> <span style="color: #fff">、</span> <a href=""
+                                        style="color: #fff">河南大学</a> <span style="color: #fff"></span> </span> </p>
+                            <p> <span>独家承办单位:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈哈哈哈哈哈</a> <span style="color: #fff"></span> </span>
+                            </p>
+                            <p> <span>总冠名品牌:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈哈啊</a> <span style="color: #fff"></span> </span> </p>
+                        </div>
+                        <div class="row about-us" style="margin-left:1px;margin-top:3px">
+                            <p>联系电话：000-00000000 老师&nbsp;&nbsp;&nbsp;&nbsp;邮箱：000000000000000 </p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-5 row left">
+                        <div class="col-md-5">
+                            <div class="er-code">
+                                <img src="../images/home/weibo.png" alt="">
+                            </div>
+                            <span>扫一扫：关注微博</span>
+                        </div>
+                        <div class="col-md-5 col-md-offset-2">
+                            <div class="er-code">
+                                <img src="../images/home/weixin.png" alt="">
+                            </div>
+
+                            <span>扫一扫：关注微信</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="container">
+                    <p>@2019河南大学生广告节 备案许可证编号为：<a style="color: #2D8EF8;font-size: 12px;"
+                            href="http://www.beian.miit.gov.cn/">0000000000000</a></p>
+                </div>
+            </div>
+        </footer>
+    
+    <script>
+        // 获取首页底部公司赞助相关信息
+        var CompanyListData = { result: null };
+        function getCompanyInfos() {
+            Request_.ajax({
+                // key: '/api/WebPage/IndexCompanyList',
+                // type: 'GET',
+                key: '',
+                type: '',
+                data: {}, 
+                dataType: "json",
+                success: function (info) {
+                    if (info && info.Stata === 10000) {
+                        CompanyListData.result = info.Data;
+                        $.each(CompanyListData.result, function(k, v) {
+                            if (v.Title) {
+    
+                            }
+                        });
+                        updataView('t:_CompanyList', 'CompanyList', CompanyListData);
+                    }
+                }
+            })
+        }
+        getCompanyInfos();
+    </script></div>
+    <script src="../public/script/upload.js" ></script>
+   
+    <script>
+        $('#commonHeader').load('./components/newHeader.html', null, function() {
+            selectHeaderActiveClass('upload');
+            // 登录按钮和登陆头像的显示隐藏逻辑
+            loginBtnAndUserImg();
+        })
+        $('.control_left').load('./components/UserCenterSideMenu.html', null, function() {
+            userCenterSiderActiveClass('upload');
+        });
+        $('#commonFooter').load('./components/footer.html')
+
+        var loadingTime= 5;//默认遮罩时间
+        function showLoading(loadText) {
+            if(!loadText){
+                $("#loadText").html(loadText)
+            }
+            $('#loadingModal').modal({backdrop: 'static', keyboard: false});
+        }
+        function hideLoading () {
+            $('#loadingModal').modal('hide');
+        }
+    </script>
+</body>
+
+</html>

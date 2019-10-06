@@ -1,0 +1,177 @@
+.headerBase,
+.headerBase #bs-navbar li.active,
+.headerBase #bs-navbar li:hover {
+    position: relative
+}
+
+.headerBase {
+    z-index: 999;
+    background: #fff
+}
+
+.headerBase .navbar-brand {
+    height: 1.2rem;
+    padding: .2rem .8rem .2rem 0;
+    font-size: .18rem;
+    line-height: .2rem;
+    cursor: pointer
+}
+
+.headerBase #bs-navbar li {
+    line-height: 1.2rem;
+    height: 1.2rem;
+    margin-right: .4rem;
+    cursor: pointer
+}
+
+.headerBase #bs-navbar li a {
+    display: inline-block;
+    font-size: 16px;
+    color: #192035;
+    padding: 0
+}
+
+.headerBase #bs-navbar .navbar-nav.navbar-right li:hover::after,
+.headerBase #user-navbar.hideList {
+    display: none
+}
+
+.headerBase #bs-navbar li a:hover {
+    background: unset
+}
+
+.headerBase #bs-navbar li:last-child {
+    margin-right: 0
+}
+
+.headerBase #bs-navbar li.active a,
+.headerBase #bs-navbar li:hover a {
+    color: #FFAC2A
+}
+
+.headerBase #bs-navbar li.active::after,
+.headerBase #bs-navbar li:hover::after {
+    content: '';
+    position: absolute;
+    
+    bottom: 25px;
+    width: 100%;
+    height: .02rem;
+    background: #FFAC2A
+} 
+
+.headerBase #bs-navbar .navbar-nav.navbar-right {
+    line-height: 1.2rem;
+    height: 1.2rem
+}
+
+.headerBase #bs-navbar .navbar-nav.navbar-right#userPic {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    line-height: 0;
+    border: 5px solid #fff;
+    text-align: right;
+    cursor: pointer
+}
+
+.headerBase #bs-navbar .navbar-nav.navbar-right li {
+    position: relative;
+    top: .6rem;
+    transform: translateY(-50%);
+    text-align: center;
+    margin-right: 8px;
+    width: 80px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 18px;
+    border-radius: 4px;
+    border: 1px solid #FFAC2A;
+    overflow: hidden；
+    
+}
+
+.headerBase #bs-navbar .navbar-nav.navbar-right li a {
+    float: left;
+    line-height: 36px;
+    width: 100%;
+    text-align: center
+}
+
+.headerBase #bs-navbar .navbar-nav.navbar-right li a:hover {
+    color: #fff;
+    background: #FFAC2A
+}
+
+.headerBase #user-navbar {
+    width: 180px;
+    background-color: rgba(255, 255, 255, .9);
+    position: absolute;
+    right: 0;
+    top: 39px;
+    border: 1px solid #dfdfdf;
+    box-shadow: 1px 1px 3px #eee;
+    border-radius: 6px;
+    overflow: hidden
+}
+
+.headerBase #user-navbar .navbar-content {
+    display: flex;
+    flex-direction: column
+}
+
+.headerBase #user-navbar .navbar-content .navbar-item {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: #192035;
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+    cursor: pointer
+}
+
+.headerBase #user-navbar .navbar-content .navbar-item.active {
+    color: #FFAC2A
+}
+
+.headerBase #user-navbar .navbar-content .navbar-item:hover {
+    background-color: #FFAC2A;
+    color: #fff
+}
+
+.headerBase .child {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 1.2rem;
+    width: 100%;
+    height: 1rem;
+    background: rgba(230, 230, 230, .9);
+    box-shadow: 0 .02rem .06rem 0 rgba(0, 0, 0, .1)
+}
+
+.headerBase .child.active {
+    display: block
+}
+
+.headerBase .child ul {
+    margin: 0 auto;
+    text-align: center
+}
+
+.headerBase .child ul li {
+    padding: .4rem .3rem;
+    display: inline-block;
+    font-size: 16px;
+    line-height: .2rem;
+    cursor: pointer
+}
+
+.headerBase .child ul li:hover {
+    color: #fff;
+    background: #FFAC2A
+}

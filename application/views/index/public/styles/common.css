@@ -1,0 +1,184 @@
+.fenye,
+body>div {
+    width: 100%
+}
+
+body {
+    min-width: 1240px
+}
+
+.header {
+    margin-top: 50px;
+    margin-bottom: 30px
+}
+
+.header .col-sm-8 {
+    padding: 0
+}
+
+.header ul {
+    font-size: 20px;
+    line-height: 50px;
+    float: right
+}
+
+.header ul li {
+    float: left;
+    margin: 0 20px
+}
+
+.header ul span {
+    float: left;
+    color: #dcdcdc
+}
+
+#header {
+    margin: 0;
+    height: 120px
+}
+
+.fenye ul li,
+.fenye ul span {
+    height: 40px;
+    line-height: 40px
+}
+
+.dImage .img_box {
+    border-top: 4px solid #e95513;
+    width: 100%;
+    overflow: hidden
+}
+
+.dImage .img_box img {
+    margin-top: -2px
+}
+
+.fenye {
+    margin-top: 130px;
+    position: absolute;
+    bottom: 0
+}
+
+.fenye ul {
+    width: 595px;
+    margin: 0 auto
+}
+
+.fenye ul span {
+    display: inline-block;
+    width: 100px
+}
+
+.fenye ul li {
+    width: 40px
+}
+
+.fenye ul li,
+.fenye ul span {
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+    border: 1px solid #dcdcdc;
+    cursor: pointer
+}
+
+.fenye ul .fy_doudian {
+    border: none;
+    font-size: 30px
+}
+
+.fenye ul .fy_doudian a {
+    display: block;
+    margin-top: -10px
+}
+
+.foot_our .continer {
+    padding-top: 58px
+}
+
+.foot_our .continer dl {
+    padding-left: 35%
+}
+
+.foot_our .continer dt {
+    font-size: 20px;
+    margin-bottom: 20px
+}
+
+.foot_our .continer dt dd {
+    font-size: 14px;
+    color: #333
+}
+
+.foot {
+    margin-top: 30px;
+    width: 100%;
+    border-top: 1px solid #dcdcdc;
+    text-align: center;
+    padding-top: 38px
+}
+
+.foot p {
+    margin: 0
+}
+
+.control_left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 240px;
+    background: #fff;
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, .08);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden
+}
+
+.control_left .title {
+    padding: 20px 40px;
+    background: #FFAC2A;
+    height: 90px;
+    text-align: left;
+    margin-bottom: 16px
+}
+
+.control_left .title p:first-child {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 33px
+}
+
+.control_left .title p:last-child {
+    font-size: 16px;
+    color: #fff;
+    line-height: 18px
+}
+
+.control_left .nav li {
+    padding-left: 40px;
+    line-height: 62px;
+    height: 62px;
+    color: #444;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer
+}
+
+.control_left .nav li.active {
+    font-weight: 500;
+    color: #FFAC2A;
+    position: relative;
+    background: #F7F7F7
+}
+
+.control_left .nav li.active::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 62px;
+    background: #FFAC2A;
+    position: absolute;
+    left: 0;
+    top: 0
+}

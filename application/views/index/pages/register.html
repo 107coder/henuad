@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <iframe src="components/heade.html"  frameborder="0"></iframe> 
+
+<head>
+    <title>注册</title>
+    <meta name="description" content="河南大学广告节">
+    <meta name="keywords" content="河广节,河南大学大学生,河南大学生,广告节">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/styles/base.css">
+    <link rel="stylesheet" href="../public/styles/common.css"> 
+    <link rel="stylesheet" href="../public/styles/header.css">
+    <link rel="stylesheet" href="../public/styles/footer.css">
+    <link rel="stylesheet" href="../public/assets/swiper/swiper.min.css">
+    <script src="../public/utils/common.js"></script>
+     
+    <script src="../public/assets/jquery-1.12.4.js"></script> 
+    <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../public/assets/layer/layer.js"></script>
+    <script src="../public/utils/render.request.js"></script>
+    <script src="../public/utils/render.utils.js"></script>
+    <script src="../public/assets/baiduTemplate.js"></script>
+    <script src="../public/assets/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="../public/styles/register.css">
+    <script src="../public/assets/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <!--头部导航-->
+    <header class="headerBase">
+        <div class="container">
+            <div class="navbar-header">
+                <img onclick="navTo('../index')" src="../images/logo.png" class="logo" alt="">
+                <span class="line"></span>
+                <span class="title">用户注册</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="register-box">
+            <!-- step1 -->
+            <div id="step1">
+                <div class="top row">
+                    <div class="col-md-6">绑定手机号</div>
+                    <div class="col-md-6 step">
+                        <img src="../images/icon/register_step1.png" alt="step">
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="form-input row">
+                        <div class="col-md-7">
+                            <span class="icon mobile"></span>
+                            <input type="text" id="regMobile" data-regexp="tel" maxlength="11" placeholder="请输入手机号">
+                        </div>
+                        <div class="col-md-5 error-tips"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="form-input row">
+                                <div class="col-md-7">
+                                    <span class="icon safe"></span>
+                                    <input type="text" id="regMobileCode" maxlength="6" placeholder="请输入验证码">
+                                </div>
+                                <div class="col-md-5 error-tips"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="button" value="获取验证码" class="get-code">
+                        </div>
+                    </div>
+
+                    <div class="form-btn">
+                        <button id="next_step2">下一步</button>
+                    </div>
+                </div>
+                <div class="tips-guide">
+                    已有账号？<a href="login.html">马上登录</a>
+                </div>
+            </div>
+            <!-- step2 -->
+            <div id="step2" style="display: none;">
+                <div class="top row">
+                    <div class="col-md-6">设置密码</div>
+                    <div class="col-md-6 step">
+                        <img src="../images/icon/register_step2@2x.png" alt="step">
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="form-input row">
+                        <div class="col-md-7">
+                            <span class="icon password"></span>
+                            <input type="password" id="password" placeholder="请输入密码">
+                        </div>
+                        <div class="col-md-5 error-tips"></div>
+                    </div>
+                    <div class="form-input row">
+                        <div class="col-md-7">
+                            <span class="icon password2"></span>
+                            <input type="password" id="confirmPassword" placeholder="请确认密码">
+                        </div>
+                        <div class="col-md-5 error-tips"></div>
+                    </div>
+
+                    <div class="form-btn">
+                        <button id="next_step3">下一步</button>
+                    </div>
+                </div>
+                <div class="tips-guide">
+                    已有账号？<a href="login.html">马上登录</a>
+                </div>
+            </div>
+            <!-- step3 -->
+            <div id="step3" style="display: none;">
+                <div class="suc-icon">
+                    <img src="../images/icon/suc@2x.png" alt="">
+                </div>
+                <div class="suc-tips">恭喜您，注册成功！</div>
+                <div class="form-btn">
+                    <button id="register_suc">进入首页</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="commonFooter"><footer>
+            <div class="container content">
+                <div class="row">
+                    <div class="col-md-7 right">
+                        <div class="meun">
+                            <ul>
+                                <li><a href="pages/about.html" onclick="">关于河广节</a></li>
+                                <li><a href="pages/moreNews.html" onclick="">新闻动态</a></li>
+                                <li><a href="pages/JudgesIntroduce.html" onclick="">评审介绍</a></li>
+                                <li><a href="pages/contact.html" onclick="navTo('contact')">联系我们</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="about-us" id="CompanyList">
+                            <p> <span>指导单位:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈啊哈哈哈哈</a> <span style="color: #fff">、</span> <a href=""
+                                        style="color: #fff">哈哈哈哈啊哈哈哈哈会</a> <span style="color: #fff">、</span> <a href=""
+                                        style="color: #fff">哈哈哈哈啊哈哈</a> <span style="color: #fff"></span> </span> </p>
+                            <p> <span>主办单位:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈啊</a> <span style="color: #fff">、</span> <a href=""
+                                        style="color: #fff">河南大学</a> <span style="color: #fff"></span> </span> </p>
+                            <p> <span>独家承办单位:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈哈哈哈哈哈</a> <span style="color: #fff"></span> </span>
+                            </p>
+                            <p> <span>总冠名品牌:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈哈啊</a> <span style="color: #fff"></span> </span> </p>
+                        </div>
+                        <div class="row about-us" style="margin-left:1px;margin-top:3px">
+                            <p>联系电话：000-00000000 老师&nbsp;&nbsp;&nbsp;&nbsp;邮箱：000000000000000 </p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-5 row left">
+                        <div class="col-md-5">
+                            <div class="er-code">
+                                <img src="../images/home/weibo.png" alt="">
+                            </div>
+                            <span>扫一扫：关注微博</span>
+                        </div>
+                        <div class="col-md-5 col-md-offset-2">
+                            <div class="er-code">
+                                <img src="../images/home/weixin.png" alt="">
+                            </div>
+
+                            <span>扫一扫：关注微信</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="container">
+                    <p>@2019河南大学生广告节 备案许可证编号为：<a style="color: #2D8EF8;font-size: 12px;"
+                            href="http://www.beian.miit.gov.cn/">0000000000000</a></p>
+                </div>
+            </div>
+        </footer>
+    
+   
+    <script>
+        // 获取首页底部公司赞助相关信息
+        var CompanyListData = { result: null };
+        function getCompanyInfos() {
+            Request_.ajax({
+                // key: '/api/WebPage/IndexCompanyList',
+                // type: 'GET',
+                key: '',
+                type: '',
+                data: {}, 
+                dataType: "json",
+                success: function (info) {
+                    if (info && info.Stata === 10000) {
+                        CompanyListData.result = info.Data;
+                        $.each(CompanyListData.result, function(k, v) {
+                            if (v.Title) {
+    
+                            }
+                        });
+                        updataView('t:_CompanyList', 'CompanyList', CompanyListData);
+                    }
+                }
+            })
+        }
+        getCompanyInfos();
+    </script></div>
+
+    <script src="../public/script/register.js" ></script>
+    <script>
+        $('#commonFooter').load('./components/footer.html')
+        initPage();
+    </script>
+
+</body>
+
+
+</html>

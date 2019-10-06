@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<iframe src="pages/components/heade.html" frameborder="0"></iframe>
+
+<head>
+    <meta charset="UTF-8">
+    <title>河南大学广告节</title>
+    <meta name="description" content="河南大学广告节">
+    <meta name="keywords" content="河广节,河南大学大学生,河南大学生,广告节">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./public/styles/base.css">
+    <link rel="stylesheet" href="./public/styles/common.css">
+    <link rel="stylesheet" href="./public/styles/index.css">
+    <link rel="stylesheet" href="./public/styles/header.css">
+    <link rel="stylesheet" href="./public/styles/footer.css">
+    <script src="./public/assets/jquery-3.2.1.js"></script>
+    <script src="./public/assets/baiduTemplate.js"></script>
+    <script src="./public/utils/render.request.js"></script>
+    <script src="./public/utils/render.utils.js"></script>
+    <script src="./public/assets/swiper/swiper.min.js"></script>
+    <script src="./public/utils/common.js"></script>
+    <script src="./public/script/common.js"></script>
+</head>
+
+<body>
+    <!--头部导航-->
+    <div id="commonHeader">
+        <header class="headerBase">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                        data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="../heguangjie/images/logo.png" class="navbar-brand" onclick="" alt="">
+                </div>
+
+                <nav id="bs-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+
+                        <li onclick="" name="index" class="active">
+                            <a href="index.html">首页</a>
+                        </li>
+
+                        <li onclick="" name="about">
+                            <a href="pages/about.html">关于大广节</a>
+                        </li>
+                        <li onclick="" name="news">
+                            <a href="pages/moreNews.html">新闻动态</a>
+                        </li>
+                        <li onclick="" name="judgesIntroduce">
+                            <a href="pages/JudgesIntroduce.html">评审介绍</a>
+                        </li>
+
+                        <li onclick="" name="linkus">
+                            <a href="pages/contact.html">联系我们</a>
+                        </li>
+
+                    </ul>
+                    <!-- mavleft -->
+                    <ul class="nav navbar-nav navbar-right" id="unLogin">
+                        <li onclick=""><a href="../heguangjie/pages/login.html">登录</a>
+                        </li>
+                        <li onclick=""><a href="../heguangjie/pages/register.html">注册</a>
+                        </li>
+                    </ul>
+                    <div class="nav navbar-nav navbar-right" id="userPic" style="display: none"
+                        onmouseleave="hideUserImgList(event)">
+                        <img id="user-image" onmouseenter="getUserCenterList(event)"
+                            src="../heguangjie/images/touxiang.jpg" width="40" alt="" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <div id="user-navbar" class="hideList">
+                            <div class="navbar-content">
+                                <div class="navbar-item" onclick="navTo('user-info')" name="user-info">个人信息</div>
+                                <div class="navbar-item" onclick="navTo('upload')" name="upload">作品上传</div>
+                                <div class="navbar-item" onclick="navTo('mycreation')" name="mycreation">我的作品</div>
+                                <div class="navbar-item" onclick="navTo('changePassword')" name="changePassword">修改密码
+                                </div>
+                                <div class="navbar-item" onclick="userExit()">安全退出</div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <div id="bannerBox">
+        <div class="container cansaixuzhi">
+            <div onclick="navTo('know')" class="banner_icon col-sm-4 col-xs-4">
+                <div>
+                    <div class="icon">
+                        <img src="../heguangjie/images/csxz.png" alt="">
+                        <img src="../heguangjie/images/csxz2.png" alt="">
+                    </div>
+                    <p>参赛须知</p>
+                </div>
+            </div>
+            <div onclick="navTo('load')" class="banner_icon col-sm-4 col-xs-4">
+                <div>
+                    <div class="icon">
+                        <img src="../heguangjie/images/mtxz.png" alt="">
+                        <img src="../heguangjie/images/mtxz2.png" alt="">
+                    </div>
+                    <p>命题下载</p>
+                </div>
+            </div>
+            <div onclick="navTo('upload')" class="banner_icon col-sm-4 col-xs-4">
+                <div>
+                    <div class="icon">
+                        <img src="../heguangjie/images/zpsc.png" alt="">
+                        <img src="../heguangjie/images/zpsc2.png" alt="">
+                    </div>
+                    <p>作品上传</p>
+                </div>
+            </div>
+        </div>
+        <!-- 轮播 -->
+        <!-- 轮播 -->
+        <div id="shuffling">
+            <div class="swiper-container carousel swiper_header swiper-container-initialized swiper-container-horizontal"
+                style="height: 300.949px;">
+                <div class="swiper-wrapper"
+                    style="transition-duration: 0ms; transform: translate3d(-2540px, 0px, 0px);">
+                    <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5"
+                        style="width: 1240px; margin-right: 30px;"> <a href="#"> <img
+                                src="../heguangjie/images/lunbotu.jpg"
+                                alt=""> </a> </div>
+                    <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
+                        style="width: 1240px; margin-right: 30px;"> <a href="pages/know.html"> <img
+                                src="../heguangjie/images/lunbotu.jpg"
+                                alt=""> </a> </div>
+                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1"
+                        style="width: 1240px; margin-right: 30px;"> <a
+                            href="">
+                            <img src="../heguangjie/images/lunbotu.jpg"
+                                alt=""> </a> </div>
+                    <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2"
+                        style="width: 1240px; margin-right: 30px;"> <a
+                            href="">
+                            <img src="../heguangjie/images/lunbotu.jpg"
+                                alt=""> </a> </div>
+                    <div class="swiper-slide" data-swiper-slide-index="3" style="width: 1240px; margin-right: 30px;"> <a
+                            href="">
+                            <img src="../heguangjie/images/lunbotu.jpg"
+                                alt=""> </a> </div>
+                    <div class="swiper-slide" data-swiper-slide-index="4" style="width: 1240px; margin-right: 30px;"> <a
+                            href="">
+                            <img src="../heguangjie/images/lunbotu.jpg"
+                                alt=""> </a> </div>
+                    <div class="swiper-slide" data-swiper-slide-index="5" style="width: 1240px; margin-right: 30px;"> <a
+                            href="#"> <img
+                                src="../heguangjie/images/lunbotu.jpg"
+                                alt=""> </a> </div>
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                        data-swiper-slide-index="0" style="width: 1240px; margin-right: 30px;"> <a
+                            href=""> <img
+                                src="../heguangjie/images/lunbotu.jpg"
+                                alt=""> </a> </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
+                        class="swiper-pagination-bullet" tabindex="0" role="button"
+                        aria-label="Go to slide 1"></span><span
+                        class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+                        aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0"
+                        role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet"
+                        tabindex="0" role="button" aria-label="Go to slide 4"></span><span
+                        class="swiper-pagination-bullet" tabindex="0" role="button"
+                        aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0"
+                        role="button" aria-label="Go to slide 6"></span></div> <span class="swiper-notification"
+                    aria-live="assertive" aria-atomic="true"></span>
+            </div>
+        </div>
+        
+    </div>
+    <!-- 新闻动态 -->
+    <div id="newsContent">
+        <div class="container ">
+            <p class="itemName">新闻动态</p>
+            <p class="newTips"> <span class="line">NEWS</span> </p>
+            <div class="item auto_height" id="newsContentList">
+                <div class="newsTitle">
+                    <div class="title"> <img
+                            src="https://"
+                            alt=""> </div> <a href="./pages/moreNews.html">
+                        <div class="content clearfix">
+                            <div class="content_left"> 01 <p>2019-06</p>
+                            </div>
+                            <div class="content_right">
+                                <p class="rightt one_txt_cut">【开幕式精彩集锦】共赴创意青春盛宴，河南大学大学生广告节隆重开幕！</p>
+                                <p class="rightb txt_cut_4"> 河南大学大学生广告节... </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="newsTitle_right">
+                    <div class="clearfix ">
+                        <div class="left"><img
+                                src="https://heguangjie."
+                                alt=""></div> <a href="./pages/moreNews.html">
+                            <div class="right top_news">
+                                <h2 class="txt_cut_2">哈哈哈哈哈哈啊哈哈啊哈哈哈哈哈哈哈哈哈啊</h2>
+                                <p class="time">2019-06-24</p>
+                                <p class="question txt_cut_2"> 哈哈哈哈哈哈哈哈哈哈哈哈哈哈...
+                                   
+                                </p>
+                                <div class="arrow">
+                                    <div> <img src="../images/arrowRight.png" alt=""> <img
+                                            src="../images/arrowRight2.png" alt="">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="clearfix ">
+                        <div class="left"><img
+                                src="https://heguangjie.">
+                        </div> <a href="./pages/moreNews.html">
+                            <div class="right bottom_news">
+                                <h2 class="txt_cut_2"> 【品牌命题】青春敢做梦，创意凭“植”觉，新飘影命题策略单请注意查收！ <p class="time">2019-06-05</p>
+                                    <p class="question txt_cut_2">新飘影命题策略单赶紧收好！</p>
+                                    
+                                    <div class="arrow">
+                                        <div> <img src="../images/arrowRight.png" alt=""> <img
+                                                src="../images/arrowRight2.png" alt=""> </div>
+                                    </div>
+                                </h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+           <a href="./pages/moreNews.html"> <p class="more" onclick="navTo('moreNews')"> <span>更多新闻</span> </p></a>
+        </div>
+    </div>
+    <!-- 合作品牌 -->
+    <div class="cooperation">
+        <div class="container ">
+            <p class="itemName">合作品牌</p>
+            <p class="newTips">
+                <span class="line">COOPERATION BRANDS</span>
+            </p>
+            <div class="clearfix" id="cooperationList">
+                <div class="col-sm-2 col-xs-2"
+                    onclick="navTo('brandIntroduce', {brandguid: '008f5c90-71a2-4913-a953-ac94c9b52550', isTopic: 1})">
+                    <img src="https://heguangjie."
+                        alt=""> </div>
+                <div class="col-sm-2 col-xs-2"
+                    onclick="navTo('brandIntroduce', {brandguid: 'ca0fd832-a0b7-4e6c-b5c9-92e2144053ae', isTopic: 1})">
+                    <img src="https://heguangjie."
+                        alt=""> </div>
+                <div class="col-sm-2 col-xs-2"
+                    onclick="navTo('brandIntroduce', {brandguid: '95d33a27-aae5-4412-9aa4-efec1e5f2cb9', isTopic: 1})">
+                    <img src="https://heguangjie."
+                        alt=""> </div>
+                <div class="col-sm-2 col-xs-2"
+                    onclick="navTo('brandIntroduce', {brandguid: 'deee5900-931a-4175-86ff-da51d57dab78', isTopic: 0})">
+                    <img src="https://heguangjie."
+                        alt=""> </div>
+            </div>
+        </div>
+    </div>
+    <!-- 评委介绍 -->
+    <div class="judges">
+        <img src="../images/judges.png" class="judgesImage" alt="">
+        <div class="container ">
+            <p class="itemName">评委介绍</p>
+            <p class="newTips">
+                <span class="line">JUDGES</span>
+            </p>
+            <div class="swiper-container judges swiper-container-initialized swiper-container-horizontal" dir="ltr">
+                <div class="swiper-wrapper" id="JudgeList"
+                    style="transition-duration: 0ms; transform: translate3d(-492.8px, 0px, 0px);">
+                    <div class="swiper-slide swiper-slide-duplicate"
+                        onclick="navTo('JudgesIntroduce', {guid: '41537f07-7267-40f6-9454-e29279865184'})"
+                        data-swiper-slide-index="10" style="width: 234.4px; margin-right: 12px;">
+                        <div class="touxiang"><img
+                                src="https://heguangjie."
+                                alt=""></div>
+                        <p class="name">张艳</p>
+                        <p class="introduce">上海广告有限公司 创意群总监</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate"
+                        onclick="navTo('JudgesIntroduce', {guid: '3b9c9ee2-d3fa-4dca-8cd1-e07d916a0d67'})"
+                        data-swiper-slide-index="11" style="width: 234.4px; margin-right: 12px;">
+                        <div class="touxiang"><img
+                                src="https://heguangjie."
+                                alt=""></div>
+                        <p class="name">杨斌</p>
+                        <p class="introduce">上海葵友广告有限公司 总经理</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate"
+                        onclick="navTo('JudgesIntroduce', {guid: 'cd370074-8177-4722-a5e5-a135991ea1eb'})"
+                        data-swiper-slide-index="12" style="width: 234.4px; margin-right: 12px;">
+                        <div class="touxiang"><img
+                                src="https://heguangjie."
+                                alt=""></div>
+                        <p class="name">董鹏飞</p>
+                        <p class="introduce">上海焦点品牌管理股份有限公司 创意总监</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev"
+                        onclick="navTo('JudgesIntroduce', {guid: '31ee122f-33e9-4950-9c01-0a84b17ab9a3'})"
+                        data-swiper-slide-index="13" style="width: 234.4px; margin-right: 12px;">
+                        <div class="touxiang"><img
+                                src="https://heguangjie."
+                                alt=""></div>
+                        <p class="name">方年晓</p>
+                        <p class="introduce">上海剧星传媒股份有限公司 全国策略中心高级策略总监</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-active"
+                        onclick="navTo('JudgesIntroduce', {guid: 'e3b4e406-8c65-4b90-ab1a-4bb21dc32c54'})"
+                        data-swiper-slide-index="14" style="width: 234.4px; margin-right: 12px;">
+                        <div class="touxiang"><img
+                                src="https://heguangjie."
+                                alt=""></div>
+                        <p class="name">黄士卿</p>
+                        <p class="introduce">上海蓝梦广告传播股份有限公司 创意总监</p>
+                    </div>
+                    <div class="swiper-slide swiper-slide-next"
+                        onclick="navTo('JudgesIntroduce', {guid: 'db9638b0-7e4a-46b2-818a-116bfaa5fdd0'})"
+                        data-swiper-slide-index="0" style="width: 234.4px; margin-right: 12px;">
+                        <div class="touxiang"><img
+                                src="https://heguangjie."
+                                alt=""></div>
+                        <p class="name">莫康孙</p>
+                        <p class="introduce">麦肯·光明广告有限公司创意顾问，创意热店“Match·马马也”创始人</p>
+                    </div>
+                    <div class="swiper-slide"
+                        onclick="navTo('JudgesIntroduce', {guid: '6fa861da-80a5-4c7c-b166-cea45af7320c'})"
+                        data-swiper-slide-index="1" style="width: 234.4px; margin-right: 12px;">
+                        <div class="touxiang"><img
+                                src="https://heguangjie."
+                                alt=""></div>
+                        <p class="name">孙二黑</p>
+                        <p class="introduce">灵智精实广告有限公司上海分公司 上海总经理兼中国区首席创意官</p>
+                    </div>
+                    <div class="swiper-slide"
+                        onclick="navTo('JudgesIntroduce', {guid: '03a04124-8d59-4e9a-b8dd-304d297deddb'})"
+                        data-swiper-slide-index="2" style="width: 234.4px; margin-right: 12px;">
+                        <div class="touxiang"><img
+                                src="https://heguangjie."
+                                alt=""></div>
+                        <p class="name">任师迁</p>
+                        <p class="introduce">中原消费金融股份有限公司 品牌管理中心负责人 </p>
+                    </div>
+                    <div class="swiper-slide"
+                        onclick="navTo('JudgesIntroduce', {guid: '7456e6c8-0fd2-47d1-8d23-9f77e6e22496'})"
+                        data-swiper-slide-index="3" style="width: 234.4px; margin-right: 12px;">
+                        <div class="touxiang"><img
+                                src="https://heguangjie."
+                                alt=""></div>
+                        <p class="name">吴景璇</p>
+                        <p class="introduce">杭州爱柏森生物科技有限公司 创始人兼总裁 </p>
+                    </div>
+                    
+                </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+            <a class="left carousel-control swiper_left" href="#myCarousel" role="button" data-slide="prev" tabindex="0"
+                aria-label="Previous slide">
+                <span class=" iconleftImage" aria-hidden="true">
+                    <img src="./images/home/jiantou.png" alt="">
+                </span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control swiper_right" href="#myCarousel" role="button" data-slide="next"
+                tabindex="0" aria-label="Next slide">
+                <span class=" iconrightImage" aria-hidden="true">
+                    <img src="./images/home/jiantou.png" alt="">
+                </span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div>
+    <!-- 参与院校 -->
+    <div class="university">
+        <div class="container ">
+            <p class="itemName">参与院校</p>
+            <p class="newTips">
+                <span class="line">PARTICIPATING INSTITUTIONS</span>
+            </p>
+            <div class="clearfix swiper-container schoolList schoolListBanner swiper-container-initialized swiper-container-horizontal swiper-container-rtl"
+                dir="rtl">
+                <div class="swiper-wrapper" id="schoolList"
+                    style="transition-duration: 0ms; transform: translate3d(11088px, 0px, 0px);">
+                    <div class="schoolBox swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                        data-swiper-slide-index="9" style="width: 1220px; margin-left: 12px;">
+                        <div class="col-sm-div swiper-slide " title="泰州学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>泰州学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="北海职业学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>北海职业学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="淮阴工学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>淮阴工学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="武夷学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>武夷学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="武昌工学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>武昌工学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="辽宁何氏医学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>辽宁何氏医学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="湖北大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>湖北大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="济南大学泉城学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>济南大学泉城学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="湖南科技学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>湖南科技学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="西安建筑科技大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>西安建筑科技大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="洛阳理工学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>洛阳理工学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="内蒙古艺术学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>内蒙古艺术学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="上海理工大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>上海理工大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="鲁迅美术学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>鲁迅美术学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="山东管理学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>山东管理学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="温州大学瓯江学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>温州大学瓯江学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="南华大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>南华大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="南昌大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>南昌大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="贺州学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>贺州学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="上海政法学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>上海政法学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="华中师范大学武汉传媒学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>华中师范大学武汉传媒学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="青岛黄海学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>青岛黄海学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="湖南应用技术学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>湖南应用技术学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="北京电影学院现代创意媒体学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>北京电影学院现代创意媒体学院</p>
+                        </div>
+                    </div>
+                    <div class="schoolBox swiper-slide" data-swiper-slide-index="0"
+                        style="width: 1220px; margin-left: 12px;">
+                        <div class="col-sm-div swiper-slide " title="南京师范大学中北学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>南京师范大学中北学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="内蒙古大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>内蒙古大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="杭州师范大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>杭州师范大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="大连民族大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>大连民族大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="湖北美术学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>湖北美术学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="武汉科技大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>武汉科技大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="江苏师范大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>江苏师范大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="九江学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>九江学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="东莞理工学院城市学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>东莞理工学院城市学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="浙江农林大学暨阳学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>浙江农林大学暨阳学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="福建工程学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>福建工程学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="东北农业大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>东北农业大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="河北工程大学科信学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>河北工程大学科信学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="郑州大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>郑州大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="河北地质大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>河北地质大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="广东农工商职业技术学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>广东农工商职业技术学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="曲阜师范大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>曲阜师范大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="衡水学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>衡水学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="辽宁对外经贸学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>辽宁对外经贸学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="湖北民族学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>湖北民族学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="上海立信会计学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>上海立信会计学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="山东水利职业学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>山东水利职业学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="东北财经大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>东北财经大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="景德镇陶瓷学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>景德镇陶瓷学院</p>
+                        </div>
+                    </div>
+                    <div class="schoolBox swiper-slide" data-swiper-slide-index="1"
+                        style="width: 1220px; margin-left: 12px;">
+                        <div class="col-sm-div swiper-slide " title="上海建桥学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>上海建桥学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="上海行健职业学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>上海行健职业学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="天津工业大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>天津工业大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="河北北方学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>河北北方学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="中央财经大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>中央财经大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="广东创新科技职业学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>广东创新科技职业学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="北京师范大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>北京师范大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="华中科技大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>华中科技大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="北京邮电大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>北京邮电大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="桂林电子科技大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>桂林电子科技大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="哈尔滨理工大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>哈尔滨理工大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="湖南艺术职业学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>湖南艺术职业学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="江苏师范大学科文学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>江苏师范大学科文学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="延安大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>延安大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="三峡大学科技学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>三峡大学科技学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="东莞理工学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>东莞理工学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="广东外语外贸大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>广东外语外贸大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="闽南师范大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>闽南师范大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="华东政法大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>华东政法大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="上海出版印刷高等专科学校"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>上海出版印刷高等专科学校</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="安徽师范大学皖江学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>安徽师范大学皖江学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="中原工学院信息商务学院"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>中原工学院信息商务学院</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="汕头大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>汕头大学</p>
+                        </div>
+                        <div class="col-sm-div swiper-slide " title="浙江农林大学"> <img
+                                src="https://heguangjie."
+                                alt="">
+                            <p>浙江农林大学</p>
+                        </div>
+                    </div>
+                    <div class="schoolBox swiper-slide" data-swiper-slide-index="2"
+                        style="width: 1220px; margin-left: 12px;">
+                        
+                    </div>
+                    <div class="schoolBox swiper-slide" data-swiper-slide-index="3"
+                        style="width: 1220px; margin-left: 12px;">
+                        
+                    </div>
+                    <div class="schoolBox swiper-slide" data-swiper-slide-index="5"
+                        style="width: 1220px; margin-left: 12px;">
+                        
+                    </div>
+                    <div class="schoolBox swiper-slide" data-swiper-slide-index="6"
+                        style="width: 1220px; margin-left: 12px;">
+                       
+                    </div>
+                    <div class="schoolBox swiper-slide swiper-slide-active" data-swiper-slide-index="8"
+                        style="width: 1220px; margin-left: 12px;">
+                        
+                    </div>
+                    <div class="schoolBox swiper-slide swiper-slide-next" data-swiper-slide-index="9"
+                        style="width: 1220px; margin-left: 12px;">
+                       
+                    </div>
+                    <div class="schoolBox swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"
+                        style="width: 1220px; margin-left: 12px;">
+                        
+                    </div>
+                </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+           
+
+        </div>
+    </div>
+    <div id="commonFooter">
+        <footer>
+            <div class="container content">
+                <div class="row">
+                    <div class="col-md-7 right">
+                        <div class="meun">
+                            <ul>
+                                <li><a href="pages/about.html" onclick="">关于河广节</a></li>
+                                <li><a href="pages/moreNews.html" onclick="">新闻动态</a></li>
+                                <li><a href="pages/JudgesIntroduce.html" onclick="">评审介绍</a></li>
+                                <li><a href="pages/contact.html" onclick="navTo('contact')">联系我们</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="about-us" id="CompanyList">
+                            <p> <span>指导单位:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈啊哈哈哈哈</a> <span style="color: #fff">、</span> <a href=""
+                                        style="color: #fff">哈哈哈哈啊哈哈哈哈会</a> <span style="color: #fff">、</span> <a href=""
+                                        style="color: #fff">哈哈哈哈啊哈哈</a> <span style="color: #fff"></span> </span> </p>
+                            <p> <span>主办单位:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈啊</a> <span style="color: #fff">、</span> <a href=""
+                                        style="color: #fff">河南大学</a> <span style="color: #fff"></span> </span> </p>
+                            <p> <span>独家承办单位:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈哈哈哈哈哈</a> <span style="color: #fff"></span> </span>
+                            </p>
+                            <p> <span>总冠名品牌:</span> <span style="margin-left: 3px;"> <a href=""
+                                        style="color: #fff">哈哈哈哈哈啊</a> <span style="color: #fff"></span> </span> </p>
+                        </div>
+                        <div class="row about-us" style="margin-left:1px;margin-top:3px">
+                            <p>联系电话：000-00000000 老师&nbsp;&nbsp;&nbsp;&nbsp;邮箱：000000000000000 </p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-5 row left">
+                        <div class="col-md-5">
+                            <div class="er-code">
+                                <img src="../heguangjie/images/home/weibo.png" alt="">
+                            </div>
+                            <span>扫一扫：关注微博</span>
+                        </div>
+                        <div class="col-md-5 col-md-offset-2">
+                            <div class="er-code">
+                                <img src="../heguangjie/images/home/weixin.png" alt="">
+                            </div>
+
+                            <span>扫一扫：关注微信</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="container">
+                    <p>@2019河南大学生广告节 备案许可证编号为：<a style="color: #2D8EF8;font-size: 12px;"
+                            href="http://www.beian.miit.gov.cn/">0000000000000</a></p>
+                </div>
+            </div>
+        </footer>
+
+       
+    </div>
+    <!--loading遮罩层-->
+    <div class="modal fade" id="loadingModal" backdrop="static" keyboard="false">
+        　　<div class="loadingContent">
+            　　　　<div class="progress progress-striped active" style="margin-bottom: 0;background-color: transparent;">
+                　　　　　　
+                <!-- <div class="progress-bar" style="width: 100%;"></div> -->
+                　　　　</div>
+            　　　　<h5 id="loadText" style="color: #fff;">loading</h5>
+            　　</div>
+    </div>
+   
+</body>
+<script>
+    // 动态设置banner高度
+    var newsData = { result: null }; // 新闻列表
+    var cooperationData = { result: null }; // 合作品牌列表
+    var schoolListData = { result: null }; // 参与院校列表
+    var judgeListData = { result: null }; // 评审员列表
+    var currentPage = 0;
+    var schoolSwriper = null;
+    var isSchoolLoading = false;
+    var schoolTimer = null;
+
+    $('#commonHeader').load('./pages/components/newHeader.html', null, function () {
+        // 设置头部当前选中项
+        selectHeaderActiveClass('index');
+        // 登录按钮和登陆头像的显示隐藏逻辑
+        loginBtnAndUserImg();
+    })
+    $('#commonFooter').load('./pages/components/footer.html')
+
+    // var loadingTime= 5;//默认遮罩时间
+    // function showLoading(loadText) {
+    //     if(!loadText){
+    //         $("#loadText").html(loadText)
+    //     }
+    //     $('#loadingModal').modal({backdrop: 'static', keyboard: false});
+    // }
+    // function hideLoading () {
+    //     $('#loadingModal').modal('hide');
+    // }
+
+    // 获取首页底部公司赞助相关信息
+    var CompanyListData = { result: null };
+    function getCompanyInfos() {
+        Request_.ajax({
+            // key: '/api/WebPage/IndexCompanyList',
+            // type: 'GET',
+            key: '',
+            type: '',
+            data: {},
+            dataType: "json",
+            success: function (info) {
+                if (info && info.Stata === 10000) {
+                    CompanyListData.result = info.Data;
+                    $.each(CompanyListData.result, function (k, v) {
+                        if (v.Title) {
+
+                        }
+                    });
+                    updataView('t:_CompanyList', 'CompanyList', CompanyListData);
+                }
+            }
+        })
+    }
+    // 初始化新闻动态
+
+    function initNewsList() {
+        Request_.ajax({
+            // key: '/api/WebPage/IndexNewsList',
+            // type: 'GET',
+            key: '',
+            type: '',
+            data: { index: 3 },
+            dataType: "json",
+            success: function (info) {
+                if (info && info.Stata === 10000) {
+                    newsData.result = info.Data;
+                    updataView('t:_newsContent', 'newsContent', newsData);
+                }
+            }
+        })
+    }
+    // 初始化合作品牌列表
+    function initIndexBrandList() {
+        Request_.ajax({
+            // key: '/api/WebPage/IndexBrandList',
+            // type: 'GET',
+            key: '',
+            type: '',
+            data: { index: 18 },
+            dataType: "json",
+            success: function (info) {
+                if (info && info.Stata === 10000) {
+                    cooperationData.result = info.Data;
+                    updataView('t:_cooperationList', 'cooperationList', cooperationData);
+                }
+            }
+        })
+    }
+    function nextSchoolList() {
+        if (schoolListData.page >= Math.floor(schoolListData.total / 24)) {
+            currentPage = 0
+            initSchoolList(currentPage);
+            return
+        }
+        if (isSchoolLoading) { return }
+        isSchoolLoading = true;
+
+        currentPage = currentPage + 1;
+        initSchoolList(currentPage);
+    }
+    function lastSchoolList() {
+        if (schoolListData.page <= 0) {
+            currentPage = Math.floor(schoolListData.total / 24);
+            initSchoolList(currentPage);
+            return
+        }
+        if (isSchoolLoading) { return }
+        isSchoolLoading = true;
+
+        currentPage = currentPage - 1;
+        initSchoolList(currentPage);
+    }
+    //拆分学校数据
+    function filterScholl(data) {
+        var allList = [];
+        subList = [];
+        data.forEach(function (element, index) {
+            if (subList.length < 23) {
+                subList.push(element);
+            } else {
+                subList.push(element)
+                allList.push(subList);
+                subList = [];
+            }
+        });
+        return allList;
+    }
+    // 初始化参与院校列表
+    function initSchoolList(currentPage) {
+
+        Request_.ajax({
+            // key: '/api/WebPage/LPSchoolList', 
+            // type: 'GET',
+            key: '',
+            type: '',
+            data: { offset: currentPage, limit: 240 },
+            dataType: "json",
+            success: function (info) {
+                isSchoolLoading = false;
+                if (info && info.Stata === 10000) {
+                    schoolListData.result = filterScholl(info.Data.rows);
+                    schoolListData.total = info.Data.total;
+                    schoolListData.page = info.Data.index;
+                    updataView('t:_schoolList', 'schoolList', schoolListData);
+                    var _options = {
+                        // slidesPerView: 1, // 5
+                        spaceBetween: 12, // 12
+                        centerInsufficientSlides: true,
+                        initialSlide: 0, // 2
+                        loop: true,
+                        autoplay: {
+                            delay: 5000,//1秒切换一次
+                            reverseDirection: true,
+                        },
+                        speed:800,
+                        lazy: {
+                            loadingClass: 'my-lazy-loading',
+                        },
+                        // navigation: {
+                        //     nextEl: '.schoolList_right',
+                        //     prevEl: '.schoolList_left',
+                        // }
+                    };
+                    var swiper = new Swiper('.schoolListBanner', _options);
+                    if (schoolListData.result.length >= _options.slidesPerView) {
+                        _options.centeredSlides = true;
+                    }
+                    // if (schoolTimer) {
+                    //     clearInterval(schoolTimer);
+                    // }
+                    // schoolTimer = setInterval(function() {
+                    //     nextSchoolList();
+                    // }, 6000)
+                }
+            },
+            failed: function () {
+                isSchoolLoading = false;
+            }
+        })
+    }
+    // 初始化评审员列表
+    function initIndexJudgeList() {
+        Request_.ajax({
+            // key: '/api/WebPage/IndexJudgeList',
+            // type: 'GET',
+            key: '',
+            type: '',
+            data: { index: 15 },
+            dataType: "json",
+            success: function (info) {
+                if (info && info.Stata === 10000) {
+                    judgeListData.result = info.Data;
+                    updataView('t:_JudgeList', 'JudgeList', judgeListData);
+                    // 评委介绍轮播
+                    var options = {
+                        slidesPerView: 5, // 5
+                        spaceBetween: 28, // 12
+                        centerInsufficientSlides: true,
+                        initialSlide: 0, // 2
+                        loop: true,
+                        autoplay: {
+                            delay: 3000,//1秒切换一次
+                            reverseDirection: true,
+                        },
+                        navigation: {
+                            nextEl: '.swiper_right',
+                            prevEl: '.swiper_left',
+                        }
+                    };
+                    if (judgeListData.result.length >= options.slidesPerView) {
+                        options.centeredSlides = true;
+                    }
+                    var swiper = new Swiper('.swiper-container.judges', options);
+                }
+            }
+        })
+    }
+
+    window.onload = function () {
+        initNewsList();
+        initIndexBrandList();
+        initSchoolList(currentPage);
+        initIndexJudgeList();
+        getCompanyInfos();
+    } 
+</script>
+
+</html>
