@@ -1,0 +1,740 @@
+body {
+    background-color: #F7F7F7
+}
+
+.upload_main {
+    position: relative;
+    margin-top: 15px;
+    min-height: 100px
+}
+
+.upload_main .theme_red {
+    color: #FFAC2A
+}
+
+.upload_main .theme_blue {
+    color: #2D8EF8
+}
+
+.upload_main .upload_content {
+    background: #fff;
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, .08);
+    border-radius: 8px 8px 0 0;
+    margin-left: 245px;
+    padding: 40px
+}
+
+.upload_main .upload_content .upload_head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px
+}
+
+.upload_main .upload_content .upload_head .upload_title {
+    font-size: 18px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: #192036;
+    line-height: 25px;
+    position: relative
+}
+
+.upload_main .upload_content .upload_head .upload_title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: .04rem;
+    background: #FFAC2A
+}
+
+.upload_main .upload_content .upload_head .right_part .right_btn {
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #2d8ef8;
+    line-height: 20px
+}
+
+.upload_main .upload_content .upload_head .right_part .split_line {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #eee
+}
+
+.upload_main .upload_content .upload_select .select_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 7px
+}
+
+.upload_main .upload_content .upload_select .select_item .select_name {
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #666;
+    line-height: 20px
+}
+
+.upload_main .upload_content .upload_select .select_item .select_main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+
+.upload_main .upload_content .upload_select .select_item .select_main .btn {
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid #FFAC2A;
+    color: #FFAC2A;
+    margin-right: 10px
+}
+
+.upload_main .upload_content .upload_select .select_item .select_main .active_btn {
+    color: #fff;
+    background-color: #FFAC2A
+}
+
+.upload_main .upload_content .upload_select .select_item .select_main .check_box {
+    margin-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    white-space: nowrap
+}
+
+.upload_main .upload_content .upload_select .select_item .select_main .check_box .check_btn {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 11px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 5px;
+    border-radius: 2px;
+    cursor: pointer
+}
+
+.upload_main .upload_content .upload_select .select_item .select_main .check_box .active_btn {
+    background: url(../../images/icon/upload/checkbox@2x.png)
+      
+    ;
+    background-size: 100%;
+    border: none
+}
+
+.upload_main .upload_content .upload_select #MT {
+    display: none
+}
+
+.upload_main .upload_content .write_info {
+    margin-top: 20px;
+    border-radius: 4px;
+    border: 1px solid #E6E6E6;
+    border-top: none
+}
+
+.upload_main .upload_content .write_info .info_head {
+    height: 48px;
+    background: #F8F9FA;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 16px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #192036;
+    line-height: 48px;
+    text-align: center
+}
+
+.upload_main .upload_content .write_info .info_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px
+}
+
+.upload_main .upload_content .write_info .info_content .info_item {
+    margin-bottom: 15px;
+    position: relative
+}
+
+.upload_main .upload_content .write_info .info_content .info_item .date_icon {
+    position: absolute;
+    right: 15px;
+    bottom: 13px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../../images/icon/upload/date@2x.png)
+       
+    ;
+    background-size: 100%
+}
+
+.upload_main .upload_content .write_info .info_content .info_item .schoolbox {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 0;
+    z-index: 99;
+    box-shadow: 1px 1px 2px #eee;
+    border-radius: 2px;
+    min-width: 100%;
+    display: none
+}
+
+.upload_main .upload_content .write_info .info_content .info_item .schoolbox .schoolitem {
+    padding: 5px 10px;
+    cursor: pointer
+}
+
+.upload_main .upload_content .write_info .info_content .info_item .schoolbox .nohover {
+    color: #999
+}
+
+.upload_main .upload_content .write_info .info_content .info_item .schoolbox .schoolitem:hover {
+    background-color: #eee
+}
+
+.upload_main .upload_content .write_info .info_content .info_item .schoolbox .nohover:hover {
+    background-color: #fff
+}
+
+.upload_main .upload_content .write_info .info_content .item_name {
+    color: #666;
+    position: relative;
+    padding-left: 8px
+}
+
+.upload_main .upload_content .write_info .info_content .item_name.require:before {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    content: '*';
+    color: #FFAC2A
+}
+
+.upload_main .upload_content .write_info .info_content .radio_btn {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px
+}
+
+.upload_main .upload_content .write_info .info_content .radio_btn .radios {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer
+}
+
+.upload_main .upload_content .write_info .info_content .radio_btn .radio_yes {
+    margin-right: 40px
+}
+
+.upload_main .upload_content .write_info .info_content .radio_btn .radios:before {
+    content: '·';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #ced4da;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 14px;
+    vertical-align: middle;
+    margin-top: 4px;
+    margin-right: 3px
+}
+
+.upload_main .upload_content .write_info .info_content .radio_btn .active_btn:before {
+    background-color: #2D8EF8;
+    border: none
+}
+
+.upload_main .upload_content .write_info .info_content .input_box {
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 15px
+}
+
+.upload_main .upload_content .write_info .info_content .input_box.textarea_box {
+    height: 88px
+}
+
+.upload_main .upload_content .write_info .info_content .published_box {
+    position: relative
+}
+
+.upload_main .upload_content .write_info .info_content .published_box:before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+    left: 19px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    transform: rotate(45deg);
+    z-index: 1
+}
+
+.upload_main .upload_content .write_info .info_content .upload {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding-left: 15px
+}
+
+.upload_main .upload_content .write_info .info_content .upload.require:before {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    content: '*';
+    color: #FFAC2A
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_box {
+    width: 100px;
+    height: 100px;
+    background: #fafafa;
+    border-radius: 4px;
+    border: 1px dashed #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_box.isInputUrl {
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    background-color: #fff;
+    border: none
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_box .myIsInputUrlBox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_box .myIsInputUrlBox .InputUrlLabel {
+    white-space: nowrap;
+    line-height: 40px;
+    color: #666;
+    font-weight: 400
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_box .myIsInputUrlBox .myIsInputUrl {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_box .upload_need {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_box .upload_icon {
+    width: 28px;
+    height: 28px;
+    background: url(../../images/icon/upload/upload@2x.png)
+      
+    ;
+    background-size: 100%;
+    z-index: 1
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_box .upload_txt {
+    white-space: nowrap;
+    font-size: 12px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #adb5bd;
+    line-height: 17px;
+    z-index: 1
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_box input[name=uploadInputs] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    z-index: 2
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_homepage {
+    width: 150px;
+    height: 80px;
+    position: relative
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_homepage #uploadHomePage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 80px;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_homepage #homePagePic {
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_homepage #homePagePicCover {
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, .6)
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right #workLists0,
+.upload_main .upload_content .write_info .info_content .upload .upload_right #workLists1,
+.upload_main .upload_content .write_info .info_content .upload .upload_right #workLists2,
+.upload_main .upload_content .write_info .info_content .upload .upload_right #workLists3,
+.upload_main .upload_content .write_info .info_content .upload .upload_right #workLists4 {
+    height: 60px;
+    width: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right .worksPicBox {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-right: 5px
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right .noImageFiles,
+.upload_main .upload_content .write_info .info_content .upload .upload_right .worksPic {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right .noImageFiles {
+    padding: 2px
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right .closeWorks {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    text-align: center;
+    line-height: 18px;
+    opacity: 0;
+    background: url(../../images/icon/upload/deletIcon@2x.png)
+        
+    ;
+    background-size: 100%
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right #PDFLists {
+    margin-left: 15px
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right #PDFLists .PDFPic {
+    display: flex;
+    align-items: flex-end;
+    height: 70px;
+    color: #2D8EF8
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right #MP4Lists {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px
+}
+
+.upload_main .upload_content .write_info .info_content .upload .upload_right #MP4Lists .MP4Pic {
+    display: flex;
+    align-items: flex-end;
+    height: 70px;
+    color: #2D8EF8;
+    margin-right: 15px
+}
+
+.upload_main .upload_content .write_info .info_content .upload .size_tips {
+    margin-left: 15px;
+    color: #999;
+    display: flex;
+    align-items: flex-end
+}
+
+.upload_main .upload_content .write_info .info_content .small_tips {
+    font-size: 12px;
+    color: #999
+}
+
+.upload_main .upload_content .write_info .info_item_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px
+}
+
+.upload_main .upload_content .write_info .info_item_row .item_row {
+    flex: 1;
+    margin-right: 15px;
+    margin-bottom: 0
+}
+
+.upload_main .upload_content .write_info .info_item_row .item_row:last-child {
+    margin-right: 0
+}
+
+.upload_main .upload_content .write_info .operate_btn {
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px
+}
+
+.upload_main .upload_content .write_info .operate_btn .left_tips {
+    color: #999
+}
+
+.upload_main .upload_content .write_info .operate_btn .left_tips:before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../../images/icon/upload/tip@2x.png)
+    
+        center;
+    background-size: 100%;
+    margin-right: 5px;
+    vertical-align: middle
+}
+
+.upload_main .upload_content .write_info .operate_btn .right_btn {
+    display: flex;
+    flex-direction: row
+}
+
+.upload_main .upload_content .write_info .operate_btn .right_btn .btns:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../../images/icon/upload/add@2x.png)
+     
+        center;
+    background-size: 100%;
+    margin-right: 5px;
+    vertical-align: middle
+}
+
+.upload_main .upload_content .write_info .operate_btn .right_btn .btn_del:before {
+    background-image: url(../../images/icon/upload/delet@2x.png)
+      
+}
+
+.upload_main .upload_content .write_info .operate_btn .right_btn .btn_add {
+    color: #2D8EF8;
+    cursor: pointer
+}
+
+.upload_main .upload_content .write_info .operate_btn .right_btn .btn_del {
+    color: #FFAC2A;
+    margin-right: 15px;
+    cursor: pointer
+}
+
+.upload_main .upload_content .select_arrow {
+    position: absolute;
+    right: 5px;
+    bottom: 18px;
+    width: 0;
+    height: 0;
+    border-width: 4px 4px 0;
+    border-style: solid;
+    border-color: #333 transparent transparent;
+    margin: 0 auto
+}
+
+.upload_main .upload_content .select_arrow:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 2px 2px 0;
+    border-style: solid;
+    border-color: #666 transparent transparent;
+    position: absolute;
+    top: -3px;
+    left: -2px
+}
+
+.upload_main .upload_content .upload_copy_right {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    color: #999
+}
+
+.upload_main .upload_content .upload_copy_right .checkbox_icon {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 1px solid #ced4da;
+    vertical-align: middle;
+    margin-top: 3px;
+    margin-right: 5px
+}
+
+.upload_main .upload_content .upload_copy_right .checkbox_icon.active_btn {
+    background: url(../../images/icon/upload/checkbox@2x.png)
+       
+    ;
+    background-size: 100%;
+    border: none
+}
+
+.upload_main .upload_content .upload_copy_right .copyright_txt {
+    color: #2D8EF8;
+    cursor: pointer
+}
+
+.upload_main .upload_submit_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px
+}
+
+.upload_main .upload_submit_btn .submit_btn {
+    width: 240px;
+    height: 48px;
+    color: #FFAC2A;
+    border: 1px solid #FFAC2A;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 16px;
+    cursor: pointer
+}
+
+.upload_main .upload_submit_btn .submit_btn.active_btn {
+    background-color: #FFAC2A;
+    border: none;
+    color: #fff
+}
+
+.upload_main .upload_submit_btn .confirm_submit {
+    margin-right: 30px
+}
+
+.upload_main .footer_tips {
+    text-align: center;
+    line-height: 50px;
+    color: #666
+}
+
+#copyRightModal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999
+}
+
+#copyRightModal .body-self .right-txt {
+    font-size: 14px;
+    line-height: 24px;
+    color: #444
+}
+
+#copyRightModal .self-footer {
+    padding-top: 40px;
+    padding-bottom: 40px
+}
+
+#copyRightModal .self-footer .btn-self-close {
+    border-color: #FFAC2A;
+    color: #FFAC2A;
+    width: 240px;
+    height: 48px;
+    outline-style: none
+}
+
+#copyRightModal .self-footer .btn-self-close:hover {
+    background-color: #fff
+}
+
+#copyRightModal .modalContentBox {
+    width: 800px;
+    height: 618px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+#copyRightModal .modalContentBox .modal-title {
+    font-size: 24px;
+    line-height: 78px;
+    color: #192035;
+    text-align: center
+}
+
+#copyRightModal .modalContentBox .modal-content {
+    padding-left: 30px;
+    padding-right: 30px
+}

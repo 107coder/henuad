@@ -6,7 +6,6 @@ class UserAction extends CI_Controller {
     public function index()
     {
         echo "this is userAction index";
-        session_start();
         print_r($_SESSION);
         phpinfo();
 

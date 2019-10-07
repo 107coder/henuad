@@ -1,0 +1,834 @@
+body {
+    background: #f7f7f7
+}
+
+#control_center .container {
+    position: relative;
+    margin-top: 20px;
+    top: -35px;
+    z-index: 888
+}
+
+#control_center .container .control_right {
+    background-color: #fff;
+    margin-left: 260px;
+    min-height: 400px;
+    padding-bottom: 40px;
+    border-radius: 8px 8px 0 0
+}
+
+#control_center .container .control_right .mb38 {
+    margin-bottom: 38px !important
+}
+
+#control_center .container .control_right #cooperationList {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 50px
+}
+
+#control_center .container .control_right #cooperationList .col-sm-2 {
+    width: 180px;
+    height: 120px;
+    background: #fff;
+    box-shadow: 0 0 8px 0 #dbdbdc;
+    padding-top: 35px;
+    box-sizing: border-box;
+    margin: 10px
+}
+
+#control_center .container .control_right #cooperationList .col-sm-2:hover {
+    background: #fff;
+    box-shadow: 0 0 8px 0 #c1b9b9
+}
+
+#control_center .container .control_right #cooperationList .col-sm-2 img {
+    width: 137px;
+    height: auto;
+    box-shadow: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%)
+}
+
+#control_center .container .control_right .Page.navigation {
+    text-align: center
+}
+
+#control_center .container .control_right .Page.navigation .pagination>li>a {
+    float: unset
+}
+
+#control_center .container .control_right .Page.navigation .pagination>li:first-child {
+    margin-right: 5px
+}
+
+#control_center .container .control_right .Page.navigation .pagination .pageNum.activePage {
+    background-color: #FFAC2A;
+    color: #fff
+}
+
+#control_center .container .control_right#showDetail {
+    display: none
+}
+
+#control_center .container .control_right#showDetail #showDetailtmpl h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #192035;
+    line-height: 45px;
+    margin-bottom: 20px
+}
+
+#control_center .container .control_right#showDetail #showDetailtmpl p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #999;
+    line-height: 25px
+}
+
+#control_center .container .control_right#showDetail #showDetailtmpl p span {
+    display: inline-block;
+    margin: 0 24px
+}
+
+#control_center .container .control_right>div {
+    padding: 40px;
+    border-radius: 8px 8px 0 0;
+    background: #fff
+}
+
+#control_center .container .control_right .upload_select .topicContent {
+    margin-top: 26px;
+    margin-bottom: 26px
+}
+
+#control_center .container .control_right .upload_select .topicContent .box {
+    cursor: pointer;
+    float: left;
+    margin-right: 24px
+}
+
+#control_center .container .control_right .upload_select .topicContent .box>div {
+    box-shadow: 0 0 8px 0 #888;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    background: #fff
+}
+
+#control_center .container .control_right .upload_select .topicContent .box:nth-child(3n) {
+    margin-right: 0
+}
+
+#control_center .container .control_right .upload_select .topicContent .box .topimg {
+    width: 277px;
+    height: 144px
+}
+
+#control_center .container .control_right .upload_select .topicContent .box .topimg img {
+    width: 100%;
+    height: 100%
+}
+
+#control_center .container .control_right .upload_select .topicContent .box h2 {
+    max-width: 277px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    padding: 0 16px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFAC2A
+}
+
+#control_center .container .control_right .upload_select .topicContent .box p {
+    padding: 0 16px;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #bbb
+}
+
+#control_center .container .control_right .upload_select .topicContent .box p .right {
+    float: right
+}
+
+#control_center .container .control_right .upload_select .select_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 7px
+}
+
+#control_center .container .control_right .upload_select .select_item .select_name {
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #666;
+    line-height: 20px
+}
+
+#control_center .container .control_right .upload_select .select_item .select_main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+
+#control_center .container .control_right .upload_select .select_item .select_main .btn {
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid #FFAC2A;
+    color: #FFAC2A;
+    margin-right: 10px
+}
+
+#control_center .container .control_right .upload_select .select_item .select_main .active_btn {
+    color: #fff;
+    background-color: #FFAC2A
+}
+
+#control_center .container .control_right .upload_select .select_item .select_main .check_box {
+    margin-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    white-space: nowrap
+}
+
+#control_center .container .control_right .upload_select .select_item .select_main .check_box .check_btn {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 11px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 5px;
+    border-radius: 2px;
+    cursor: pointer
+}
+
+#control_center .container .control_right .upload_select .select_item .select_main .check_box .active_btn {
+    background: url(../../images/icon/upload/checkbox@2x.png)
+     
+    ;
+    background-size: 100%;
+    border: none
+}
+
+#control_center .container .control_right .upload_select #MT {
+    display: none
+}
+
+#control_center .container .control_right .fileNewType button {
+    width: 130px;
+    height: 34px;
+    line-height: 34px;
+    margin-right: 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #FFAC2A;
+    border: 1px solid #FFAC2A;
+    border-radius: 4px;
+    background: #fff
+}
+
+#control_center .container .control_right .fileNewType button.active,
+#control_center .container .control_right .fileNewType button:hover {
+    background: #FFAC2A;
+    color: #fff;
+    border-color: #FFAC2A
+}
+
+#control_center .container .control_right .newsTitle_right {
+    position: relative;
+    padding: 30px 0 !important
+}
+
+#control_center .container .control_right .newsTitle_right.padding_lr3 {
+    padding: 30px 10px 0 !important
+}
+
+#control_center .container .control_right .newsTitle_right.padding_lr3>div .right {
+    width: 588px !important
+}
+
+#control_center .container .control_right .newsTitle_right>div {
+    width: 100%;
+    position: relative;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E5E5E5
+}
+
+#control_center .container .control_right .newsTitle_right>div .left {
+    width: 290px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden
+}
+
+#control_center .container .control_right .newsTitle_right>div img {
+    width: 290px
+}
+
+#control_center .container .control_right .newsTitle_right>div .right {
+    float: left;
+    padding: 0 20px;
+    margin-left: 290px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 0 .04rem .04rem 0;
+    width: 610px !important;
+    cursor: pointer
+}
+
+#control_center .container .control_right .newsTitle_right>div .right .arrow {
+    float: right;
+    padding-top: 6px;
+    text-align: right;
+    line-height: 10px
+}
+
+#control_center .container .control_right .newsTitle_right>div .right .arrow>div {
+    cursor: pointer;
+    display: inline-block;
+    width: 42px;
+    height: 10px;
+    line-height: 10px
+}
+
+#control_center .container .control_right .newsTitle_right>div .right .arrow>div img {
+    width: 42px;
+    float: left
+}
+
+#control_center .container .control_right .newsTitle_right>div .right .arrow>div img:last-child {
+    display: none
+}
+
+#control_center .container .control_right .newsTitle_right>div .right:hover h2 {
+    color: #FFAC2A
+}
+
+#control_center .container .control_right .newsTitle_right>div .right:hover .arrow>div img:last-child {
+    display: block
+}
+
+#control_center .container .control_right .newsTitle_right>div .right:hover .arrow>div img:first-child {
+    display: none
+}
+
+#control_center .container .control_right .newsTitle_right>div .right h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #192035;
+    line-height: 28px
+}
+
+#control_center .container .control_right .newsTitle_right>div .right .time {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #aeaeae;
+    line-height: 16px
+}
+
+#control_center .container .control_right .newsTitle_right>div .right .answer,
+#control_center .container .control_right .newsTitle_right>div .right .question {
+    min-height: 75px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    line-height: 25px;
+    margin-top: 9px
+}
+
+#control_center .container .control_right .fileLoader {
+    height: 40px;
+    line-height: 40px;
+    background: #f8f9fa;
+    text-align: right;
+    padding-right: 16px;
+    margin-bottom: 24px
+}
+
+#control_center .container .control_right .fileLoader a {
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px
+}
+
+#control_center .container .control_right .fileLoader a img {
+    vertical-align: sub
+}
+
+#control_center .container .control_right .fileLoader a span {
+    display: inline-block;
+    margin-top: 10px
+}
+
+#control_center .container .control_right .fileLoader img {
+    width: 22px;
+    height: 22px;
+    vertical-align: text-bottom;
+    margin-right: 10px;
+    cursor: pointer
+}
+
+#control_center .container .control_right .fileLoader span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFAC2A;
+    line-height: 18px;
+    text-decoration: none
+}
+
+#control_center .container .control_right .load>div {
+    display: inline-block;
+    width: 410px
+}
+
+#control_center .container .control_right .load>div.flet {
+    float: right
+}
+
+#control_center .container .control_right .load>div>p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #192036;
+    line-height: 25px;
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 17px;
+    position: relative;
+    margin-bottom: 12px
+}
+
+#control_center .container .control_right .load>div>p::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: #FFAC2A;
+    position: absolute;
+    left: 0;
+    bottom: 0
+}
+
+#control_center .container .control_right .load>div .itemC {
+    margin-bottom: 12px;
+    cursor: pointer
+}
+
+#control_center .container .control_right .load>div .itemC .itemImg {
+    float: left;
+    margin-right: 12px;
+    line-height: 66px;
+    width: 88px;
+    height: 66px;
+    background-color: #FFAC2A;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 3px
+}
+
+#control_center .container .control_right .load>div .itemC img {
+    width: 88px;
+    height: 66px;
+    border-radius: 4px;
+    margin-right: 12px;
+    float: left
+}
+
+#control_center .container .control_right .load>div .itemC .one_txt_cut {
+    height: 22px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #192036;
+    line-height: 22px;
+    margin-bottom: 12px
+}
+
+#control_center .container .control_right .load>div .itemC .txt_cut_2 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+    line-height: 20px;
+    min-height: 40px
+}
+
+#control_center .container .control_right ul li {
+    font-size: 16px;
+    font-weight: 500;
+    color: #192036;
+    line-height: 32px;
+    text-indent: 35px
+}
+
+#control_center .container .control_right ul li a {
+    color: #FFAC2A
+}
+
+#control_center .container .control_right .ggcol-md-5 {
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 20px;
+    margin-right: 50px
+}
+
+#control_center .container .control_right .ggcol-md-5 img {
+    width: 120px
+}
+
+#control_center .container .control_right .ggcol-md-5 .er-code {
+    margin-bottom: 11px
+}
+
+#control_center .container .control_right .know li {
+    text-indent: 0
+}
+
+#control_center .container .control_right .know li.gray {
+    color: #a2a2a2
+}
+
+#control_center .container .control_right .know li span {
+    color: #2D8EF8
+}
+
+#control_center .container .control_right .know .table_title {
+    background: #FFAC2A;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #e6e6e6;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 25px;
+    text-align: center
+}
+
+#control_center .container .control_right .know table tbody td.black,
+#control_center p.itemName {
+    font-weight: 500;
+    color: #192035
+}
+
+#control_center .container .control_right .know table {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 34px
+}
+
+#control_center .container .control_right .know table thead {
+    background: #f8f9fa
+}
+
+#control_center .container .control_right .know table tbody td {
+    line-height: 40px;
+    height: 40px;
+    border: 1px solid #e5e5e5
+}
+
+#control_center .container .control_right .know table th {
+    border: 1px solid #e6e6e6;
+    font-size: 18px;
+    font-weight: 500;
+    color: #192035;
+    text-align: center;
+    height: 64px;
+    line-height: 64px
+}
+
+#control_center p.itemName {
+    text-align: center;
+    width: 100%;
+    height: 33px;
+    font-family: PingFangSC-Medium;
+    font-size: 24px;
+    line-height: 33px
+}
+
+#control_center .contact_content {
+    text-align: center;
+    padding-bottom: 20px
+}
+
+#control_center .contact_content .contactTips {
+    font-size: 14px;
+    font-weight: 400;
+    color: #192036;
+    line-height: 24px;
+    text-align: center
+}
+
+#control_center .contact_content .contact_call {
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .08);
+    border-radius: 8px
+}
+
+#control_center .contact_content .contact_call>div {
+    width: 25%;
+    height: 230px;
+    float: left;
+    padding-top: 30px;
+    box-sizing: border-box;
+    position: relative
+}
+
+#control_center .contact_content .contact_call>div .after {
+    display: block;
+    width: 1px;
+    height: 120px;
+    background: #f0f0f0;
+    position: absolute;
+    right: 0;
+    top: 55px
+}
+
+#control_center .contact_content .contact_call>div .img {
+    width: 30px;
+    height: 30px;
+    border: 1px dashed #888;
+    margin: 0 auto 17px
+}
+
+#control_center .contact_content .contact_call>div .img img {
+    width: 100%;
+    height: 100%
+}
+
+#control_center .contact_content .contact_call>div .name {
+    height: 42px;
+    line-height: 42px;
+    width: 32px;
+    margin: 0 auto 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #192036;
+    border-bottom: 1px solid #FFAC2A
+}
+
+#control_center .contact_content .contact_call>div .techer {
+    width: 100%;
+    height: 17px;
+    line-height: 17px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 2px
+}
+
+#control_center .contact_content .contact_call>div .tell {
+    height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #192036;
+    line-height: 20px
+}
+
+#control_center .contact_content .ggcol-md-5 {
+    margin-right: 40px;
+    margin-bottom: 40px
+}
+
+#control_center .contact_content .ggcol-md-5 .er-code {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    margin-bottom: 5px !important;
+    border: 1px dashed #888
+}
+
+#control_center .contact_content .ggcol-md-5 .er-code img {
+    width: 130px;
+    height: 130px
+}
+
+#control_center .contact_content .ggcol-md-5 span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #999;
+    line-height: 17px
+}
+
+#control_center .contact_content .ggcol-md-5:last-child {
+    margin-right: 0
+}
+
+#control_center p.newTips {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 22px
+}
+
+#control_center p.newTips.cantactTips {
+    margin-bottom: 44px
+}
+
+#control_center p.newTips.cantactTips span::after {
+    transform: translateX(40%)
+}
+
+#control_center p.newTips.cantactTips span::before {
+    transform: translateX(-40%)
+}
+
+#control_center p.newTips.cantactTips.nima span::after {
+    transform: translateX(100%) translateY(-50%)
+}
+
+#control_center p.newTips.cantactTips.nima span::before {
+    transform: translateX(-100%) translateY(-50%)
+}
+
+#control_center p.newTips span {
+    color: #9699a7;
+    padding: 0 30px;
+    height: 17px;
+    font-size: 16px;
+    line-height: 18px;
+    position: relative
+}
+
+#control_center p.newTips span.before_w317::after,
+#control_center p.newTips span.before_w317::before {
+    width: 315px
+}
+
+#control_center p.newTips span.before_w270::after,
+#control_center p.newTips span.before_w270::before {
+    width: 270px
+}
+
+#control_center p.newTips span::after,
+#control_center p.newTips span::before {
+    content: '';
+    display: block;
+    width: 240px;
+    height: 1px;
+    background: #FFAC2A;
+    position: absolute;
+    top: 50%;
+    bottom: 13px
+}
+
+#control_center p.newTips span::after {
+    right: 0;
+    transform: translateX(100%) translateY(-50%)
+}
+
+#control_center p.newTips span::before {
+    left: 0;
+    transform: translateX(-100%) translateY(-50%)
+}
+
+.padding-b0 {
+    padding-bottom: 0 !important
+}
+
+.margin_b0 {
+    margin-bottom: 0 !important
+}
+
+.padding-t8 {
+    padding-top: 8px !important
+}
+
+#shuffling {
+    position: relative
+}
+
+#shuffling .swiper-slide img {
+    height: 100%;
+    width: 100%
+}
+
+#shuffling .swiper-container .swiper-pagination {
+    bottom: .4rem !important
+}
+
+#shuffling .swiper-container .swiper-pagination span {
+    background: #fff;
+    opacity: 1;
+    border-radius: .02rem;
+    box-sizing: border-box;
+    width: .1rem;
+    height: .1rem
+}
+
+#shuffling .swiper-container .swiper-pagination span.swiper-pagination-bullet-active {
+    width: .4rem;
+    height: .1rem;
+    background: #FFAC2A;
+    border-color: #FFAC2A;
+    border-radius: .02rem
+}
+
+#shuffling .swiper-container>.container {
+    height: .52rem;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5555
+}
+
+#shuffling .swiper-container .carousel-control {
+    z-index: 8888
+}
+
+#shuffling .swiper-container .left.carousel-control,
+#shuffling .swiper-container .right.carousel-control {
+    width: .52rem;
+    height: .52rem;
+    background: #2e3760;
+    opacity: 1;
+    left: unset;
+    color: #fff
+}
+
+#shuffling .swiper-container .left.carousel-control:hover,
+#shuffling .swiper-container .right.carousel-control:hover {
+    background: #FFAC2A
+}
+
+#shuffling .swiper-container .left.carousel-control span,
+#shuffling .swiper-container .right.carousel-control span {
+    height: 100%;
+    width: 100%;
+    font-size: .16rem;
+    margin: 0;
+    left: 0;
+    top: 0;
+    color: #fff
+}
+
+#shuffling .swiper-container .left.carousel-control span::before,
+#shuffling .swiper-container .right.carousel-control span::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%)
+}
+
+#shuffling .swiper-container .right.carousel-control {
+    right: 0;
+    border-radius: 0 4px 4px 0
+}
+
+#shuffling .swiper-container .left.carousel-control {
+    right: .52rem;
+    border-radius: 4px 0 0 4px
+}

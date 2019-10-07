@@ -1,0 +1,187 @@
+html {
+    font-size: 65.89px
+}
+
+body {
+    background-color: #F7F7F7
+}
+
+header {
+    background-color: #fff;
+    height: 80px;
+    padding: 10px 0
+}
+
+header .logo {
+    height: 60px
+}
+
+header span.line {
+    background-color: #FFAC2A;
+    display: inline-block;
+    width: 1px;
+    height: 40px;
+    vertical-align: middle;
+    margin: 0 30px
+}
+
+header span.title {
+    font-size: .24rem;
+    vertical-align: middle
+}
+
+.register-box {
+    width: 8rem;
+    height: 5.5rem;
+    background-color: #fff;
+    margin: 50px auto;
+    border-top: 12px solid #FFAC2A;
+    padding: 35px 60px
+}
+
+.register-box .top {
+    font-size: .3rem
+}
+
+.form,
+.form .get-code,
+.tips-guide {
+    font-size: .18rem
+}
+
+.register-box .top .step {
+    text-align: right
+}
+
+.register-box .top .step img {
+    width: 2.2rem
+}
+
+.form {
+    padding: 0 15px;
+    margin-top: 30px
+}
+
+.form>div {
+    margin-bottom: 20px
+}
+
+.form .form-input {
+    border: 1px solid #E5E5E5;
+    height: 39px;
+    border-radius: 8px;
+    padding: 10px 0
+}
+
+.form .form-input>div {
+    height: 100%
+}
+
+.form .form-input input[type=text],
+.form .form-input input[type=password] {
+    height: 100%;
+    width: 80%;
+    text-indent: 1em;
+    font-size: .18rem
+}
+
+.form .get-code,
+button {
+    width: 100%;
+    height: 39px
+}
+
+.form .form-input .error-tips {
+    display: none;
+    text-align: right;
+    color: red
+}
+
+.form .form-input.error {
+    border: 1px solid #FFAC2A
+}
+
+.form .form-input.error .error-tips {
+    display: block
+}
+
+.icon,
+.suc-icon img {
+    display: inline-block
+}
+
+.form .get-code {
+    border-radius: 8px;
+    border: 1px solid #2E3760
+}
+
+.form .get-code[disabled] {
+    border: 1px solid #E5E5E5;
+    color: #BBB
+}
+
+.form .form-btn {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 42px
+}
+
+.tips-guide {
+    color: #BBB
+}
+
+.tips-guide a {
+    color: #FFAC2A
+}
+
+button {
+    background-color: #FFAC2A;
+    color: #fff;
+    border-radius: 8px;
+    font-size: .2rem
+}
+
+.icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 100%;
+    width: 13px;
+    vertical-align: top
+}
+
+.icon.mobile {
+    background-image: url(../../images/icon/mobile@2x.png)
+      
+}
+
+.icon.safe {
+    background-image: url(../../images/icon/vercode@2x.png)
+       
+}
+
+.icon.password {
+    background-image: url(../../images/icon/pw@2x.png)
+     
+}
+
+.icon.password2 {
+    background-image: url(../../images/icon/pw2@2x.png)
+       
+}
+
+.suc-icon {
+    text-align: center;
+    margin-top: 50px
+}
+
+.suc-icon img {
+    width: .95rem
+}
+
+.suc-tips {
+    font-size: .3rem;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 50px
+}

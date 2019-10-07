@@ -12,24 +12,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/styles/base.css">
-    <link rel="stylesheet" href="../public/styles/common.css"> 
-    <link rel="stylesheet" href="../public/styles/header.css">
-    <link rel="stylesheet" href="../public/styles/footer.css">
-    <link rel="stylesheet" href="../public/assets/swiper/swiper.min.css">
-    <script src="../public/utils/common.js"></script>
+    <base href="<?=base_url('public');?>">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./public/styles/base.css">
+    <link rel="stylesheet" href="./public/styles/common.css"> 
+    <link rel="stylesheet" href="./public/styles/header.css">
+    <link rel="stylesheet" href="./public/styles/footer.css">
+    <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
+    <script src="./public/utils/common.js"></script>
      
     <script src="../public/assets/jquery-1.12.4.js"></script> 
-    <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../public/assets/layer/layer.js"></script>
-    <script src="../public/utils/render.request.js"></script>
-    <script src="../public/utils/render.utils.js"></script>
-    <script src="../public/assets/baiduTemplate.js"></script>
-    <script src="../public/assets/swiper/swiper.min.js"></script>
-    <link rel="stylesheet" href="../public/styles/register.css">
-    <script src="../public/assets/jquery-1.12.4.js"></script>
+    <!-- <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="./public/assets/layer/layer.js"></script>
+    <script src="./public/utils/render.request.js"></script>
+    <script src="./public/utils/render.utils.js"></script>
+    <script src="./public/assets/baiduTemplate.js"></script>
+    <script src="./public/assets/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="./public/styles/register.css">
+    <script src="./public/assets/jquery-1.12.4.js"></script>
 </head>
 
 <body>
@@ -51,7 +52,7 @@
                 <div class="top row">
                     <div class="col-md-6">绑定手机号</div>
                     <div class="col-md-6 step">
-                        <img src="../images/icon/register_step1.png" alt="step">
+                        <img src="./images/icon/register_step1.png" alt="step">
                     </div>
                 </div>
                 <div class="form">
@@ -73,7 +74,7 @@
                             </div>
                         </div>
                         <div class="col-md-5">
-                            <input type="button" value="获取验证码" class="get-code">
+                            <input type="button" value="获取验证码" onclick="getCode()" class="get-code">
                         </div>
                     </div>
 
@@ -90,7 +91,7 @@
                 <div class="top row">
                     <div class="col-md-6">设置密码</div>
                     <div class="col-md-6 step">
-                        <img src="../images/icon/register_step2@2x.png" alt="step">
+                        <img src="./images/icon/register_step2@2x.png" alt="step">
                     </div>
                 </div>
                 <div class="form">
@@ -120,7 +121,7 @@
             <!-- step3 -->
             <div id="step3" style="display: none;">
                 <div class="suc-icon">
-                    <img src="../images/icon/suc@2x.png" alt="">
+                    <img src="./images/icon/suc@2x.png" alt="">
                 </div>
                 <div class="suc-tips">恭喜您，注册成功！</div>
                 <div class="form-btn">
@@ -216,12 +217,28 @@
         getCompanyInfos();
     </script></div>
 
-    <script src="../public/script/register.js" ></script>
+    <script src="./public/script/register.js" ></script>
     <script>
-        $('#commonFooter').load('./components/footer.html')
+        // $('#commonFooter').load('./components/footer.html')
         initPage();
     </script>
 
+    <script>
+        function getCode(){
+            var data = $('#regMobile').val();
+            if(data.length != 11){
+                return false;
+            }
+            $.ajax({
+                'url':'<?=site_url("index/PublicView/sendCode");?>',
+                'data':{'phoneNumber':data},
+                'type':'post',
+                'success':function(data) {
+                    alert(data);
+                }
+            });
+        }
+    </script>
 </body>
 
 

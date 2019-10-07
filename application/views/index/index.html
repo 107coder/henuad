@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-
+    <base href="<?=base_url();?>">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
@@ -68,9 +68,9 @@
                     </ul>
                     <!-- mavleft -->
                     <ul class="nav navbar-nav navbar-right" id="unLogin">
-                        <li onclick=""><a href="../heguangjie/pages/login.html">登录</a>
+                        <li onclick=""><a href="<?=site_url('index/PublicView/login')?>">登录</a>
                         </li>
-                        <li onclick=""><a href="../heguangjie/pages/register.html">注册</a>
+                        <li onclick=""><a href="<?=site_url('index/PublicView/register')?>">注册</a>
                         </li>
                     </ul>
                     <div class="nav navbar-nav navbar-right" id="userPic" style="display: none"

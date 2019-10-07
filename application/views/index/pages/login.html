@@ -12,24 +12,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    
+    <base href="<?=base_url('public');?>">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/styles/base.css">
-    <link rel="stylesheet" href="../public/styles/common.css">
-    <link rel="stylesheet" href="../public/styles/header.css">
-    <link rel="stylesheet" href="../public/styles/footer.css">
-    <link rel="stylesheet" href="../public/assets/swiper/swiper.min.css">
-    <script src="../public/utils/common.js"></script>
+    <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./public/styles/base.css">
+    <link rel="stylesheet" href="./public/styles/common.css">
+    <link rel="stylesheet" href="./public/styles/header.css">
+    <link rel="stylesheet" href="./public/styles/footer.css">
+    <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
+    <script src="./public/utils/common.js"></script>
 
-    <script src="../public/assets/jquery-1.12.4.js"></script>
-    <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../public/assets/layer/layer.js"></script>
-    <script src="../public/utils/render.request.js"></script>
-    <script src="../public/utils/render.utils.js"></script>
-    <script src="../public/assets/baiduTemplate.js"></script>
-    <script src="../public/assets/swiper/swiper.min.js"></script>
-    <link rel="stylesheet" href="../public/styles/login.css">
-    <script src="../public/assets/jquery-1.12.4.js"></script>
+    <script src="./public/assets/jquery-1.12.4.js"></script>
+    <!-- <script src="./public/assets/bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="./public/assets/layer/layer.js"></script>
+    <script src="./public/utils/render.request.js"></script>
+    <script src="./public/utils/render.utils.js"></script>
+    <script src="./public/assets/baiduTemplate.js"></script>
+    <script src="./public/assets/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="./public/styles/login.css">
+    <script src="./public/assets/jquery-1.12.4.js"></script>
 </head>
 
 <body>
@@ -37,7 +39,7 @@
     <header class="headerBase">
         <div class="container">
             <div class="navbar-header">
-                <img onclick="navTo('../index')" src="../images/logo.png" class="logo" alt="">
+                <img onclick="navTo('../index')" src="./images/logo.png" class="logo" alt="">
                 <span class="line"></span>
                 <span class="title">欢迎登录</span>
             </div>
@@ -155,13 +157,13 @@
                     <div class="col-md-5 row left">
                         <div class="col-md-5">
                             <div class="er-code">
-                                <img src="../images/home/weibo.png" alt="">
+                                <img src="./images/home/weibo.png" alt="">
                             </div>
                             <span>扫一扫：关注微博</span>
                         </div>
                         <div class="col-md-5 col-md-offset-2">
                             <div class="er-code">
-                                <img src="../images/home/weixin.png" alt="">
+                                <img src="./images/home/weixin.png" alt="">
                             </div>
 
                             <span>扫一扫：关注微信</span>
@@ -208,9 +210,9 @@
             getCompanyInfos();
         </script>
     </div>
-    <script src="../public/script/login.js"></script>
+    <script src="./public/script/login.js"></script>
     <script>
-        $('#commonFooter').load('./components/footer.html')
+        // $('#commonFooter').load('./components/footer.html')
         initPageEvent()
     </script>
 

@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+.txt_cut,
+.txt_cut_02,
+.txt_cut_2,
+.txt_cut_4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical
+}
+
+body,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+img,
+legend,
+li,
+p,
+ul {
+    margin: 0;
+    padding: 0
+}
+
+@font-face {
+    font-family: SourceHanSansCN;
+    src: url(../assets/font/SourceHanSansCN-Normal.ttf)
+      
+}
+
+* {
+    font-family: SourceHanSansCN !important
+}
+
+button,
+fieldset,
+img,
+input {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none
+}
+
+li,
+ul {
+    list-style: none
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0
+}
+
+input,
+select,
+textarea {
+    font-size: 12px;
+    margin: 0
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse
+}
+
+body {
+    color: #000;
+    background: #fff;
+    font-family: "PingFang SC", PingFangSC-Regular, "Source Han Sans", "思源黑体", sans-serif, "宋体", SimSun, Arial, Tahoma, Helvetica, Verdana, sans-serif
+}
+
+textarea {
+    resize: none
+}
+
+.one_txt_cut {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.txt_cut {
+    -webkit-line-clamp: 5
+}
+
+.txt_cut_02 {
+    -webkit-line-clamp: 2
+}
+
+.txt_cut_2 {
+    -webkit-line-clamp: 3
+}
+
+.txt_cut_4 {
+    -webkit-line-clamp: 4
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: table
+}
+
+.clearfix:after {
+    clear: both
+}
+
+a,
+a:hover,
+a:visited {
+    color: #333;
+    text-decoration: none
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 100%
+}
+
+em,
+i,
+s {
+    font-style: normal;
+    text-decoration: none
+}
+
+.container {
+    width: 1240px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative
+}
+
+.navbar-nav>li>a {
+    font-weight: 500;
+    color: #563d7c
+}
+
+iframe {
+    height: 0;
+    display: none
+}
