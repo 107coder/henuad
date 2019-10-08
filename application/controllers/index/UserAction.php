@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -100,24 +99,3 @@ class UserAction extends CI_Controller {
         return false;
     }
 }
-=======
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class UserAction extends CI_Controller {
-
-    public function index()
-    {
-        echo "this is userAction index";
-        print_r($_SESSION);
-        phpinfo();
-
-
-    }
-
-    public function login()
-    {
-        $this->load->view('index/login.html');
-    }
-}
->>>>>>> 8be0acb7abb277b941a11f25a9f3fc464f7c5d97
