@@ -39,7 +39,7 @@ class Judges extends CI_Controller
     //发布新闻验证
     public function judges_verity(){
         //配置
-        $config['upload_path']      = './uploads/';
+        $config['upload_path']      = './judges/';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
         $config['max_size']     = 10000;
         $config['file_name'] = time() - mt_rand(1000,9999);
