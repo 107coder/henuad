@@ -27,8 +27,8 @@ class PublicView extends CI_Controller {
         $this->session->set_userdata(['code'=>$code]);
         $param = "{$code},60"; 
         echo $param;
-        // $this->load->library('sms');
-        // $sms_code = $this->sms->send($param,$mobile);
+         $this->load->library('sms');
+         $sms_code = $this->sms->send($param,$mobile);
         // echo $sms_code;
     }
     // 校验验证码是否正确
