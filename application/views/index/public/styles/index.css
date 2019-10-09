@@ -340,11 +340,18 @@
 }
 
 #newsContent .newsTitle .content .content_right .rightb {
+   /* width:140px;
+    height:20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    */
     margin-top: 12px;
     font-size: 12px;
     font-weight: 400;
     color: #666;
-    line-height: 22px
+    line-height: 22px;
+
 }
 
 #newsContent .newsTitle_right {

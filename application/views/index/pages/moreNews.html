@@ -9,27 +9,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="renderer" content="webkit">
+
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/assets/swiper/swiper.min.css">
-    <link rel="stylesheet" href="../public/styles/base.css">
-    <link rel="stylesheet" href="../public/styles/common.css">
-    <link rel="stylesheet" href="../public/styles/index.css">
-    <link rel="stylesheet" href="../public/styles/about.css">
-    <link rel="stylesheet" href="../public/styles/header.css">
-    <link rel="stylesheet" href="../public/styles/footer.css">
-    <link rel="stylesheet" href="../public/styles/mycreation.css">
+    <base href="<?=base_url();?>">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./public/styles/base.css">
+    <link rel="stylesheet" href="./public/styles/common.css">
+    <link rel="stylesheet" href="./public/styles/index.css">
+    <link rel="stylesheet" href="./public/styles/about.css">
+    <link rel="stylesheet" href="./public/styles/header.css">
+    <link rel="stylesheet" href="./public/styles/footer.css">
+    <link rel="stylesheet" href="./public/styles/mycreation.css">
 
-    <script src="../public/assets/jquery-3.2.1.js"></script>
-    <script src="../public/assets/baiduTemplate.js"></script>
-    <script src="../public/assets/swiper/swiper.min.js"></script>
-    <script src="../public/assets/layer/layer.js"></script>
-    <script src="../public/utils/render.request.js"></script>
-    <script src="../public/utils/render.utils.js"></script>
-    <script src="../public/utils/common.js"></script>
-    <script src="../public/script/common.js"></script>
+    <script src="./public/assets/jquery-3.2.1.js"></script>
+    <script src="./public/assets/baiduTemplate.js"></script>
+    <script src="./public/assets/swiper/swiper.min.js"></script>
+    <script src="./public/assets/layer/layer.js"></script>
+    <script src="./public/utils/render.request.js"></script>
+    <script src="./public/utils/render.utils.js"></script>
+    <script src="./public/utils/common.js"></script>
+    <script src="./public/script/common.js"></script>
 </head>
 
 <body>
@@ -104,27 +106,28 @@
                 <div class="swiper-wrapper" style="transition-duration: 300ms; transform: translate3d(0px, 0px, 0px);">
                     <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5"
                         style="width: 1240px; margin-right: 30px;"> <a href="#"> <img
-                                src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
+                                src="./images/lunbotu.jpg" alt=""> </a> </div>
                     <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
                         style="width: 1240px; margin-right: 30px;"> <a href="pages/know.html"> <img
-                                src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
+                                src="./images/lunbotu.jpg" alt=""> </a> </div>
                     <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1"
                         style="width: 1240px; margin-right: 30px;"> <a href="">
-                            <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
+                            <img src="./images/lunbotu.jpg" alt=""> </a> </div>
                     <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2"
                         style="width: 1240px; margin-right: 30px;"> <a href="">
-                            <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
+                            <img src="./images/lunbotu.jpg" alt=""> </a> </div>
                     <div class="swiper-slide" data-swiper-slide-index="3" style="width: 1240px; margin-right: 30px;"> <a
                             href="">
-                            <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
+                            <img src="./images/lunbotu.jpg" alt=""> </a> </div>
                     <div class="swiper-slide" data-swiper-slide-index="4" style="width: 1240px; margin-right: 30px;"> <a
                             href="">
-                            <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
+                            <img src="./images/lunbotu.jpg" alt=""> </a> </div>
                     <div class="swiper-slide" data-swiper-slide-index="5" style="width: 1240px; margin-right: 30px;"> <a
-                            href="#"> <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
+                            href="#">
+                            <img src="./images/lunbotu.jpg" alt=""> </a> </div>
                     <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
                         data-swiper-slide-index="0" style="width: 1240px; margin-right: 30px;"> <a href=""> <img
-                                src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
+                                src="./images/lunbotu.jpg" alt=""> </a> </div>
                 </div>
                 <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
                         class="swiper-pagination-bullet" tabindex="0" role="button"
@@ -155,28 +158,31 @@
             </div>
             <div class="control_right" id="newsList">
                 <div id="newListType" style="padding-bottom: 0;">
-                    <div class="fileNewType"> <button class="" onclick="tageNewType(1)">开闭幕式</button> <button class=""
-                            onclick="tageNewType(2)">校园巡讲</button> <button class=""
-                            onclick="tageNewType(3)">命题解读</button> <button class=""
-                            onclick="tageNewType(4)">大赛新闻</button> <button class=""
-                            onclick="tageNewType(5)">品牌新闻</button> <button class=""
-                            onclick="tageNewType(6)">评委风采</button> </div>
+                    <div class="fileNewType">
+                        <?php foreach ($type as $v):?>
+                        <button class="" onclick='tageNewType()'><?=$v['TypeName']?></button>
+
+                        <?php endforeach;?>
+                    </div>
                 </div>
                 <div id="newsListContent">
+                    <?php foreach ($news as $v):?>
                     <div class="newsTitle_right " onclick="getNewsDetail('')">
                         <div class="clearfix">
-                            <div class="left"><img src="https://heguanhjie." alt=""></div>
+                            <div class="left"><img src="<?php echo base_url('uploads/'.$v['Picture']);?>" alt=""></div>
                             <div class="right top_news">
-                                <h2 class="txt_cut_02"> 【开幕式精彩集锦】共赴创意青春盛宴，第十八届上海国际大学生广告节隆重开幕！ </h2>
+                                <h2 class="txt_cut_02"> <?=$v['Title']?> </h2>
                                 <p class="question txt_cut_4"> 5月31日，第十八届上海国际大学生广告节... </p>
-                                <div class="time">2019-10-01<div class="arrow">
-                                        <div> <img src="../images/arrowRight.png" alt=""> <img
-                                                src="../images/arrowRight2.png" alt=""> </div>
+                                <div class="time"><?php $datestring = '%Y-%m-%d';echo mdate($datestring,$v['Date']);?><div class="arrow">
+                                        <div> <img src="./images/arrowRight.png" alt=""> <img
+                                                src="./images/arrowRight2.png" alt=""> </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php endforeach;?>
+                    <!--
                     <div class="newsTitle_right " onclick="getNewsDetail('')">
                         <div class="clearfix">
                             <div class="left"><img src="https://heguanhjie." alt=""></div>
@@ -227,8 +233,8 @@
                                 <h2 class="txt_cut_02"> 【公益命题】上海市市场监督管理局“祝贺祖国70华诞”公益命题出炉，火速来战！ </h2>
                                 <p class="question txt_cut_4"> 本届大广节上海市市场监督管理局公益命题—... </p>
                                 <div class="time">2019-05-28<div class="arrow">
-                                        <div> <img src="../images/arrowRight.png" alt=""> <img
-                                                src="../images/arrowRight2.png" alt=""> </div>
+                                        <div> <img src="./images/arrowRight.png" alt=""> <img
+                                                src="./images/arrowRight2.png" alt=""> </div>
                                     </div>
                                 </div>
                             </div>
@@ -277,7 +283,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="Page navigation">
                         <nav aria-label="Page navigation">
                             <ul class="pagination">
@@ -420,7 +426,7 @@
             getCompanyInfos();
         </script>
     </div>
-    <script src="../public/script/common.js"></script>
+    <script src="./public/script/common.js"></script>
     <script>
         $('#commonHeader').load('./components/newHeader.html', null, function () {
             selectHeaderActiveClass('news');

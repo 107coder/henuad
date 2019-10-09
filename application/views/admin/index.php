@@ -45,7 +45,7 @@
 									<a href="<?php echo site_url() .'/admin/background/product' ?>" target="right">产品管理</a>
 								</dd>
 								<dd>
-									<a href="<?php echo site_url() .'/admin/type/index' ?>" target="right">新闻分类管理</a>
+									<a href="<?php echo site_url() .'/admin/type/index' ?>" target="right">分类管理</a>
 								</dd>
 								<dd>
 									<a href="<?php echo site_url() .'/admin/news/index' ?>" target="right">新闻管理</a>
@@ -70,7 +70,9 @@
 						<li class="layui-nav-item">
 							<a href="javascript:;">菜单栏</a>
 							<dl class="layui-nav-child">
-								
+                                <dd>
+                                    <a href="<?php echo site_url() .'/index/News_Front/list_news' ?>" target="right">前台页面</a>
+                                </dd>
 							</dl>
 						</li>
 						<li class="layui-nav-item">

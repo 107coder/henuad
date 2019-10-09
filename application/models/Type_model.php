@@ -14,9 +14,19 @@ class Type_model extends CI_Model
     public function add($data){
         $this->db->insert('type', $data);
     }
-    //查看新闻类别
+    //查看新闻及评委类别
     public function check(){
         $data = $this->db->get('type')->result_array();
+        return $data;
+    }
+    //只查看新闻类别
+    public function check1(){
+        $data = $this->db->where(array('IsNew'=> 1))->get('type')->result_array();
+        return $data;
+    }
+    //查看新闻及评委类别
+    public function check2(){
+        $data = $this->db->where(array('IsNew'=> 0))->get('type')->result_array();
         return $data;
     }
     //查询对应的类别
@@ -24,11 +34,11 @@ class Type_model extends CI_Model
         $data = $this->db->where(array('TypeId'=>$TypeId))->get('type')->result_array();
         return $data;
     }
-    //修改新闻文章栏目
+    //修改类别
     public function update_type($TypeId, $data){
         $this->db->update('type', $data, array('TypeId'=>$TypeId));
     }
-    //删除栏目
+    //删除类别
     public function del($TypeId){
         $this->db->delete('type', array('TypeId'=>$TypeId));
     }

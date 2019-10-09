@@ -16,10 +16,22 @@ class News_model extends CI_Model
     public function add($data){
         $this->db->insert('news', $data);
     }
-    //查看文章
+    //查看新闻
     public function news_type(){
-        $data = $this->db->select('newsId,Title,TypeName,Date,Author')->from('news')->
+        $data = $this->db->select('newsId,Title,TypeName,Date,Author,Picture')->from('news')->
         join('type', 'news.TypeId=type.TypeId')->order_by('Date', 'desc')->get()->result_array();
+        return $data;
+    }
+    //前台显示最近时间发布的开闭幕式一个新闻
+    public function news_recent(){
+        $data = $this->db->select('Title,Date,Content,Picture')->from('news')->
+        join('type', 'news.TypeId=type.TypeId')->where(array('TypeName'=>'开闭幕式'))->limit(1)->get()->result_array();
+        return $data;
+    }
+    //前台显示最近时间发布的两个新闻
+    public function news_recent1(){
+        $data = $this->db->select('Title,Date,Content,Picture')->from('news')->
+        order_by('Date', 'desc')->limit(2)->get()->result_array();
         return $data;
     }
     //查询对应的新闻

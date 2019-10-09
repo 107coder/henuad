@@ -32,7 +32,7 @@ class News extends CI_Controller
     }
     //后台发布新闻界面
     public function release_news(){
-        $data['type'] = $this->Type_model->check();
+        $data['type'] = $this->Type_model->check1();
         $this->load->helper('form');
         $this->load->view('admin/release_news',$data);
     }
@@ -69,7 +69,7 @@ class News extends CI_Controller
             $this->News_model->add($data);
             success('admin/news/index', '发表成功');
         }else{
-            $data['type'] = $this->Type_model->check();
+            $data['type'] = $this->Type_model->check1();
             $this->load->helper('form');
             $this->load->view('admin/release_news',$data);
         };
@@ -79,7 +79,7 @@ class News extends CI_Controller
     public function edit(){
         $newsId = $this->uri->segment(4);
         $data['news'] = $this->News_model->check_news($newsId);
-        $data['type'] = $this->Type_model->check();
+        $data['type'] = $this->Type_model->check1();
         $this->load->helper('form');
         $this->load->view('admin/news_edit',$data);
     }
@@ -116,7 +116,7 @@ class News extends CI_Controller
             $data['news'] = $this->News_model->update_news($newsId, $data);
             success('admin/news/index', '修改成功');
         }else{
-            $data['type'] = $this->Type_model->check();
+            $data['type'] = $this->Type_model->check1();
             $this->load->helper('form');
             $this->load->view('admin/news_edit',$data);
         };

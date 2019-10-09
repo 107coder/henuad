@@ -30,13 +30,13 @@ class Judges extends CI_Controller
         $data['judges'] = $this->Judge_model->judge_type();
         $this->load->view('admin/judges',$data);
     }
-    //后台发布新闻界面
+    //后台添加评委界面
     public function add_judges(){
-        $data['type'] = $this->Type_model->check();
+        $data['type'] = $this->Type_model->check2();
         $this->load->helper('form');
         $this->load->view('admin/add_judge',$data);
     }
-    //发布新闻验证
+    //添加评委验证
     public function judges_verity(){
         //配置
         $config['upload_path']      = './judges/';
@@ -68,11 +68,65 @@ class Judges extends CI_Controller
             $this->Judge_model->add($data);
             success('admin/judges/index', '添加成功');
         }else{
-            $data['type'] = $this->Type_model->check();
+            $data['type'] = $this->Type_model->check2();
             $this->load->helper('form');
             $this->load->view('admin/add_judge',$data);
         };
 
+    }
+    //编辑评委界面
+    public function edit(){
+        $JudgesId = $this->uri->segment(4);
+        $data['judges'] = $this->Judge_model->check_judge($JudgesId);
+        $data['type'] = $this->Type_model->check2();
+        $this->load->helper('form');
+        $this->load->view('admin/judges_edit',$data);
+    }
+    //编辑评委验证
+    public function judges_edit(){
+        //配置
+        $config['upload_path']      = './judges/';
+        $config['allowed_types']    = 'gif|jpg|png|jpeg';
+        $config['max_size']     = 1000000;
+        $config['file_name'] = time() - mt_rand(1000,9999);
+        //载入上传类
+        $this->load->library('upload', $config);
+        $this->upload->do_upload('Picture');
+        $wrong = $this->upload->display_errors();
+        if($wrong){
+            error($wrong);
+        }
+        //返回信息
+        $info = $this->upload->data();
+
+        $this->load->library('form_validation');
+        $status = $this->form_validation->run('judges');
+        if($status){
+            $JudgesId = $this->input->post('JudgesId');
+            $data = array(
+                'Name' => $this->input->post('Name'),
+                'Position' => $this->input->post('Position'),
+                'Picture'	=> $info['file_name'],
+                'Introduction'=> $this->input->post('Introduction'),
+                'TypeId' => $this->input->post('TypeId')
+            );
+
+            $data['judges'] = $this->Judge_model->update_judge($JudgesId, $data);
+            success('admin/judges/index', '修改成功');
+        }else{
+            $data['type'] = $this->Type_model->check2();
+            $this->load->helper('form');
+            $this->load->view('admin/judges_edit',$data);
+        };
+
+    }
+    //删除文章
+
+    public function judges_del()
+    {
+        $JudgesId = $this->uri->segment(4);
+        $this->Judge_model->del_Judge($JudgesId );
+        success('admin/judges/index', '删除成功');
     }
 }
 

@@ -41,7 +41,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <img src="../heguangjie/images/logo.png" class="navbar-brand" onclick="" alt="">
+                    <img src="../images/logo.png" class="navbar-brand" onclick="" alt="">
                 </div>
 
                 <nav id="bs-navbar" class="collapse navbar-collapse">
@@ -55,10 +55,10 @@
                             <a href="pages/about.html">关于大广节</a>
                         </li>
                         <li onclick="" name="news">
-                            <a href="pages/moreNews.html">新闻动态</a>
+                            <a href="<?php echo site_url() .'/index/news_front/news_more' ?>">新闻动态</a>
                         </li>
                         <li onclick="" name="judgesIntroduce">
-                            <a href="pages/JudgesIntroduce.html">评审介绍</a>
+                            <a href="<?php echo site_url() .'/index/news_front/judges_more' ?>">评审介绍</a>
                         </li>
 
                         <li onclick="" name="linkus">
@@ -76,7 +76,7 @@
                     <div class="nav navbar-nav navbar-right" id="userPic" style="display: none"
                         onmouseleave="hideUserImgList(event)">
                         <img id="user-image" onmouseenter="getUserCenterList(event)"
-                            src="../heguangjie/images/touxiang.jpg" width="40" alt="" data-toggle="dropdown"
+                            src="./images/touxiang.jpg" width="40" alt="" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         <div id="user-navbar" class="hideList">
                             <div class="navbar-content">
@@ -99,8 +99,8 @@
             <div onclick="navTo('know')" class="banner_icon col-sm-4 col-xs-4">
                 <div>
                     <div class="icon">
-                        <img src="../heguangjie/images/csxz.png" alt="">
-                        <img src="../heguangjie/images/csxz2.png" alt="">
+                        <img src="./images/csxz.png" alt="">
+                        <img src="./images/csxz2.png" alt="">
                     </div>
                     <p>参赛须知</p>
                 </div>
@@ -108,8 +108,8 @@
             <div onclick="navTo('load')" class="banner_icon col-sm-4 col-xs-4">
                 <div>
                     <div class="icon">
-                        <img src="../heguangjie/images/mtxz.png" alt="">
-                        <img src="../heguangjie/images/mtxz2.png" alt="">
+                        <img src="./images/mtxz.png" alt="">
+                        <img src="./images/mtxz2.png" alt="">
                     </div>
                     <p>命题下载</p>
                 </div>
@@ -117,8 +117,8 @@
             <div onclick="navTo('upload')" class="banner_icon col-sm-4 col-xs-4">
                 <div>
                     <div class="icon">
-                        <img src="../heguangjie/images/zpsc.png" alt="">
-                        <img src="../heguangjie/images/zpsc2.png" alt="">
+                        <img src="./images/zpsc.png" alt="">
+                        <img src="./images/zpsc2.png" alt="">
                     </div>
                     <p>作品上传</p>
                 </div>
@@ -133,38 +133,38 @@
                     style="transition-duration: 0ms; transform: translate3d(-2540px, 0px, 0px);">
                     <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5"
                         style="width: 1240px; margin-right: 30px;"> <a href="#"> <img
-                                src="../heguangjie/images/lunbotu.jpg"
+                                src="./images/lunbotu.jpg"
                                 alt=""> </a> </div>
                     <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
                         style="width: 1240px; margin-right: 30px;"> <a href="pages/know.html"> <img
-                                src="../heguangjie/images/lunbotu.jpg"
+                                src="./images/lunbotu.jpg"
                                 alt=""> </a> </div>
                     <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1"
                         style="width: 1240px; margin-right: 30px;"> <a
                             href="">
-                            <img src="../heguangjie/images/lunbotu.jpg"
+                            <img src="./images/lunbotu.jpg"
                                 alt=""> </a> </div>
                     <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2"
                         style="width: 1240px; margin-right: 30px;"> <a
                             href="">
-                            <img src="../heguangjie/images/lunbotu.jpg"
+                            <img src="./images/lunbotu.jpg"
                                 alt=""> </a> </div>
                     <div class="swiper-slide" data-swiper-slide-index="3" style="width: 1240px; margin-right: 30px;"> <a
                             href="">
-                            <img src="../heguangjie/images/lunbotu.jpg"
+                            <img src="./images/lunbotu.jpg"
                                 alt=""> </a> </div>
                     <div class="swiper-slide" data-swiper-slide-index="4" style="width: 1240px; margin-right: 30px;"> <a
                             href="">
-                            <img src="../heguangjie/images/lunbotu.jpg"
+                            <img src="./images/lunbotu.jpg"
                                 alt=""> </a> </div>
                     <div class="swiper-slide" data-swiper-slide-index="5" style="width: 1240px; margin-right: 30px;"> <a
                             href="#"> <img
-                                src="../heguangjie/images/lunbotu.jpg"
+                                src="./images/lunbotu.jpg"
                                 alt=""> </a> </div>
                     <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
                         data-swiper-slide-index="0" style="width: 1240px; margin-right: 30px;"> <a
                             href=""> <img
-                                src="../heguangjie/images/lunbotu.jpg"
+                                src="./images/lunbotu.jpg"
                                 alt=""> </a> </div>
                 </div>
                 <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
@@ -188,28 +188,34 @@
             <p class="itemName">新闻动态</p>
             <p class="newTips"> <span class="line">NEWS</span> </p>
             <div class="item auto_height" id="newsContentList">
+                <?php foreach ($recent as $v):?>
                 <div class="newsTitle">
-                    <div class="title"> <img
-                            src="https://"
-                            alt=""> </div> <a href="./pages/moreNews.html">
+                    <div class="title">
+                        <img src="<?php echo base_url('uploads/'.$v['Picture']);?>" alt="">
+                    </div>
+                    <a href="./pages/moreNews.html">
                         <div class="content clearfix">
-                            <div class="content_left"> 01 <p>2019-06</p>
+                            <div class="content_left"> 01 <p><?php $datestring = '%Y-%m';echo mdate($datestring,$v['Date']);?></p>
                             </div>
                             <div class="content_right">
-                                <p class="rightt one_txt_cut">【开幕式精彩集锦】共赴创意青春盛宴，河南大学大学生广告节隆重开幕！</p>
-                                <p class="rightb txt_cut_4"> 河南大学大学生广告节... </p>
-                            </div>
+                                <p class="rightt one_txt_cut"><?=$v['Title']?></p>
+                                <p class="rightb txt_cut_4"> 5月31日，第十八届上海国际大学生广告节...</p>
+                        </div>
                         </div>
                     </a>
                 </div>
+                <?php endforeach;?>
                 <div class="newsTitle_right">
+                    <?php foreach ($recent1 as $v):?>
                     <div class="clearfix ">
-                        <div class="left"><img
-                                src="https://heguangjie."
-                                alt=""></div> <a href="./pages/moreNews.html">
+                        <div class="left">
+                            <img src="<?php echo base_url('uploads/'.$v['Picture']);?>"
+                                alt="">
+                        </div>
+                        <a href="./pages/moreNews.html">
                             <div class="right top_news">
-                                <h2 class="txt_cut_2">哈哈哈哈哈哈啊哈哈啊哈哈哈哈哈哈哈哈哈啊</h2>
-                                <p class="time">2019-06-24</p>
+                                <h2 class="txt_cut_2"><?=$v['Title']?></h2>
+                                <p class="time"><?php $datestring = '%Y-%m-%d';echo mdate($datestring,$v['Date']);?></p>
                                 <p class="question txt_cut_2"> 哈哈哈哈哈哈哈哈哈哈哈哈哈哈...
                                    
                                 </p>
@@ -222,7 +228,8 @@
                             </div>
                         </a>
                     </div>
-                    <div class="clearfix ">
+                    <?php endforeach;?>
+                    <!--<div class="clearfix ">
                         <div class="left"><img
                                 src="https://heguangjie.">
                         </div> <a href="./pages/moreNews.html">
@@ -237,7 +244,7 @@
                                 </h2>
                             </div>
                         </a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
            <a href="./pages/moreNews.html"> <p class="more" onclick="navTo('moreNews')"> <span>更多新闻</span> </p></a>
@@ -272,7 +279,7 @@
     </div>
     <!-- 评委介绍 -->
     <div class="judges">
-        <img src="../images/judges.png" class="judgesImage" alt="">
+        <img src="./images/judges.png" class="judgesImage" alt="">
         <div class="container ">
             <p class="itemName">评委介绍</p>
             <p class="newTips">
@@ -281,16 +288,18 @@
             <div class="swiper-container judges swiper-container-initialized swiper-container-horizontal" dir="ltr">
                 <div class="swiper-wrapper" id="JudgeList"
                     style="transition-duration: 0ms; transform: translate3d(-492.8px, 0px, 0px);">
-                    <div class="swiper-slide swiper-slide-duplicate"
+                    <?php foreach ($judges as $v):?>
+                    <div class="swiper-slide swiper-slide-duplicate "
                         onclick="navTo('JudgesIntroduce', {guid: '41537f07-7267-40f6-9454-e29279865184'})"
-                        data-swiper-slide-index="10" style="width: 234.4px; margin-right: 12px;">
+                        data-swiper-slide-index="<?=$v['JudgesId']?>" style="width: 234.4px; margin-right: 12px;">
                         <div class="touxiang"><img
-                                src="https://heguangjie."
+                                src="<?php echo base_url('judges/'.$v['Picture']);?>"
                                 alt=""></div>
-                        <p class="name">张艳</p>
-                        <p class="introduce">上海广告有限公司 创意群总监</p>
+                        <p class="name"><?=$v['Name']?></p>
+                        <p class="introduce"><?=$v['Position']?></p>
                     </div>
-                    <div class="swiper-slide swiper-slide-duplicate"
+                    <?php endforeach;?>
+                    <!--<div class="swiper-slide swiper-slide-duplicate"
                         onclick="navTo('JudgesIntroduce', {guid: '3b9c9ee2-d3fa-4dca-8cd1-e07d916a0d67'})"
                         data-swiper-slide-index="11" style="width: 234.4px; margin-right: 12px;">
                         <div class="touxiang"><img
@@ -361,8 +370,8 @@
                                 alt=""></div>
                         <p class="name">吴景璇</p>
                         <p class="introduce">杭州爱柏森生物科技有限公司 创始人兼总裁 </p>
-                    </div>
-                    
+                    </div>-->
+
                 </div>
                 <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>

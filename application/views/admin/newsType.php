@@ -42,7 +42,7 @@
 	<body>
 		<div class="admin-content-body">
 			<div class="am-cf am-padding am-padding-bottom-0">
-				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">新闻类别管理</strong><small></small></div>
+				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">类别管理</strong><small></small></div>
 			</div>
 
 			<hr>
@@ -60,7 +60,7 @@
 				</div>
 				<div class="am-u-sm-12 am-u-md-3">
 					<div class="am-input-group am-input-group-sm">
-						<input type="text" class="am-form-field"  placeholder="请输入新闻类型">
+						<input type="text" class="am-form-field"  placeholder="请输入类型">
 						<span class="am-input-group-btn">
             <button class="am-btn am-btn-default" type="button">搜索</button>
           </span>
@@ -75,7 +75,7 @@
 								<tr>
 									<th class="table-check"><input type="checkbox"></th>
 									<th class="table-id">ID</th>
-									<th class="table-title">新闻类别</th>
+									<th class="table-title">类别</th>
 									<th class="table-set">操作</th>
 								</tr>
 							</thead>
