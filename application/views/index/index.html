@@ -55,10 +55,10 @@
                             <a href="pages/about.html">关于大广节</a>
                         </li>
                         <li onclick="" name="news">
-                            <a href="<?php echo site_url() .'/index/news_front/news_more' ?>">新闻动态</a>
+                            <a href="<?php echo site_url() .'/index/PublicView/news_more' ?>">新闻动态</a>
                         </li>
                         <li onclick="" name="judgesIntroduce">
-                            <a href="<?php echo site_url() .'/index/news_front/judges_more' ?>">评审介绍</a>
+                            <a href="<?php echo site_url() .'/index/PublicView/judges_more' ?>">评审介绍</a>
                         </li>
 
                         <li onclick="" name="linkus">
@@ -216,9 +216,7 @@
                             <div class="right top_news">
                                 <h2 class="txt_cut_2"><?=$v['Title']?></h2>
                                 <p class="time"><?php $datestring = '%Y-%m-%d';echo mdate($datestring,$v['Date']);?></p>
-                                <p class="question txt_cut_2"> 哈哈哈哈哈哈哈哈哈哈哈哈哈哈...
-                                   
-                                </p>
+                                <p class="question txt_cut_2">哈哈哈哈啊哈哈啊哈哈哈...</p>
                                 <div class="arrow">
                                     <div> <img src="../images/arrowRight.png" alt=""> <img
                                             src="../images/arrowRight2.png" alt="">
@@ -247,7 +245,7 @@
                     </div>-->
                 </div>
             </div>
-           <a href="./pages/moreNews.html"> <p class="more" onclick="navTo('moreNews')"> <span>更多新闻</span> </p></a>
+           <a href="<?php echo site_url() .'/index/PublicView/news_more' ?>"> <p class="more" onclick="navTo('moreNews')"> <span>更多新闻</span> </p></a>
         </div>
     </div>
     <!-- 合作品牌 -->

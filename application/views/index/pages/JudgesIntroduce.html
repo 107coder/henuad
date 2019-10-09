@@ -11,6 +11,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <base href="<?=base_url();?>">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
@@ -164,28 +165,26 @@
                     </div>
                     <div class="select_item">
                         <div class="select_main" id="JudgesTypeList">
-                            <div class="btn active_btn" onclick="changeJudgesType(0, '')">全部</div>
-                            <div class="btn" onclick="changeJudgesType(1, '')">
-                                评委会名誉主席</div>
-                            <div class="btn" onclick="changeJudgesType(2, '')">评委会主席
-                            </div>
-                            <div class="btn" onclick="changeJudgesType(3, '')">终审评委
-                            </div>
-                            <div class="btn" onclick="changeJudgesType(4, '')">创意导师
-                            </div>
+                            <a style="display:inline-block" href="<?php echo site_url('/index/PublicView/judges_more/') ?>"><div class="btn active_btn" onclick="changeJudgesType(0, '')">全部</div></a>
+                            <?php foreach ($type as $v):?>
+                            <a style="display:inline-block" href="<?php echo site_url('/index/PublicView/judges_more/' . $v['TypeId']) ?>"><div class="btn" onclick="changeJudgesType(1, '')"><?=$v['TypeName']?></div></a>
+
+                            <?php endforeach;?>
                         </div>
                     </div>
                     <div id="JudgesList">
+                        <?php foreach ($judges as $v):?>
                         <div class="Judges-item" onmouseover="showCoverCeng(this)" onmouseleave="hideCoverCeng(this)"
                             onclick="readDetail('')">
-                            <img class="Judges-pic" src="https://heguangjie." alt="">
-                            <div class="Judges-name"> 莫康孙 <img class="go" src="../../images/grayGo.png" alt=""
+                            <img class="Judges-pic" src="<?php echo base_url('judges/'.$v['Picture']);?>" alt="">
+                            <div class="Judges-name"> <?=$v['Name']?><img class="go" src="./images/grayGo.png" alt=""
                                     style="opacity: 0;"> </div>
                             <div class="cover-ceng top100">
-                                <div class="text">麦肯·光明广告有限公司创意顾问，创意热店“Match·马马也”创始人</div>
+                                <div class="text"><?=$v['Position']?></div>
                             </div>
                         </div>
-                        <div class="Judges-item" onmouseover="showCoverCeng(this)" onmouseleave="hideCoverCeng(this)"
+                        <?php endforeach;?>
+                        <!--<div class="Judges-item" onmouseover="showCoverCeng(this)" onmouseleave="hideCoverCeng(this)"
                             onclick="readDetail('')">
                             <img class="Judges-pic" src="https://heguangjie." alt="">
                             <div class="Judges-name"> 孙二黑 <img class="go" src="../../images/grayGo.png" alt=""
@@ -222,7 +221,7 @@
                             <div class="cover-ceng">
                                 <div class="text">上海剧星传媒股份有限公司 董事长兼总裁</div>
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="Judges-item" style="border: none;box-shadow: none;"></div>
                         <div class="Judges-item" style="border: none;box-shadow: none;"></div>

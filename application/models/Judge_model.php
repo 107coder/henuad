@@ -19,7 +19,13 @@ class Judge_model extends CI_Model
     //查看评委
     public function judge_type(){
         $data = $this->db->select('JudgesId,Name,TypeName,Position,Picture')->from('udges')->
-        join('type', 'udges.TypeId=type.TypeId')->order_by('JudgesId', 'asc')->get()->result_array();
+        join('type', 'udges.TypeId=type.TypeId')->order_by('udges.TypeId', 'asc')->get()->result_array();
+        return $data;
+    }
+    //查看某一分类下的评委
+    public function judge_type1($TypeId){
+        $data = $this->db->select('JudgesId,Name,TypeName,Position,Picture')->from('udges')->
+        join('type', 'udges.TypeId=type.TypeId')->where(array('udges.TypeId'=>$TypeId))->order_by('JudgesId', 'asc')->get()->result_array();
         return $data;
     }
     //查询对应的评委

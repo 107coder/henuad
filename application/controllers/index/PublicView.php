@@ -2,10 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class PublicView extends CI_Controller {
-
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('News_model');
+        $this->load->model('Judge_model');
+        $this->load->model('Type_model');
+    }
     public function index()
     {
-        $this->load->view('index/index.html');
+        $this->load->helper('date');
+        $data['recent'] = $this->News_model->news_recent();
+        $data['recent1'] = $this->News_model->news_recent1();
+        $data['judges'] = $this->Judge_model->judge_type();
+        $this->load->view('index/index.html',$data);
     }
 
     public function login()
@@ -17,7 +27,28 @@ class PublicView extends CI_Controller {
     {
         $this->load->view('index/pages/register.html');
     }
-
+    //前台新闻动态及更多新闻
+    public function news_more()
+    {
+        $this->load->helper('date');
+        $TypeId = $this->uri->segment(4);
+        if(isset($TypeId)){
+            $data['news'] = $this->News_model->news_type1($TypeId);
+        }else $data['news'] = $this->News_model->news_type();
+        $data['type'] = $this->Type_model->check1();
+        $this->load->view('index/pages/moreNews.html',$data);
+    }
+    //前台评委动态
+    public function judges_more()
+    {
+        $this->load->helper('date');
+        $TypeId = $this->uri->segment(4);
+        if(isset($TypeId)) {
+            $data['judges'] = $this->Judge_model->judge_type1($TypeId);
+        }else $data['judges'] = $this->Judge_model->judge_type();
+        $data['type'] = $this->Type_model->check2();
+        $this->load->view('index/pages/JudgesIntroduce.html',$data);
+    }
     public function heade()
     {
         $this->load->view('index/components/heade.html');

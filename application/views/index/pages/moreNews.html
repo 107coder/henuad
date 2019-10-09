@@ -160,7 +160,7 @@
                 <div id="newListType" style="padding-bottom: 0;">
                     <div class="fileNewType">
                         <?php foreach ($type as $v):?>
-                        <button class="" onclick='tageNewType()'><?=$v['TypeName']?></button>
+                        <a style="display:inline-block" href="<?php echo site_url('/index/PublicView/news_more/' . $v['TypeId']) ?>"><button class="" onclick='tageNewType()'><?=$v['TypeName']?></button></a>
 
                         <?php endforeach;?>
                     </div>

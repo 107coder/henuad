@@ -71,7 +71,7 @@
 							<a href="javascript:;">菜单栏</a>
 							<dl class="layui-nav-child">
                                 <dd>
-                                    <a href="<?php echo site_url() .'/index/News_Front/list_news' ?>" target="right">前台页面</a>
+                                    <a href="<?php echo site_url() .'/index/PublicView/index' ?>" target="right">前台页面</a>
                                 </dd>
 							</dl>
 						</li>

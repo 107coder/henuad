@@ -26,7 +26,7 @@ class Type_model extends CI_Model
     }
     //查看新闻及评委类别
     public function check2(){
-        $data = $this->db->where(array('IsNew'=> 0))->get('type')->result_array();
+        $data = $this->db->where(array('IsNew'=> 0))->order_by('TypeId', 'asc')->get('type')->result_array();
         return $data;
     }
     //查询对应的类别

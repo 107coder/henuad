@@ -22,6 +22,12 @@ class News_model extends CI_Model
         join('type', 'news.TypeId=type.TypeId')->order_by('Date', 'desc')->get()->result_array();
         return $data;
     }
+    //查看某一分类下的新闻
+    public function news_type1($TypeId){
+        $data = $this->db->select('newsId,Title,Date,Author,Picture')->from('news')->
+        join('type', 'news.TypeId=type.TypeId')->where(array('news.TypeId'=>$TypeId))->order_by('Date', 'desc')->get()->result_array();
+        return $data;
+    }
     //前台显示最近时间发布的开闭幕式一个新闻
     public function news_recent(){
         $data = $this->db->select('Title,Date,Content,Picture')->from('news')->

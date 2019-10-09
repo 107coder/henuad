@@ -879,4 +879,8 @@ function error($msg){
     echo "<script type='text/javascript'>alert('$msg');window.history.back();</script>";
     die;
 }
+function getText($html){
+    $msg = $html.replace(new RegExp("<.+?>","g"),"");
+    return $msg;
+}
 
