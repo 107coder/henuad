@@ -73,8 +73,8 @@ class PublicView extends CI_Controller {
         $param = "{$code},60";
         echo $mobile.'   ' ;
         echo $param;
-        // $this->load->library('sms');
-        // $sms_code = $this->sms->send($param,$mobile);
+        //$this->load->library('sms');
+        //$sms_code = $this->sms->send($param,$mobile);
         // echo $sms_code;
     }
 

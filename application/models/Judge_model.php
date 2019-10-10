@@ -33,11 +33,11 @@ class Judge_model extends CI_Model
         $data = $this->db->where(array('JudgesId'=>$JudgesId))->get('udges')->result_array();
         return $data;
     }
-    //修改新闻文章
+    //修改评委
     public function update_judge($JudgesId, $data){
         $this->db->update('udges', $data, array('JudgesId'=>$JudgesId));
     }
-    //删除新闻
+    //删除评委
     public function del_judge($JudgesId){
         $this->db->delete('udges', array('JudgesId'=>$JudgesId));
     }

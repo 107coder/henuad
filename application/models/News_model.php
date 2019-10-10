@@ -45,7 +45,7 @@ class News_model extends CI_Model
         $data = $this->db->where(array('newsId'=>$newsId))->get('news')->result_array();
         return $data;
     }
-    //修改新闻文章
+    //修改新闻
     public function update_news($newsId, $data){
         $this->db->update('news', $data, array('newsId'=>$newsId));
     }

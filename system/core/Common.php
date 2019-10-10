@@ -874,13 +874,33 @@ function success1($msg){
  * @param  [type] $msg [提示信息]
  * @return [type]      [description]
  */
-function error($msg){
+function error($msg)
+{
     header('Content-Type:text/html;charset=utf-8');
     echo "<script type='text/javascript'>alert('$msg');window.history.back();</script>";
     die;
 }
-function getText($html){
-    $msg = $html.replace(new RegExp("<.+?>","g"),"");
-    return $msg;
+/**
+ * 文件上传函数
+ * @param  [type] $path [提示路径信息]
+ * @param  [type] $name [提示name属性]
+ * @return [type]      [description]
+ */
+function upload_file($path,$name)
+{
+    //配置
+    $config['upload_path'] = './'.$path.'/';
+    $config['allowed_types'] = 'txt|pdf|docx|doc';
+    $config['max_size'] = 0;
+    //载入上传类
+    $this->load->library('upload', $config);
+    $this->upload->do_upload($name);
+    $wrong = $this->upload->display_errors();
+    if ($wrong) {
+        error($wrong);
+    }
+    //返回信息
+    $info = $this->upload->data();
 }
+
 

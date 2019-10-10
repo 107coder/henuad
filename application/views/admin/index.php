@@ -131,7 +131,7 @@
 					title: title,
 					iframeWidth: 500,
 					iframeHeight: 300,
-					url: "updatePwd.html"
+					url: "<?php echo site_url() .'/admin/background/updatePwd' ?>"
 				});
 			}
 		</script>
