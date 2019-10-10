@@ -22,5 +22,27 @@ class Background extends CI_Controller
     public function product(){
         $this->load->view('admin/product');
     }
+    //修改自己密码
+    public function updatePwd(){
+        $this->load->view('admin/updatePwd');
+    }
+    //修改密码验证
+    public function pwd_verify(){
+        $this->load->model('User_model');
+        $this->load->library('pwdhash'); // 载入加密类
+        //验证原始密码
+        $mobileNumber = $this->session->userdata('mobileNumber');
+        $userData = $this->User_model->checkMobile($mobileNumber);
+        $password = $this->input->post('password');
+        if($userData[0]['password'] != $this->pwdhash->HashPassword($password)) error('原始密码错误');
+        $passwordN = $this->input->post('passwordN');
+        $passwordE = $this->input->post('passwordE');
+        if($passwordN != $passwordE) error('两次密码不同');
+        $data = array(
+            'password' => $this->pwdhash->HashPassword($passwordN),
+        );
+        $this->User_model->change_pwd($mobileNumber,$data);
+        success1('密码修改成功');
+    }
 
 }

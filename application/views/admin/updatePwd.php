@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-	    <link rel="stylesheet" href="css/amazeui.min.css">
-		<link rel="stylesheet" href="css/admin.css">
-		<link rel="stylesheet" href="css/app.css">
+        <base href="<?=base_url();?>">
+	    <link rel="stylesheet" href="public/admin/css/amazeui.min.css">
+		<link rel="stylesheet" href="public/admin/css/admin.css">
+		<link rel="stylesheet" href="public/admin/css/app.css">
 		<style>
 			.admin-main{
 				padding-top: 0px;
@@ -18,15 +19,21 @@
 		<div class="admin-content">
 			<div class="admin-content-body">
 				<div class="am-g">
-					<form class="am-form am-form-horizontal"
-						 method="post"
-						style="padding-top:30px;" data-am-validator>
+					<form action="<?php echo site_url('admin/background/pwd_verify')?>" class="am-form am-form-horizontal" method="post" style="padding-top:30px;" data-am-validator>
+                        <div class="am-form-group">
+                            <label for="user-name" class="am-u-sm-3 am-form-label">
+                                原始密码 </label>
+                            <div class="am-u-sm-9">
+                                <input type="password" id="doc-vld-pwd-1" required placeholder="请输入原始密码"
+                                       name="password"> <small>输入原始密码。</small>
+                            </div>
+                        </div>
 						<div class="am-form-group">
 							<label for="user-name" class="am-u-sm-3 am-form-label">
 							新密码 </label>
 							<div class="am-u-sm-9">
 								<input type="password" id="doc-vld-pwd-1" required placeholder="请输入新密码" 
-									name="password"> <small>输入新密码。</small>
+									name="passwordN"> <small>输入新密码。</small>
 							</div>
 						</div>
 						<div class="am-form-group">
@@ -34,7 +41,7 @@
 								重复密码</label>
 							<div class="am-u-sm-9">
 								<input type="password" id="doc-vld-pwd-2" required placeholder="请输入重复密码" 
-									name="pwd"  data-equal-to="#doc-vld-pwd-1"  required> <small>输入重复密码。</small>
+									name="passwordE"  data-equal-to="#doc-vld-pwd-1"  required> <small>输入重复密码。</small>
 							</div>
 						</div>
 						<div class="am-form-group">
@@ -48,9 +55,9 @@
 		</div>
 	</div>
 	<script type="text/javascript"
-		src="assets/js/libs/jquery-1.10.2.min.js">
+		src="public/admin/assets/js/libs/jquery-1.10.2.min.js">
 	</script>
-	<script type="text/javascript" src="myplugs/js/plugs.js">
+	<script type="text/javascript" src="public/admin/myplugs/js/plugs.js">
 	</script>
 	</body>
 </html>

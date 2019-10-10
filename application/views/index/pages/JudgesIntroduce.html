@@ -165,9 +165,9 @@
                     </div>
                     <div class="select_item">
                         <div class="select_main" id="JudgesTypeList">
-                            <a style="display:inline-block" href="<?php echo site_url('/index/PublicView/judges_more/') ?>"><div class="btn active_btn" onclick="changeJudgesType(0, '')">全部</div></a>
+                            <a style="display:inline-block" href="<?php echo site_url('/index/PublicView/judges_more/') ?>"><div class="btn active_btn" >全部</div></a>
                             <?php foreach ($type as $v):?>
-                            <a style="display:inline-block" href="<?php echo site_url('/index/PublicView/judges_more/' . $v['TypeId']) ?>"><div class="btn" onclick="changeJudgesType(1, '')"><?=$v['TypeName']?></div></a>
+                            <a style="display:inline-block" href="<?php echo site_url('/index/PublicView/judges_more/' . $v['TypeId']) ?>"><div class="btn"><?=$v['TypeName']?></div></a>
 
                             <?php endforeach;?>
                         </div>

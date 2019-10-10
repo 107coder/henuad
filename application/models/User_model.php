@@ -22,4 +22,9 @@ class User_model extends CI_Model {
         $data = $this->db->get_where('user',$data_arr)->result_array();
         return $data;
     }
+    
+    //密码修改
+    public function change_pwd($mobileNumber,$data){
+        $this->db->update('user',$data,array('mobileNumber' => $mobileNumber));
+    }
 }
