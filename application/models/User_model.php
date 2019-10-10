@@ -16,4 +16,10 @@ class User_model extends CI_Model {
         $data = $this->db->get_where('user',['mobileNumber'=>$mobile])->num_rows();
         return $data;
     }
+    // 登录验证
+    public function checkLogin($data_arr)
+    {
+        $data = $this->db->get_where('user',$data_arr)->result_array();
+        return $data;
+    }
 }

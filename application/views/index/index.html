@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<iframe src="pages/components/heade.html" frameborder="0"></iframe>
+    <iframe src="<?=site_url('index/PublicView/heade');?>"  frameborder="0"></iframe> 
 
 <head>
     <meta charset="UTF-8">
@@ -41,7 +41,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <img src="../images/logo.png" class="navbar-brand" onclick="" alt="">
+                    <img src="./images/logo.png" class="navbar-brand" onclick="" alt="">
                 </div>
 
                 <nav id="bs-navbar" class="collapse navbar-collapse">
@@ -67,12 +67,21 @@
 
                     </ul>
                     <!-- mavleft -->
+                    <?php if(empty($this->session->mobile)){?>
                     <ul class="nav navbar-nav navbar-right" id="unLogin">
                         <li onclick=""><a href="<?=site_url('index/PublicView/login')?>">登录</a>
                         </li>
                         <li onclick=""><a href="<?=site_url('index/PublicView/register')?>">注册</a>
                         </li>
                     </ul>
+                    <?php } else {?>
+                        <ul class="nav navbar-nav navbar-right" id="unLogin">
+                            <li onclick=""><?="欢迎您，".$this->session->mobile;?>
+                            </li>
+                            <li onclick=""><a href="<?=site_url('index/UserAction/loginOut')?>">退出</a>
+                            </li>
+                        </ul>
+                    <?php }?>
                     <div class="nav navbar-nav navbar-right" id="userPic" style="display: none"
                         onmouseleave="hideUserImgList(event)">
                         <img id="user-image" onmouseenter="getUserCenterList(event)"
@@ -218,8 +227,8 @@
                                 <p class="time"><?php $datestring = '%Y-%m-%d';echo mdate($datestring,$v['Date']);?></p>
                                 <p class="question txt_cut_2">哈哈哈哈啊哈哈啊哈哈哈...</p>
                                 <div class="arrow">
-                                    <div> <img src="../images/arrowRight.png" alt=""> <img
-                                            src="../images/arrowRight2.png" alt="">
+                                    <!-- <div> <img src="./images/arrowRight.png" alt=""> <img
+                                            src="./images/arrowRight2.png" alt=""> -->
 
                                     </div>
                                 </div>
@@ -889,13 +898,13 @@
     var isSchoolLoading = false;
     var schoolTimer = null;
 
-    $('#commonHeader').load('./pages/components/newHeader.html', null, function () {
-        // 设置头部当前选中项
-        selectHeaderActiveClass('index');
-        // 登录按钮和登陆头像的显示隐藏逻辑
-        loginBtnAndUserImg();
-    })
-    $('#commonFooter').load('./pages/components/footer.html')
+    // $('#commonHeader').load('<?=site_url("index/PublicView/newHeader");?>', null, function () {
+    //     // 设置头部当前选中项
+    //     selectHeaderActiveClass('index');
+    //     // 登录按钮和登陆头像的显示隐藏逻辑
+    //     loginBtnAndUserImg();
+    // })
+    // $('#commonFooter').load('<?=site_url("index/PublicView/footer");?>')
 
     // var loadingTime= 5;//默认遮罩时间
     // function showLoading(loadText) {

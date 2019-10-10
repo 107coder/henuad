@@ -236,7 +236,7 @@
             }
             $.ajax({
                 'url':'<?=site_url("index/PublicView/sendCode");?>',
-                'data':{'phoneNumber':data},
+                'data':{'phoneNumber':data,'action':'register'},
                 'type':'post',
                 'success':function(data) {
                     alert(data);
@@ -244,12 +244,6 @@
             });
         }
 
-        //通过验证码获取下一步验证正确性
-        // $('#next_step2').click(
-        //     function(){
-        //         $('#step2').submit();
-        //     }
-        // );
 
         // 使用ajax方式实现下一步的请求
         function checkCode(){

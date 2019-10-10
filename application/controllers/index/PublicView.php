@@ -27,6 +27,7 @@ class PublicView extends CI_Controller {
     {
         $this->load->view('index/pages/register.html');
     }
+
     //前台新闻动态及更多新闻
     public function news_more()
     {
@@ -51,19 +52,32 @@ class PublicView extends CI_Controller {
     }
     public function heade()
     {
-        $this->load->view('index/components/heade.html');
+        $this->load->view('index/pages/components/heade.html');
     }
-
+    public function newHeader()
+    {
+        $this->load->view('index/components/newHeader.html');
+    }
+    public function footer()
+    {
+        $this->load->view('index/components/footer.html');
+    }   
     // 发送验证码
     public function sendCode()
     {
+        $action = $this->input->post('action');
         $mobile = $this->input->post('phoneNumber');
         // 引入数据库，验证手机号是否已经注册
         $this->load->model('user_model','user');
         $exist = $this->user->checkMobile($mobile);
-        if($exist != 0)
+        
+        if($exist != 0 && $action == "register")
         {
             echo "exist";
+            return false;
+        }else if($exist == 0 && $action == 'login')
+        {
+            echo "noexist";
             return false;
         }
         $data = array('mobile_number'=>$mobile);
@@ -77,7 +91,6 @@ class PublicView extends CI_Controller {
         // $sms_code = $this->sms->send($param,$mobile);
         // echo $sms_code;
     }
-
 
 
 }
