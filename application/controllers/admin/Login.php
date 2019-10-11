@@ -30,17 +30,13 @@ class Login extends CI_Controller
     public function login_in(){
         $this->load->library('pwdhash'); // 载入加密类
         $code = $this->input->post('captcha');
-        if(!isset($_SESSION)){
-            session_start();
-        }
         $this->load->helper('date');
         if(strtoupper($code) != $_SESSION['code']) error('验证码错误');
 
         $mobileNumber = $this->input->post('mobileNumber');
         $password = $this->input->post('password');
-        var_dump($this->pwdhash->HashPassword($password));
-        $userData = $this->User_model->checkMobile($mobileNumber);
-        if(!$userData || $userData[0]['password'] != $this->pwdhash->HashPassword($password)) error('用户名或者密码错误');
+        $userData = $this->User_model->checkMobile1($mobileNumber);
+        if(!$userData || !$this->pwdhash->CheckPassword($password,$userData[0]['password'])) error('用户名或者密码错误');
         $sessionData = array(
             'mobileNumber'=> $mobileNumber,
             'login_time' => time()

@@ -27,7 +27,11 @@ class PublicView extends CI_Controller {
     {
         $this->load->view('index/pages/register.html');
     }
-
+    //前台有关广告节
+    public function about()
+    {
+        $this->load->view('index/pages/about.html');
+    }
     //前台新闻动态及更多新闻
     public function news_more()
     {

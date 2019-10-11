@@ -24,7 +24,7 @@
 <div class="admin-content-body id="admin_one">
 <div class="am-cf am-padding am-padding-bottom-0">
     <div class="am-fl am-cf">
-        <strong class="am-text-primary am-text-lg">欢迎光临河南大学广告节后台</strong>
+        <strong style="font-size: 30px;"class="am-text-primary am-text-lg">欢迎光临河南大学广告节后台</strong>
     </div>
 </div>
 
@@ -32,11 +32,11 @@
 <table class="table am-table am-table-striped am-table-hover table-main">
     <tr>
         <td>用户名</td>
-        <td style="color:#cccc77;font-weight: bold"><?php echo $this->session->userdata('username') ?></td>
+        <td style="color:#cccc77;font-weight: bold"><?php echo $this->session->userdata('mobileNumber') ?></td>
     </tr>
     <tr>
         <td>登录时间</td>
-        <td style="color:#cccc77;font-weight: bold"><?php $datestring = '%Y-%m-%d - %h:%i';echo mdate($datestring,$this->session->userdata('login_time')) ?></td>
+        <td style="color:#cccc77;font-weight: bold"><?php $datestring = '%Y-%m-%d %h:%i';echo mdate($datestring,$this->session->userdata('login_time')) ?></td>
     </tr>
     <tr>
         <td>客户端IP</td>
