@@ -25,8 +25,6 @@ class PrivateView extends CI_Controller
         $data['userInfo'] = $this->user->getInfo($where);
         $this->load->view('index/pages/user-info.html',$data);
     }
-
-
     //上传作品
     public function upload()
     {

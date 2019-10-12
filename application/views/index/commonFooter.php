@@ -6,18 +6,18 @@
                 <div class="col-md-7 right">
                     <div class="meun">
                         <ul>
-                            <li><a href="pages/about.html" onclick="">关于河广节</a></li>
-                            <li><a href="pages/moreNews.html" onclick="">新闻动态</a></li>
-                            <li><a href="pages/JudgesIntroduce.html" onclick="">评审介绍</a></li>
-                            <li><a href="pages/contact.html" onclick="navTo('contact')">联系我们</a></li>
+                            <li><a href="<?=site_url() .'/index/PublicView/about' ?>" onclick="">关于河广节</a></li>
+                            <li><a href="<?=site_url() .'/index/PublicView/news_more' ?>" onclick="">新闻动态</a></li>
+                            <li><a href="<?=site_url() .'/index/PublicView/judges_more' ?>" onclick="">评审介绍</a></li>
+                            <li><a href="<?=site_url() .'/index/PublicView/contact' ?>" onclick="navTo('contact')">联系我们</a></li>
 
                         </ul>
                     </div>
                     <div class="about-us" id="CompanyList">
                         <p> <span>指导单位:</span> <span style="margin-left: 3px;"> <a href=""
                                                                                    style="color: #fff">哈哈哈哈啊哈哈哈哈</a> <span style="color: #fff">、</span> <a
-                                    href="" style="color: #fff">哈哈哈哈啊哈哈哈哈会</a> <span
-                                    style="color: #fff">、</span> <a href="" style="color: #fff">哈哈哈哈啊哈哈</a>
+                                        href="" style="color: #fff">哈哈哈哈啊哈哈哈哈会</a> <span
+                                        style="color: #fff">、</span> <a href="" style="color: #fff">哈哈哈哈啊哈哈</a>
                                         <span style="color: #fff"></span> </span> </p>
                         <p> <span>主办单位:</span> <span style="margin-left: 3px;"> <a href=""
                                                                                    style="color: #fff">哈哈哈哈啊</a> <span style="color: #fff">、</span> <a href=""
@@ -37,13 +37,13 @@
                 <div class="col-md-5 row left">
                     <div class="col-md-5">
                         <div class="er-code">
-                            <img src="../images/home/weibo.png" alt="">
+                            <img src="./images/home/weibo.png" alt="">
                         </div>
                         <span>扫一扫：关注微博</span>
                     </div>
                     <div class="col-md-5 col-md-offset-2">
                         <div class="er-code">
-                            <img src="../images/home/weixin.png" alt="">
+                            <img src="./images/home/weixin.png" alt="">
                         </div>
 
                         <span>扫一扫：关注微信</span>

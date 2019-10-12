@@ -67,7 +67,11 @@
     <?php $this->load->view('index/commonFooter')?>
     <script src="./public/script/common.js"></script>
     <script>
+        $('#commonHeader').load('./pages/components/newHeader.html', null, function () {
+            // 设置头部当前选中项
+            selectHeaderActiveClass('index');
 
+        })
         $('.control_left').load('./components/aboutCommonSideMenu.html', null, function () {
             $('.control_left .nav li').removeClass('active');
             $('.control_left .nav li[name=about]').addClass('active');
@@ -77,8 +81,8 @@
             $('.control_left .nav li ').click(function () {
                 $(this).addClass('active').siblings().removeClass('active');
             })
-            //  头部导航切换 elName为默认选中的标签  
-            // navHeder('homePage')
+            //头部导航切换 elName为默认选中的标签
+             navHeder('homePage')
         }
         window.onload = function () {
             init()

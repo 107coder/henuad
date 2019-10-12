@@ -41,7 +41,7 @@ class User_model extends CI_Model {
     }
 
     // 补全用户信息
-    public  function completeInfo($data_arr,$where)
+    public function completeInfo($data_arr,$where)
     {
         return $this->db->update('user',$data_arr,$where);
     }
