@@ -52,7 +52,7 @@
                         </li>
 
                         <li onclick="" name="about">
-                            <a href="pages/about.html">关于大广节</a>
+                            <a href="<?php echo site_url() .'/index/PublicView/about' ?>">关于大广节</a>
                         </li>
                         <li onclick="" name="news">
                             <a href="<?php echo site_url() .'/index/PublicView/news_more' ?>">新闻动态</a>
@@ -202,7 +202,7 @@
                             </div>
                             <div class="content_right">
                                 <p class="rightt one_txt_cut"><?=$v['Title']?></p>
-                                <p class="rightb txt_cut_4"> 5月31日，第十八届上海国际大学生广告节...</p>
+                                <p style="width:280px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" class="rightb txt_cut_4">  5月31日，第十八届上海国际大学生广告节... </p>
                         </div>
                         </div>
                     </a>
@@ -213,16 +213,18 @@
                     <div class="clearfix ">
                         <div class="left">
                             <img src="<?php echo base_url('uploads/'.$v['Picture']);?>"
-                                alt="">
+                                 alt="">
                         </div>
                         <a href="./pages/moreNews.html">
                             <div class="right top_news">
                                 <h2 class="txt_cut_2"><?=$v['Title']?></h2>
                                 <p class="time"><?php $datestring = '%Y-%m-%d';echo mdate($datestring,$v['Date']);?></p>
-                                <p class="question txt_cut_2">哈哈哈哈啊哈哈啊哈哈哈...</p>
+                                <p class="question txt_cut_2"> 哈哈哈哈哈哈哈哈哈哈哈哈哈哈...
+
+                                </p>
                                 <div class="arrow">
-                                    <!-- <div> <img src="./images/arrowRight.png" alt=""> <img
-                                            src="./images/arrowRight2.png" alt=""> -->
+                                    <div> <img src="./images/arrowRight.png" alt=""> <img
+                                            src="./images/arrowRight2.png" alt="">
 
                                     </div>
                                 </div>

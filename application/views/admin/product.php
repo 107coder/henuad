@@ -11,7 +11,7 @@
 		<div class="admin-content-body">
       <div class="am-cf am-padding am-padding-bottom-0">
         <div class="am-fl am-cf">
-          <strong class="am-text-primary am-text-lg">产品管理</strong> 
+          <strong class="am-text-primary am-text-lg">美图欣赏</strong>
         </div>
       </div>
 

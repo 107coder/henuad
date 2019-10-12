@@ -18,18 +18,19 @@
 					<li class="layui-nav-item">
 						<a href="javascript:;">
 							<img src="<?php  echo base_url('public/admin/');?>images/1.gif" class="layui-nav-img"> 管理员
+                            <span style="color:#09bbff;font-size:16px;font-weight: bold">[<?php echo $this->session->userdata('mobileNumber')?>]</span>
 						</a>
-						<dl class="layui-nav-child">
+						<!--<dl class="layui-nav-child">
 							<dd>
 								<a href="">基本资料</a>
 							</dd>
 							<dd>
-								<a href="">安全设置</a>
+							    <a href="">安全设置</a>
 							</dd>
-						</dl>
+						</dl>-->
 					</li>
 					<li class="layui-nav-item">
-						<a href="">退了</a>
+						<a href="<?php echo site_url('admin/login/login_out')?>">退了</a>
 					</li>
 				</ul>
 			</div>
@@ -39,10 +40,10 @@
 					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
 					<ul class="layui-nav layui-nav-tree" lay-filter="test">
 						<li class="layui-nav-item layui-nav-itemed">
-							<a class="" href="javascript:;">菜单栏</a>
+							<a class="" href="javascript:;">后台栏目</a>
 							<dl class="layui-nav-child">
 								<dd>
-									<a href="<?php echo site_url() .'/admin/background/product' ?>" target="right">产品管理</a>
+									<a href="<?php echo site_url() .'/admin/background/product' ?>" target="right">美图欣赏</a>
 								</dd>
 								<dd>
 									<a href="<?php echo site_url() .'/admin/type/index' ?>" target="right">分类管理</a>
@@ -54,13 +55,7 @@
                                     <a href="<?php echo site_url() .'/admin/judges/index' ?>" target="right">评委管理</a>
                                 </dd>
 								<dd>
-									<a href="link.html" target="right">友情链接</a>
-								</dd>
-								<dd>
-									<a href="message.html" target="right">留言管理</a>
-								</dd>
-								<dd>
-									<a href="message.html" target="right">用户管理</a>
+									<a href="<?php echo site_url() .'/admin/users/index' ?>" target="right">用户管理</a>
 								</dd>
 								<dd>
 									<a href="javascript:void(0)"  onclick="updatePwd('修改密码',1)">修改密码</a>
@@ -68,7 +63,7 @@
 							</dl>
 						</li>
 						<li class="layui-nav-item">
-							<a href="javascript:;">菜单栏</a>
+							<a href="javascript:;">前台栏目</a>
 							<dl class="layui-nav-child">
                                 <dd>
                                     <a href="<?php echo site_url() .'/index/PublicView/index' ?>" target="right">前台页面</a>
@@ -110,7 +105,7 @@
 			<div class="layui-body" style="z-index: 0;">
 				<!-- 内容主体区域 -->
 				<div style="padding: 15px;">
-					<iframe src="product.html" name="right" frameborder="0" width="100%" height="1200"></iframe>
+					<iframe src="<?php echo site_url() .'/admin/background/welcome' ?>" name="right" frameborder="0" width="100%" height="1200"></iframe>
 
 				</div>
 			</div>

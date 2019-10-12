@@ -32,9 +32,9 @@ class Background extends CI_Controller
         $this->load->library('pwdhash'); // 载入加密类
         //验证原始密码
         $mobileNumber = $this->session->userdata('mobileNumber');
-        $userData = $this->User_model->checkMobile($mobileNumber);
+        $userData = $this->User_model->checkMobile1($mobileNumber);
         $password = $this->input->post('password');
-        if($userData[0]['password'] != $this->pwdhash->HashPassword($password)) error('原始密码错误');
+        if(!$this->pwdhash->CheckPassword($password,$userData[0]['password'])) error('原始密码错误');
         $passwordN = $this->input->post('passwordN');
         $passwordE = $this->input->post('passwordE');
         if($passwordN != $passwordE) error('两次密码不同');
