@@ -10,7 +10,7 @@ class MY_Controller extends CI_Controller
         $mobileNumber = $this->session->userdata('mobileNumber');
 
         if(!$mobileNumber) {
-            redirect('admin/login/index');
+            redirect('admin/logon/index');
         }
     }
 }

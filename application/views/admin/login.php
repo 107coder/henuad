@@ -24,7 +24,7 @@
                     <input type="hidden" name="enews" value="login">
                     <table class="tab" border="0">
                         <tr>
-                            <td align="center">手机号：</td>
+                            <td align="center">用户名：</td>
                             <td><input style="width:150px;" name="mobileNumber" class="inp" size=15 maxlength=40></td>
                         </tr>
                         <tr>
