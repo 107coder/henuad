@@ -29,9 +29,9 @@ class User_model extends CI_Model {
         return $data;
     }
     // 登录验证
-    public function checkLogin($data_arr)
+    public function checkLogin($where)
     {
-        $data = $this->db->get_where('user',$data_arr)->result_array();
+        $data = $this->db->select('name,password,email,schoolName')->get_where('user',$where)->result_array();
         return $data;
     }
     
@@ -39,17 +39,18 @@ class User_model extends CI_Model {
     public function change_pwd($mobileNumber,$data){
         $this->db->update('user',$data,array('mobileNumber' => $mobileNumber));
     }
+
     // 补全用户信息
     public  function completeInfo($data_arr,$where)
     {
         return $this->db->update('user',$data_arr,$where);
     }
+
     // 获取用户信息
     public function getInfo($where)
     {
         return $this->db->select('mobileNumber,email,name,schoolName,professional,grade,personalProfil')->from('user')->where($where)->get()->result_array();
     }
-
 
     //后台删除用户
     public function del_user($mobileNumber){

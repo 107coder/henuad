@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+    <!--<iframe src="<?=site_url('index/PublicView/heade');?>"  frameborder="0"></iframe> -->
+>>>>>>> e49411eeabab8af8814092b9e0e660b4482cd3d1
 
 <head>
     <meta charset="UTF-8">
@@ -28,7 +32,78 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <?php $this->load->view('index/head_top')?>
+=======
+    <!--头部导航-->
+    <div id="commonHeader">
+        <header class="headerBase">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                        data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="./images/logo.png" class="navbar-brand" onclick="" alt="">
+                </div>
+
+                <nav id="bs-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+
+                        <li onclick="" name="index" class="active">
+                            <a href="index.html">首页</a>
+                        </li>
+
+                        <li onclick="" name="about">
+                            <a href="<?php echo site_url() .'/index/PublicView/about' ?>">关于大广节</a>
+                        </li>
+                        <li onclick="" name="news">
+                            <a href="<?php echo site_url() .'/index/PublicView/news_more' ?>">新闻动态</a>
+                        </li>
+                        <li onclick="" name="judgesIntroduce">
+                            <a href="<?php echo site_url() .'/index/PublicView/judges_more' ?>">评审介绍</a>
+                        </li>
+
+                        <li onclick="" name="linkus">
+                            <a href="pages/contact.html">联系我们</a>
+                        </li>
+
+                    </ul>
+                    <!-- mavleft -->
+                    <?php if(empty($this->session->mobile)){?>
+                    <ul class="nav navbar-nav navbar-right" id="unLogin">
+                        <li onclick=""><a href="<?=site_url('index/PublicView/login')?>">登录</a>
+                        </li>
+                        <li onclick=""><a href="<?=site_url('index/PublicView/register')?>">注册</a>
+                        </li>
+                    </ul>
+                    <?php } else {?>
+
+                    <div class="nav navbar-nav navbar-right" id="userPic" style=""
+                        onmouseleave="hideUserImgList(event)">
+                        <img id="user-image" onmouseenter="getUserCenterList(event)"
+                            src="./images/touxiang.jpg" width="40" alt="" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <div id="user-navbar" class="hideList">
+                            <div class="navbar-content">
+                                <a href="<?=site_url('index/PrivateView/userInfo');?>"><div class="navbar-item" name="user-info">个人信息</div></a>
+                                <div class="navbar-item" onclick="navTo('upload')" name="upload">作品上传</div>
+                                <div class="navbar-item" onclick="navTo('mycreation')" name="mycreation">我的作品</div>
+                                <a href="<?=site_url('index/PrivateView/changePassword');?>"><div class="navbar-item" name="changePassword">修改密码</div></a>
+                                <a href="<?=site_url('index/UserAction/loginout');?>"><div class="navbar-item" >安全退出</div></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php }?>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+>>>>>>> e49411eeabab8af8814092b9e0e660b4482cd3d1
     <div id="bannerBox">
         <div class="container cansaixuzhi">
             <div class="banner_icon col-sm-4 col-xs-4">
@@ -147,19 +222,19 @@
             <div class="clearfix" id="cooperationList">
                 <div class="col-sm-2 col-xs-2"
                     onclick="navTo('brandIntroduce', {brandguid: '008f5c90-71a2-4913-a953-ac94c9b52550', isTopic: 1})">
-                    <img src="https://heguangjie."
+                    <img src=""
                         alt=""> </div>
                 <div class="col-sm-2 col-xs-2"
                     onclick="navTo('brandIntroduce', {brandguid: 'ca0fd832-a0b7-4e6c-b5c9-92e2144053ae', isTopic: 1})">
-                    <img src="https://heguangjie."
+                    <img src=""
                         alt=""> </div>
                 <div class="col-sm-2 col-xs-2"
                     onclick="navTo('brandIntroduce', {brandguid: '95d33a27-aae5-4412-9aa4-efec1e5f2cb9', isTopic: 1})">
-                    <img src="https://heguangjie."
+                    <img src=""
                         alt=""> </div>
                 <div class="col-sm-2 col-xs-2"
                     onclick="navTo('brandIntroduce', {brandguid: 'deee5900-931a-4175-86ff-da51d57dab78', isTopic: 0})">
-                    <img src="https://heguangjie."
+                    <img src=""
                         alt=""> </div>
             </div>
         </div>
@@ -661,36 +736,36 @@
                     </div>
                     <div class="schoolBox swiper-slide" data-swiper-slide-index="2"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                     <div class="schoolBox swiper-slide" data-swiper-slide-index="3"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                     <div class="schoolBox swiper-slide" data-swiper-slide-index="5"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                     <div class="schoolBox swiper-slide" data-swiper-slide-index="6"
                         style="width: 1220px; margin-left: 12px;">
-                       
+
                     </div>
                     <div class="schoolBox swiper-slide swiper-slide-active" data-swiper-slide-index="8"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                     <div class="schoolBox swiper-slide swiper-slide-next" data-swiper-slide-index="9"
                         style="width: 1220px; margin-left: 12px;">
-                       
+
                     </div>
                     <div class="schoolBox swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                 </div>
                 <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
-           
+
 
         </div>
     </div>
