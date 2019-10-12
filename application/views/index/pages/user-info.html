@@ -9,24 +9,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <base href="<?=base_url();?>">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"/>
-    <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/assets/swiper/swiper.min.css">
-    <link rel="stylesheet" href="../public/styles/base.css">
-    <link rel="stylesheet" href="../public/styles/common.css">
-    <link rel="stylesheet" href="../public/styles/index.css">
-    <link rel="stylesheet" href="../public/styles/header.css">
-    <link rel="stylesheet" href="../public/styles/footer.css">
-    <link rel="stylesheet" href="../public/styles/user-info.css">
-    <script src="../public/assets/jquery-3.2.1.js"></script>
-    <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../public/assets/swiper/swiper.min.js"></script>
-    <script src="../public/assets/layer/layer.js"></script>
-    <script src="../public/utils/render.request.js"></script>
-    <script src="../public/utils/render.utils.js"></script>
-    <script src="../public/assets/baiduTemplate.js"></script>
-    <script src="../public/utils/common.js"></script>
-    <script src="../public/script/common.js"></script>
+    <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./public/styles/base.css">
+    <link rel="stylesheet" href="./public/styles/common.css">
+    <link rel="stylesheet" href="./public/styles/index.css">
+    <link rel="stylesheet" href="./public/styles/header.css">
+    <link rel="stylesheet" href="./public/styles/footer.css">
+    <link rel="stylesheet" href="./public/styles/user-info.css">
+    <script src="./public/assets/jquery-3.2.1.js"></script>
+    <script src="./public/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./public/assets/swiper/swiper.min.js"></script>
+    <script src="./public/assets/layer/layer.js"></script>
+    <script src="./public/utils/render.request.js"></script>
+    <script src="./public/utils/render.utils.js"></script>
+    <script src="./public/assets/baiduTemplate.js"></script>
+    <script src="./public/utils/common.js"></script>
+    <script src="./public/script/common.js"></script>
 </head>
 <body>
     <!--头部导航-->
@@ -44,7 +45,7 @@
             <nav id="bs-navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
                             <li onclick="" name="index" >
-                                    <a href="../index.html">首页</a>
+                                    <a href="<?=site_url();?>">首页</a>
                                 </li>
                          
                                 <li onclick="" name="about">
@@ -70,7 +71,7 @@
 
                     </ul>
                 <div class="nav navbar-nav navbar-right" id="userPic" style="" onmouseleave="hideUserImgList(event)">
-                    <img id="user-image" onmouseenter="getUserCenterList(event)" src="../images/touxiang.jpg" width="40" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img id="user-image" onmouseenter="getUserCenterList(event)" src="./images/touxiang.jpg" width="40" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div id="user-navbar" class="hideList">
                         <div class="navbar-content">
                                 <a href="../pages/user-info.html"> <div class="navbar-item active" onclick="" name="user-info">个人信息</div></a>
@@ -102,38 +103,39 @@
             <div class="upload_head">
                 <span class="upload_title">个人信息</span>
             </div>
-            <div class="form_information">
+            <form action="<?=site_url('index/PrivateAction/completeInfo');?>" id="userInfo" method="post">
+                <div class="form_information">
                 <div class="write_info">
                     <div class="work_information info_items">
                         <div class="info_content">
                             <div class="info_item">
                                 <div class="item_name">个人编号/Personal number</div>
-                                <div class="item-txt user-no">---</div>
+                                <div class="item-txt user-no"><?=$this->session->mobile?></div>
                             </div>
                             <div class="info_item">
                                 <div class="item_name require">姓名/Name </div>
                                 <p style="font-size: 12px;color: #FFAC2A;padding-left: 8px;">涉及到获奖作品等级和奖金发放，请如实填写个人真实姓名</p>
                                 <div class="row">
                                      <div class="col-md-5">
-                                         <input class="input_box" id="name" type="text" placeholder="输入姓名"></div>
+                                         <input class="input_box" id="name" name="name" type="text" value="<?=$userInfo['0']['name'];?>" placeholder="输入姓名"></div>
                                 </div> 
                             </div>
                             <div class="info_item">
                                 <div class="item_name require">邮箱/Email</div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <input class="input_box" id="email" type="text" placeholder="输入个人邮箱"></div>
+                                        <input class="input_box" id="email" name="email" type="text" value="<?=$userInfo['0']['email'];?>" placeholder="输入个人邮箱"></div>
                                 </div>
                             </div>
                             <div class="info_item">
                                 <div class="item_name">手机号码/Mobile phone</div>
-                                <div class="item-txt" id="phoneNumber"></div>
+                                <div class="item-txt" id="phoneNumber"><?=$this->session->mobile?></div>
                             </div>
                             <div class="info_item">
                                 <div class="item_name require">学校名称/School name</div>
                                 <div class="row">
                                     <div class="col-md-5 mySchoolBox" style="position: relative">
-                                        <input class="input_box" data-guid="" id="schoolName" type="text" placeholder="输入学校名称">
+                                        <input class="input_box" data-guid="" id="schoolName" name="schoolName" type="text" value="<?=$userInfo['0']['schoolName'];?>" placeholder="输入学校名称">
                                         <div class="school-list" style="display: none;"> </div>
                                         <div class="select_arrow"></div>
                                     </div>
@@ -146,28 +148,29 @@
                                 <div class="item_name require">专业/Professional</div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <input class="input_box" type="text" id="major" placeholder="输入所在专业"></div>
+                                        <input class="input_box" type="text" id="major" name="professional" value="<?=$userInfo['0']['professional'];?>" placeholder="输入所在专业"></div>
                                 </div>
                             </div>
                             <div class="info_item">
                                 <div class="item_name require">年级/Grade</div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <input class="input_box" type="text" id="grade" placeholder="输入所在年级"></div>
+                                        <input class="input_box" type="text" id="grade" name="grade" value="<?=$userInfo['0']['grade'];?>" placeholder="输入所在年级"></div>
                                 </div>
                             </div>
                             <div class="info_item">
                                 <div class="item_name require">个人简介/Personal profil</div>
-                                <textarea class="input_box textarea_box" maxlength="200" id="remark" placeholder="简要说明你的个人简介（200字内）"></textarea>
+                                <textarea class="input_box textarea_box" maxlength="200" id="remark" name="personalProfil" placeholder="简要说明你的个人简介（200字内）"><?=$userInfo['0']['personalProfil'];?></textarea>
                             </div>
                         </div>
                     </div>
                     
                 </div>
                 <div class="upload_submit_btn">
-                    <div class="submit_btn confirm_submit active_btn" id="saveUserInfo">提交</div>
+                    <div class="submit_btn confirm_submit active_btn" id="saveUserInfo" onclick="complete()">提交</div>
                 </div>
             </div>
+            </form>
            
         </div>
         <div id="clickHere" class="modal fade" tabindex="-1" role="dialog">
@@ -296,6 +299,25 @@
         $('#commonFooter').load('./components/footer.html')
         initPageEvent();
     </script> -->
+    <script>
+        function complete() {
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var schoolName = $("#schoolName").val();
+            var professional = $("#major").val();
+            var grade = $("#grade").val();
+            var personalProfil = $("#remark").val();
+
+            if (name != "" && email != "" && schoolName != "" && professional != "" && grade != "" && personalProfil != "")
+            {
+                $("#userInfo").submit();
+            }
+            else
+            {
+                alert("请填写完整的信息！");
+            }
+        }
+    </script>
     
 </body>
 </html>

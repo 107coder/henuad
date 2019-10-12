@@ -130,7 +130,7 @@ class UserAction extends CI_Controller {
             {
                 if(empty($data[0]['name']) || empty($data[0]['email']) || empty($data[0]['schoolName']))
                 {
-                    $sess_data = ['eomplete' => 0];
+                    $sess_data = ['complete' => 0];
                 }
                 $sess_data['mobile'] = $mobile;
                 $this->session->set_userdata($sess_data);

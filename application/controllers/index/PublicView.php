@@ -85,8 +85,8 @@ class PublicView extends CI_Controller {
         $code = rand(123456,987654);
         $this->session->set_tempdata('code',$code,60);
         $param = "{$code},60";
-        echo $mobile.'   ' ;
-        echo $param;
+
+        echo $code;
         //$this->load->library('sms');
         //$sms_code = $this->sms->send($param,$mobile);
         // echo $sms_code;

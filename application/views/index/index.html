@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <iframe src="<?=site_url('index/PublicView/heade');?>"  frameborder="0"></iframe> 
+    <!--<iframe src="<?=site_url('index/PublicView/heade');?>"  frameborder="0"></iframe> -->
 
 <head>
     <meta charset="UTF-8">
@@ -75,29 +75,23 @@
                         </li>
                     </ul>
                     <?php } else {?>
-                        <ul class="nav navbar-nav navbar-right" id="unLogin">
-                            <li onclick=""><?="欢迎您，".$this->session->mobile;?>
-                            </li>
-                            <li onclick=""><a href="<?=site_url('index/UserAction/loginOut')?>">退出</a>
-                            </li>
-                        </ul>
-                    <?php }?>
-                    <div class="nav navbar-nav navbar-right" id="userPic" style="display: none"
+
+                    <div class="nav navbar-nav navbar-right" id="userPic" style=""
                         onmouseleave="hideUserImgList(event)">
                         <img id="user-image" onmouseenter="getUserCenterList(event)"
                             src="./images/touxiang.jpg" width="40" alt="" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         <div id="user-navbar" class="hideList">
                             <div class="navbar-content">
-                                <div class="navbar-item" onclick="navTo('user-info')" name="user-info">个人信息</div>
+                                <a href="<?=site_url('index/PrivateView/userInfo');?>"><div class="navbar-item" name="user-info">个人信息</div></a>
                                 <div class="navbar-item" onclick="navTo('upload')" name="upload">作品上传</div>
                                 <div class="navbar-item" onclick="navTo('mycreation')" name="mycreation">我的作品</div>
-                                <div class="navbar-item" onclick="navTo('changePassword')" name="changePassword">修改密码
-                                </div>
-                                <div class="navbar-item" onclick="userExit()">安全退出</div>
+                                <a href="<?=site_url('index/PrivateView/changePassword');?>"><div class="navbar-item" name="changePassword">修改密码</div></a>
+                                <a href="<?=site_url('index/UserAction/loginout');?>"><div class="navbar-item" >安全退出</div></a>
                             </div>
                         </div>
                     </div>
+                <?php }?>
                 </nav>
             </div>
         </header>
@@ -267,19 +261,19 @@
             <div class="clearfix" id="cooperationList">
                 <div class="col-sm-2 col-xs-2"
                     onclick="navTo('brandIntroduce', {brandguid: '008f5c90-71a2-4913-a953-ac94c9b52550', isTopic: 1})">
-                    <img src="https://heguangjie."
+                    <img src=""
                         alt=""> </div>
                 <div class="col-sm-2 col-xs-2"
                     onclick="navTo('brandIntroduce', {brandguid: 'ca0fd832-a0b7-4e6c-b5c9-92e2144053ae', isTopic: 1})">
-                    <img src="https://heguangjie."
+                    <img src=""
                         alt=""> </div>
                 <div class="col-sm-2 col-xs-2"
                     onclick="navTo('brandIntroduce', {brandguid: '95d33a27-aae5-4412-9aa4-efec1e5f2cb9', isTopic: 1})">
-                    <img src="https://heguangjie."
+                    <img src=""
                         alt=""> </div>
                 <div class="col-sm-2 col-xs-2"
                     onclick="navTo('brandIntroduce', {brandguid: 'deee5900-931a-4175-86ff-da51d57dab78', isTopic: 0})">
-                    <img src="https://heguangjie."
+                    <img src=""
                         alt=""> </div>
             </div>
         </div>
@@ -781,36 +775,36 @@
                     </div>
                     <div class="schoolBox swiper-slide" data-swiper-slide-index="2"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                     <div class="schoolBox swiper-slide" data-swiper-slide-index="3"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                     <div class="schoolBox swiper-slide" data-swiper-slide-index="5"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                     <div class="schoolBox swiper-slide" data-swiper-slide-index="6"
                         style="width: 1220px; margin-left: 12px;">
-                       
+
                     </div>
                     <div class="schoolBox swiper-slide swiper-slide-active" data-swiper-slide-index="8"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                     <div class="schoolBox swiper-slide swiper-slide-next" data-swiper-slide-index="9"
                         style="width: 1220px; margin-left: 12px;">
-                       
+
                     </div>
                     <div class="schoolBox swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"
                         style="width: 1220px; margin-left: 12px;">
-                        
+
                     </div>
                 </div>
                 <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
-           
+
 
         </div>
     </div>
