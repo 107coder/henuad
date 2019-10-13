@@ -74,14 +74,18 @@ class PublicView extends CI_Controller {
         // 引入数据库，验证手机号是否已经注册
         $this->load->model('user_model','user');
         $exist = $this->user->checkMobile($mobile);
-        
+        $data_arr = array();
         if($exist != 0 && $action == "register")
         {
-            echo "exist";
+            $data_arr['status'] = '00000';
+            $data_arr['message'] = "用户已存在";
+            echo json_encode($data_arr);  
             return false;
         }else if($exist == 0 && $action == 'login')
         {
-            echo "noexist";
+            $data_arr['status'] = '00000';
+            $data_arr['message'] = "用户不存在";
+            echo json_encode($data_arr);
             return false;
         }
         $data = array('mobile_number'=>$mobile);
@@ -90,7 +94,12 @@ class PublicView extends CI_Controller {
         $this->session->set_tempdata('code',$code,60);
         $param = "{$code},60";
 
-        echo $code;
+        $data_arr = array(
+            'status'=>'10000',
+            'message' => '登录成功',
+            'code'    => $code
+        );
+        echo json_encode($data_arr);
         //$this->load->library('sms');
         //$sms_code = $this->sms->send($param,$mobile);
         // echo $sms_code;

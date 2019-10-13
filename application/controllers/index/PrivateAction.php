@@ -64,7 +64,6 @@ class PrivateAction extends CI_Controller
         $mobile = $this->session->mobile;
         $passwordOld = $this->input->post('OldPwd');
         $passwordNew = $this->input->post('NewPwd');
-        $passwordNew = '12345678';
         $password = $this->pwdhash->HashPassword($passwordNew);
 
         $where = array('mobileNumber'=>$mobile);

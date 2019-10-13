@@ -64,20 +64,30 @@ function initStep2(){
 
 
 function sendCode(mobile,element){
-    Request_.ajax({
+    console.log(mobile);
+    $.ajax({
         // key: '/api/Account/SendRestigerSms',
         // type: 'POST',
-        key: '',
-        type: '',
+        // key: '',
+        url:'<?php echo site_url("index/PublicView/sendCode");?>',
+        type: 'post',
         data: {
-            tel: mobile
-        }, 
+            phoneNumber: mobile,
+            action:'register'
+        },
+        dataType:'json',
         success: function (resp) {
+            console.log(resp);
             if(resp.Stata=='10000'){
                 setTime(element);
             }else{
+                console.log('resp');
                 layer.msg(resp.Message);
             }
+        },
+        error: function()
+        {
+            console.log('error');
         }
     })
 }
