@@ -32,6 +32,16 @@ class PublicView extends CI_Controller {
     {
         $this->load->view('index/pages/about.html');
     }
+    //赛事须知
+    public function know()
+    {
+        $this->load->view('index/pages/know.html');
+    }
+    //命题下载
+    public function load()
+    {
+        $this->load->view('index/pages/load.html');
+    }
     //前台新闻动态及更多新闻
     public function news_more()
     {
@@ -53,6 +63,11 @@ class PublicView extends CI_Controller {
         }else $data['judges'] = $this->Judge_model->judge_type();
         $data['type'] = $this->Type_model->check2();
         $this->load->view('index/pages/JudgesIntroduce.html',$data);
+    }
+    //前台联系我们
+    public function contact()
+    {
+        $this->load->view('index/pages/contact.html');
     }
     public function heade()
     {

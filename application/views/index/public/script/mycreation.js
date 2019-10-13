@@ -1,13 +1,7 @@
 var producNuber = 0;
-$('#commonHeader').load('./components/newHeader.html', null, function() {
-    selectHeaderActiveClass('mycreation');
-    // 登录按钮和登陆头像的显示隐藏逻辑
-    loginBtnAndUserImg();
-})
 $('.control_left').load('./components/UserCenterSideMenu.html', null, function() {
     userCenterSiderActiveClass('mycreation');
 });
-$('#commonFooter').load('./components/footer.html')
 function initCheckBox(){
     $('.check_box').on('click',function(){
       $(this).parent('.select_main').find('.check_btn').removeClass('active_btn');

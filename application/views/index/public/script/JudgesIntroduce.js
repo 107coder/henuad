@@ -132,19 +132,7 @@ function changeJudgesType(index, guid) {
     getJudgesListByGuid(params);
 }
 
-// 切换届数
-function changeSideMenu(index, guid) {
-    PeriodGuid = guid;
-    $('#JudgesPeriod .employmentSideMenu').removeClass('active');
-    $('#JudgesPeriod .employmentSideMenu:eq('+ index +')').addClass('active');
-    var params = {
-        Period: PeriodGuid,
-        TypeGuid: JudgeTypeGuid,
-        page: 0,
-        num: limitNum
-    }
-    getJudgesListByGuid(params);
-}
+
 
 // 根据guid获取评委详情
 function getJudgeDetailByGuid(guid) {
@@ -181,7 +169,6 @@ function readDetail(guid) {
 }
 
 function isListOrDetail(type) {
-    console.log(type, $('#Judges-list'), $('#Judges-detail'))
     if (type === 'list') {
         $('#Judges-list').show();
         $('#Judges-detail').hide();
@@ -189,36 +176,4 @@ function isListOrDetail(type) {
         $('#Judges-list').hide();
         $('#Judges-detail').show();
     }
-}
-
-function nextPage(params) {
-    var totalPage = Math.ceil(totalNum / limitNum);
-    if (params.page >= totalPage) {
-        return
-    }
-    getJudgesListByGuid(params);
-}
-
-function lastPage(params) {
-    var totalPage = Math.ceil(totalNum / limitNum);
-    if (params.page < 0) {
-        return
-    }
-    getJudgesListByGuid(params);
-}
-
-function showCoverCeng(el) {
-    $(el).find('.cover-ceng').removeClass('top100');
-    $(el).find('.cover-ceng').addClass('top0');
-    $(el).find('.go').css({
-        opacity: 1
-    });
-}
-
-function hideCoverCeng(el) {
-    $(el).find('.cover-ceng').removeClass('top0');
-    $(el).find('.cover-ceng').addClass('top100');
-    $(el).find('.go').css({
-        opacity: 0
-    });
 }

@@ -15,10 +15,10 @@ class UserAction extends CI_Controller {
     public function getSession(){
         print_r($_SESSION);
     }
-    public function login()
+    /*public function login()
     {
         $this->load->view('index/login.html');
-    }
+    }*/
 
     // 校验验证码是否正确
     public function checkCode($code = '')

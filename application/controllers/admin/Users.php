@@ -16,13 +16,13 @@ class Users extends CI_Controller
         $this->load->library('pagination');
         $perPage = 6;
         $config['base_url'] = site_url('admin/users/index');
-        $config['total_rows'] = $this->db->count_all_results('user');
+        $config['total_rows'] = $this->db->count_all_results();
         $config['per_page'] = $perPage;
         $config['uri_segment'] = 4;
         $config['attributes'] = array('class' => 'am-disabled');
 
         $this->pagination->initialize($config);
-        $data['total'] = $this->db->count_all_results('user');
+        $data['total'] = $this->db->count_all_results();
         $data['links'] = $this->pagination->create_links();
         $offset = $this->uri->segment(4);
         $this->db->limit($perPage, $offset);

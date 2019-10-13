@@ -45,7 +45,7 @@ class PrivateAction extends CI_Controller
 
         if($status)
         {
-            $url = site_url('index/PrivateView/userInfo');
+            $url = 'index/PrivateView/userInfo';
             $msg = "保存成功";
             success($url,$msg);
         }
@@ -100,4 +100,5 @@ class PrivateAction extends CI_Controller
         echo json_encode($result);
 
     }
+
 }

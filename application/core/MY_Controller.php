@@ -8,9 +8,10 @@ class MY_Controller extends CI_Controller
         parent::__construct();
 
         $mobileNumber = $this->session->userdata('mobileNumber');
+        if(!$mobileNumber) {
+            redirect('admin/logon/index');
 
-        if(empty($mobileNumber)) {
-            redirect('admin/login/index');
+
         }
     }
 }

@@ -10,7 +10,11 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <base href="<?=base_url();?>">
+
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"/>
+
     <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
     <link rel="stylesheet" href="./public/styles/base.css">
@@ -30,148 +34,83 @@
     <script src="./public/script/common.js"></script>
 </head>
 <body>
-    <!--头部导航-->
-    <div id="commonHeader"><header class="headerBase">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <img src="../images/logo.png" class="navbar-brand" onclick="navTo('../index')" alt="">
-            </div>
-            <nav id="bs-navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                            <li onclick="" name="index" >
-                                    <a href="<?=site_url();?>">首页</a>
-                                </li>
-                         
-                                <li onclick="" name="about">
-                                    <a href="about.html">关于大广节</a>                       
-                                </li>
-                                <li onclick="" name="news" class="active">
-                                    <a href="moreNews.html">新闻动态</a>
-                                </li>
-                                <li onclick="" name="judgesIntroduce">
-                                    <a href="JudgesIntroduce.html">评审介绍</a>
-                                </li>
-                                
-                                <li onclick="" name="linkus">
-                                    <a href="contact.html">联系我们</a>
-                                </li>
-                    </ul>
 
-                    <ul class="nav navbar-nav navbar-right" id="unLogin">
-                            <!-- <li onclick=""><a href="../pages/login.html">登录</a>
-                            </li>
-                            <li onclick=""><a href="../pages/register.html">注册</a>
-                            </li> -->
-
-                    </ul>
-                <div class="nav navbar-nav navbar-right" id="userPic" style="" onmouseleave="hideUserImgList(event)">
-                    <img id="user-image" onmouseenter="getUserCenterList(event)" src="./images/touxiang.jpg" width="40" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div id="user-navbar" class="hideList">
-                        <div class="navbar-content">
-                                <a href="../pages/user-info.html"> <div class="navbar-item active" onclick="" name="user-info">个人信息</div></a>
-                                <a href="../pages/upload.html"> <div class="navbar-item" onclick="" name="upload">作品上传</div></a>
-                                 <a href="../pages/mycreation.html"> <div class="navbar-item" onclick="" name="mycreation">我的作品</div></a>
-                                <a href="../pages/changePassword.html"> <div class="navbar-item" onclick="" name="changePassword">修改密码</div></a>
-                                 <a href="../heguangjie/pages/login.html"></a><div class="navbar-item" onclick="">安全退出</div></a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header></div>
+    <?php $this->load->view('index/head_top')?>
     <div class="user-info-main container">
-        <div class="control_left"><div class="control_left UserCenterMenu">
-    <div class="title">
-        <p>个人中心</p>
-        <p>PERSONAL CENTER</p>
-    </div>
-    <ul class="nav">
-       <a href="../pages/user-info.html"> <li onclick="" name="user-info" class="active">个人信息</li></a>
-       <a href="../pages/upload.html"><li onclick="" name="upload">作品上传</li></a>
-        <a href="../pages/mycreation.html"><li onclick="" name="mycreation">我的作品</li></a>
-        <a href="../pages/myAward.html"></a><li name="myAward" onclick="">我的获奖</li></a>
-        <a href="../pages/changePassword.html"> <li name="changePassword" onclick="">修改密码</li></a>
-    </ul>
-    </div></div>
+        <?php $this->load->view('index/control_left')?>
         <div class="upload_content">
             <div class="upload_head">
                 <span class="upload_title">个人信息</span>
             </div>
             <form action="<?=site_url('index/PrivateAction/completeInfo');?>" id="userInfo" method="post">
                 <div class="form_information">
-                <div class="write_info">
-                    <div class="work_information info_items">
-                        <div class="info_content">
-                            <div class="info_item">
-                                <div class="item_name">个人编号/Personal number</div>
-                                <div class="item-txt user-no"><?=$this->session->mobile?></div>
-                            </div>
-                            <div class="info_item">
-                                <div class="item_name require">姓名/Name </div>
-                                <p style="font-size: 12px;color: #FFAC2A;padding-left: 8px;">涉及到获奖作品等级和奖金发放，请如实填写个人真实姓名</p>
-                                <div class="row">
-                                     <div class="col-md-5">
-                                         <input class="input_box" id="name" name="name" type="text" value="<?=$userInfo['0']['name'];?>" placeholder="输入姓名"></div>
-                                </div> 
-                            </div>
-                            <div class="info_item">
-                                <div class="item_name require">邮箱/Email</div>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <input class="input_box" id="email" name="email" type="text" value="<?=$userInfo['0']['email'];?>" placeholder="输入个人邮箱"></div>
+
+                    <div class="write_info">
+                        <div class="work_information info_items">
+                            <div class="info_content">
+                                <div class="info_item">
+                                    <div class="item_name">个人编号/Personal number</div>
+                                    <div class="item-txt user-no"><?=$this->session->mobile?></div>
                                 </div>
-                            </div>
-                            <div class="info_item">
-                                <div class="item_name">手机号码/Mobile phone</div>
-                                <div class="item-txt" id="phoneNumber"><?=$this->session->mobile?></div>
-                            </div>
-                            <div class="info_item">
-                                <div class="item_name require">学校名称/School name</div>
-                                <div class="row">
-                                    <div class="col-md-5 mySchoolBox" style="position: relative">
-                                        <input class="input_box" data-guid="" id="schoolName" name="schoolName" type="text" value="<?=$userInfo['0']['schoolName'];?>" placeholder="输入学校名称">
-                                        <div class="school-list" style="display: none;"> </div>
-                                        <div class="select_arrow"></div>
-                                    </div>
-                                    <div class="col-md-7 input-tips">
-                                        没有您的学校？<a data-toggle="modal" data-target="#clickHere">请点击这里</a>
+                                <div class="info_item">
+                                    <div class="item_name require">姓名/Name </div>
+                                    <p style="font-size: 12px;color: #FFAC2A;padding-left: 8px;">涉及到获奖作品等级和奖金发放，请如实填写个人真实姓名</p>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <input class="input_box" id="name" type="text" value="<?=$userInfo['0']['name'];?>" placeholder="输入姓名"></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="info_item">
-                                <div class="item_name require">专业/Professional</div>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <input class="input_box" type="text" id="major" name="professional" value="<?=$userInfo['0']['professional'];?>" placeholder="输入所在专业"></div>
+                                <div class="info_item">
+                                    <div class="item_name require">邮箱/Email</div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <input class="input_box" id="email" type="text" value="<?=$userInfo['0']['email'];?>" placeholder="输入个人邮箱"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="info_item">
-                                <div class="item_name require">年级/Grade</div>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <input class="input_box" type="text" id="grade" name="grade" value="<?=$userInfo['0']['grade'];?>" placeholder="输入所在年级"></div>
+                                <div class="info_item">
+                                    <div class="item_name">手机号码/Mobile phone</div>
+                                    <div class="item-txt" id="phoneNumber"><?=$this->session->mobile?></div>
                                 </div>
-                            </div>
-                            <div class="info_item">
-                                <div class="item_name require">个人简介/Personal profil</div>
-                                <textarea class="input_box textarea_box" maxlength="200" id="remark" name="personalProfil" placeholder="简要说明你的个人简介（200字内）"><?=$userInfo['0']['personalProfil'];?></textarea>
+                                <div class="info_item">
+                                    <div class="item_name require">学校名称/School name</div>
+                                    <div class="row">
+                                        <div class="col-md-5 mySchoolBox" style="position: relative">
+                                            <input class="input_box" data-guid="" id="schoolName" type="text" value="<?=$userInfo['0']['schoolName'];?>" placeholder="输入学校名称">
+                                            <div class="school-list" style="display: none;"> </div>
+                                            <div class="select_arrow"></div>
+                                        </div>
+                                        <div class="col-md-7 input-tips">
+                                            没有您的学校？<a data-toggle="modal" data-target="#clickHere">请点击这里</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div class="item_name require">专业/Professional</div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <input class="input_box" type="text" id="major" value="<?=$userInfo['0']['professional'];?>" placeholder="输入所在专业"></div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div class="item_name require">年级/Grade</div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <input class="input_box" type="text" id="grade" value="<?=$userInfo['0']['grade'];?>" placeholder="输入所在年级"></div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div class="item_name require">个人简介/Personal profil</div>
+                                    <textarea class="input_box textarea_box" maxlength="200" id="remark" placeholder="简要说明你的个人简介（200字内）"></textarea>
+                                </div>
                             </div>
                         </div>
+
                     </div>
-                    
+                    <div class="upload_submit_btn">
+                        <div class="submit_btn confirm_submit active_btn" id="saveUserInfo" onclick="complete()">提交</div>
+                    </div>
                 </div>
-                <div class="upload_submit_btn">
-                    <div class="submit_btn confirm_submit active_btn" id="saveUserInfo" onclick="complete()">提交</div>
-                </div>
-            </div>
             </form>
-           
         </div>
         <div id="clickHere" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document" style="width: 500px;height: 250px;">
@@ -196,69 +135,11 @@
                         <button type="button" class="btn btn-primary btn-self-close" style="color: #FFAC2A;background-color: #fff;border: 1px solid #D60F43;outline-style: none;" onclick="submitSchoolInfo()">确定</button>
                         <button type="button" class="btn btn-default btn-self-close" data-dismiss="modal">关闭</button>
                     </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- 底部 -->
-    <div id="commonFooter"> <footer>
-            <div class="container content">
-                <div class="row">
-                    <div class="col-md-7 right">
-                        <div class="meun">
-                            <ul>
-                                <li><a href="pages/about.html" onclick="">关于河广节</a></li>
-                                <li><a href="pages/moreNews.html" onclick="">新闻动态</a></li>
-                                <li><a href="pages/JudgesIntroduce.html" onclick="">评审介绍</a></li>
-                                <li><a href="pages/contact.html" onclick="navTo('contact')">联系我们</a></li>
-
-                            </ul>
-                        </div>
-                        <div class="about-us" id="CompanyList">
-                            <p> <span>指导单位:</span> <span style="margin-left: 3px;"> <a href=""
-                                        style="color: #fff">哈哈哈哈啊哈哈哈哈</a> <span style="color: #fff">、</span> <a href=""
-                                        style="color: #fff">哈哈哈哈啊哈哈哈哈会</a> <span style="color: #fff">、</span> <a href=""
-                                        style="color: #fff">哈哈哈哈啊哈哈</a> <span style="color: #fff"></span> </span> </p>
-                            <p> <span>主办单位:</span> <span style="margin-left: 3px;"> <a href=""
-                                        style="color: #fff">哈哈哈哈啊</a> <span style="color: #fff">、</span> <a href=""
-                                        style="color: #fff">河南大学</a> <span style="color: #fff"></span> </span> </p>
-                            <p> <span>独家承办单位:</span> <span style="margin-left: 3px;"> <a href=""
-                                        style="color: #fff">哈哈哈哈哈哈哈哈哈</a> <span style="color: #fff"></span> </span>
-                            </p>
-                            <p> <span>总冠名品牌:</span> <span style="margin-left: 3px;"> <a href=""
-                                        style="color: #fff">哈哈哈哈哈啊</a> <span style="color: #fff"></span> </span> </p>
-                        </div>
-                        <div class="row about-us" style="margin-left:1px;margin-top:3px">
-                            <p>联系电话：000-00000000 老师&nbsp;&nbsp;&nbsp;&nbsp;邮箱：000000000000000 </p>
-                            
-                        </div>
-                    </div>
-                    <div class="col-md-5 row left">
-                        <div class="col-md-5">
-                            <div class="er-code">
-                                <img src="../images/home/weibo.png" alt="">
-                            </div>
-                            <span>扫一扫：关注微博</span>
-                        </div>
-                        <div class="col-md-5 col-md-offset-2">
-                            <div class="er-code">
-                                <img src="../images/home/weixin.png" alt="">
-                            </div>
-
-                            <span>扫一扫：关注微信</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bottom">
-                <div class="container">
-                    <p>@2019河南大学生广告节 备案许可证编号为：<a style="color: #2D8EF8;font-size: 12px;"
-                            href="http://www.beian.miit.gov.cn/">0000000000000</a></p>
-                </div>
-            </div>
-        </footer>
-    
+    <?php $this->load->view('index/commonFooter')?>
     
     <script>
         // 获取首页底部公司赞助相关信息
@@ -285,21 +166,18 @@
             })
         }
         getCompanyInfos();
-    </script></div>
-    <script src="../public/script/user-info.js" ></script>
-    <!-- <script>
-        $('#commonHeader').load('./components/newHeader.html', null, function() {
-            selectHeaderActiveClass('user-info');
-            // 登录按钮和登陆头像的显示隐藏逻辑
-            loginBtnAndUserImg();
-        })
+    </script>
+    <script src="./public/script/user-info.js" ></script>
+   <script>
+
         $('.control_left').load('./components/UserCenterSideMenu.html', null, function() {
             userCenterSiderActiveClass('user-info');
         });
-        $('#commonFooter').load('./components/footer.html')
         initPageEvent();
-    </script> -->
+
+    </script>
     <script>
+
         function complete() {
             var name = $("#name").val();
             var email = $("#email").val();
@@ -317,7 +195,11 @@
                 alert("请填写完整的信息！");
             }
         }
-    </script>
+
+
+   </script>
+
+
     
 </body>
 </html>

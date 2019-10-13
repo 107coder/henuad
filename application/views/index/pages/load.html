@@ -12,178 +12,44 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/assets/swiper/swiper.min.css">
-    <link rel="stylesheet" href="../public/styles/base.css">
-    <link rel="stylesheet" href="../public/styles/common.css">
-    <link rel="stylesheet" href="../public/styles/index.css">
-    <link rel="stylesheet" href="../public/styles/about.css">
-    <link rel="stylesheet" href="../public/styles/header.css">
-    <link rel="stylesheet" href="../public/styles/footer.css">
+    <base href="<?=base_url();?>">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./public/styles/base.css">
+    <link rel="stylesheet" href="./public/styles/common.css">
+    <link rel="stylesheet" href="./public/styles/index.css">
+    <link rel="stylesheet" href="./public/styles/about.css">
+    <link rel="stylesheet" href="./public/styles/header.css">
+    <link rel="stylesheet" href="./public/styles/footer.css">
 
-    <script src="../public/assets/jquery-3.2.1.js"></script>
-    <script src="../public/assets/baiduTemplate.js"></script>
-    <script src="../public/assets/swiper/swiper.min.js"></script>
-    <script src="../public/assets/layer/layer.js"></script>
-    <script src="../public/utils/render.request.js"></script>
-    <script src="../public/utils/render.utils.js"></script>
-    <script src="../public/utils/common.js"></script>
-    <script src="../public/script/common.js"></script>
+    <script src="./public/assets/jquery-3.2.1.js"></script>
+    <script src="./public/assets/baiduTemplate.js"></script>
+    <script src="./public/assets/swiper/swiper.min.js"></script>
+    <script src="./public/assets/layer/layer.js"></script>
+    <script src="./public/utils/render.request.js"></script>
+    <script src="./public/utils/render.utils.js"></script>
+    <script src="./public/utils/common.js"></script>
+    <script src="./public/script/common.js"></script>
 </head>
 
 <body>
-    <!--头部导航-->
-    <div id="commonHeader">
-        <header class="headerBase">
-            <div class="container">
-
-                <div class="navbar-header">
-
-                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
-                        data-targer="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-
-                    </button>
-                    <img src="../images/logo.png" class="navbar-brand" onclick="navTo('../index')" alt>
-
-                </div>
-                <nav id="bs-navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li onclick="" name="index">
-                            <a href="../index.html">首页</a>
-                        </li>
-
-                        <li onclick="" name="about">
-                            <a href="about.html">关于大广节</a>
-                        </li>
-                        <li onclick="" name="news" class="active">
-                            <a href="moreNews.html">新闻动态</a>
-                        </li>
-                        <li onclick="" name="judgesIntroduce">
-                            <a href="JudgesIntroduce.html">评审介绍</a>
-                        </li>
-
-                        <li onclick="" name="linkus">
-                            <a href="contact.html">联系我们</a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right" id="unLogin">
-                        <li onclick=""><a href="../pages/login.html">登录</a>
-                        </li>
-                        <li onclick=""><a href="../pages/register.html">注册</a>
-                        </li>
-
-                    </ul>
-
-                    <div class="nav navbar-nav navbar-right" id="userPic" style="display:none"
-                        onmouseleave="hideUserImgList(event)">
-                        <img id="user-image" onmouseenter="getUserCenterList(event)" src="images/touxiang.jpg"
-                            width="40" alt data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div id="user-navbar" class="hideList">
-                            <div class="navbar-content">
-                                <div class="navbar-item" onclick="navTo('user-info')" name="user-info">个人信息</div>
-                                <div class="navbar-item" onclick="navTo('upload')" name="upload">作品上传</div>
-                                <div class="navbar-item" onclick="navTo('mycreation')" name="mycreation">我的作品</div>
-                                <div class="navbar-item" onclick="navTo('changePassword')" name="changePassword">修改密码
-                                </div>
-                                <div class="navbar-item" onclick="userExit()">安全退出</div>
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-                </nav>
-
-
-
-            </div>
-
-
-        </header>
-
-
-    </div>
+<?php $this->load->view('index/head_top')?>
     <!-- 轮播 -->
     <div id="commonBanner">
 
-        <div id="shuffling">
-            <div class="swiper-container carousel swiper_header swiper-container-initialized swiper-container-horizontal"
-                style="height: 304.317px;">
-                <div class="swiper-wrapper" style="transition-duration: 300ms; transform: translate3d(0px, 0px, 0px);">
-                    <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5"
-                        style="width: 1240px; margin-right: 30px;"> <a href="#"> <img
-                                src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
-                    <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
-                        style="width: 1240px; margin-right: 30px;"> <a href="pages/know.html"> <img
-                                src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
-                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1"
-                        style="width: 1240px; margin-right: 30px;"> <a href="">
-                            <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
-                    <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2"
-                        style="width: 1240px; margin-right: 30px;"> <a href="">
-                            <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
-                    <div class="swiper-slide" data-swiper-slide-index="3" style="width: 1240px; margin-right: 30px;"> <a
-                            href="">
-                            <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
-                    <div class="swiper-slide" data-swiper-slide-index="4" style="width: 1240px; margin-right: 30px;"> <a
-                            href="">
-                            <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
-                    <div class="swiper-slide" data-swiper-slide-index="5" style="width: 1240px; margin-right: 30px;"> <a
-                            href="#"> <img src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
-                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
-                        data-swiper-slide-index="0" style="width: 1240px; margin-right: 30px;"> <a href=""> <img
-                                src="../heguangjie/images/lunbotu.jpg" alt=""> </a> </div>
-                </div>
-                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
-                        class="swiper-pagination-bullet" tabindex="0" role="button"
-                        aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0"
-                        role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet"
-                        tabindex="0" role="button" aria-label="Go to slide 3"></span><span
-                        class="swiper-pagination-bullet" tabindex="0" role="button"
-                        aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0"
-                        role="button" aria-label="Go to slide 5"></span><span
-                        class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
-                        aria-label="Go to slide 6"></span></div> <span class="swiper-notification" aria-live="assertive"
-                    aria-atomic="true"></span>
-            </div>
-        </div>
+        <?php $this->load->view('index/shuffling')?>
     </div>
     <!-- 内容部分 -->
     <div id="control_center">
         <div class="container">
-            <div class="control_left">
-                <div class="title">
-                    <p>关于大广节</p>
-                    <p>ABOUT US</p>
-                </div>
-                <ul class="nav">
-                    <a href="./about.html">
-                        <li onclick="" name="about" class="active">大广节简介</li>
-                    </a>
-                    <a href="./know.html">
-                        <li onclick="" name="know">赛事须知</li>
-                    </a>
-                    <a href="./load.html">
-                        <li onclick="" name="load">命题下载</li>
-                    </a>
-                    <a href="./upload.html">
-                        <li onclick="" name="upload">作品上传</li>
-                    </a>
-                </ul>
-            </div>
+            <?php $this->load->view('index/controlLeft')?>
             <div class="control_right">
                 <div>
                     <p class="fileLoader">
                         <a href="download/广告节命题策略单.zip" target="_blank" download="download/广告节命题策略单.zip">
 
-                            <img src="../images/loadeicon.png" alt=""><span>文件下载</span>
+                            <img src="./images/loadeicon.png" alt=""><span>文件下载</span>
                         </a>
                     </p>
                     <div id="topicList">
@@ -290,109 +156,14 @@
             </div>
         </div>
     </div>
-    <!-- 底部 -->
-    <div id="commonFooter">
-        <footer>
-            <div class="container content">
-                <div class="row">
-                    <div class="col-md-7 right">
-                        <div class="meun">
-                            <ul>
-                                <li><a href="pages/about.html" onclick="">关于河广节</a></li>
-                                <li><a href="pages/moreNews.html" onclick="">新闻动态</a></li>
-                                <li><a href="pages/JudgesIntroduce.html" onclick="">评审介绍</a></li>
-                                <li><a href="pages/contact.html" onclick="navTo('contact')">联系我们</a></li>
-
-                            </ul>
-                        </div>
-                        <div class="about-us" id="CompanyList">
-                            <p> <span>指导单位:</span> <span style="margin-left: 3px;"> <a href=""
-                                        style="color: #fff">哈哈哈哈啊哈哈哈哈</a> <span style="color: #fff">、</span> <a href=""
-                                        style="color: #fff">哈哈哈哈啊哈哈哈哈会</a> <span style="color: #fff">、</span> <a href=""
-                                        style="color: #fff">哈哈哈哈啊哈哈</a> <span style="color: #fff"></span> </span> </p>
-                            <p> <span>主办单位:</span> <span style="margin-left: 3px;"> <a href=""
-                                        style="color: #fff">哈哈哈哈啊</a> <span style="color: #fff">、</span> <a href=""
-                                        style="color: #fff">河南大学</a> <span style="color: #fff"></span> </span> </p>
-                            <p> <span>独家承办单位:</span> <span style="margin-left: 3px;"> <a href=""
-                                        style="color: #fff">哈哈哈哈哈哈哈哈哈</a> <span style="color: #fff"></span> </span>
-                            </p>
-                            <p> <span>总冠名品牌:</span> <span style="margin-left: 3px;"> <a href=""
-                                        style="color: #fff">哈哈哈哈哈啊</a> <span style="color: #fff"></span> </span> </p>
-                        </div>
-                        <div class="row about-us" style="margin-left:1px;margin-top:3px">
-                            <p>联系电话：000-00000000 老师&nbsp;&nbsp;&nbsp;&nbsp;邮箱：000000000000000 </p>
-
-                        </div>
-                    </div>
-                    <div class="col-md-5 row left">
-                        <div class="col-md-5">
-                            <div class="er-code">
-                                <img src="../images/home/weibo.png" alt="">
-                            </div>
-                            <span>扫一扫：关注微博</span>
-                        </div>
-                        <div class="col-md-5 col-md-offset-2">
-                            <div class="er-code">
-                                <img src="../images/home/weixin.png" alt="">
-                            </div>
-
-                            <span>扫一扫：关注微信</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bottom">
-                <div class="container">
-                    <p>@2019河南大学生广告节 备案许可证编号为：<a style="color: #2D8EF8;font-size: 12px;"
-                            href="http://www.beian.miit.gov.cn/">0000000000000</a></p>
-                </div>
-            </div>
-        </footer>
-
-        <script>
-            // 获取首页底部公司赞助相关信息
-            var CompanyListData = {
-                result: null
-            };
-
-            function getCompanyInfos() {
-                Request_.ajax({
-                    // key: '/api/WebPage/IndexCompanyList',
-                    // type: 'GET',
-                    key: '',
-                    type: '',
-                    data: {},
-                    dataType: "json",
-                    success: function (info) {
-                        if (info && info.Stata === 10000) {
-                            CompanyListData.result = info.Data;
-                            $.each(CompanyListData.result, function (k, v) {
-                                if (v.Title) {
-
-                                }
-                            });
-                            updataView('t:_CompanyList', 'CompanyList', CompanyListData);
-                        }
-                    }
-                })
-            }
-            getCompanyInfos();
-        </script>
-    </div>
+    <?php $this->load->view('index/commonFooter')?>
 </body>
 <script>
-    $('#commonHeader').load('./components/newHeader.html', null, function () {
-        selectHeaderActiveClass('about');
-        // 登录按钮和登陆头像的显示隐藏逻辑
-        loginBtnAndUserImg();
-    });
+
     $('.control_left').load('./components/aboutCommonSideMenu.html', null, function () {
         $('.control_left .nav li').removeClass('active');
         $('.control_left .nav li[name=load]').addClass('active');
     });
-    $('#commonBanner').load('./components/banner.html')
-    $('#commonFooter').load('./components/footer.html')
     // image作品list
     var workListsArr = [];
     var init = function () {
@@ -401,27 +172,6 @@
             $(this).addClass('active').siblings().removeClass('active');
         })
 
-        function getInitData() {
-            Request_.ajax({
-                // key: '/api/WebPage/LPTopicList',
-                // type: 'GET',
-                key: '',
-                type: '',
-                data: {},
-                contentType: false,
-                processData: false,
-                success: function (info) {
-                    if (info && info.Stata === 10000) {
-                        workListsArr = info.Data;
-                        updataView('t:_TopicList', 'topicList', workListsArr);
-                    }
-                },
-                fail: function (err) {}
-            });
-        }
-        //  头部导航切换 elName为默认选中的标签  
-        // navHeder('homePage')
-        getInitData()
     }
     window.onload = function () {
         //接口数据           

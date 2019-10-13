@@ -35,13 +35,13 @@ class User_model extends CI_Model {
         return $data;
     }
     
-    //前后台密码修改
+    //后台密码修改
     public function change_pwd($mobileNumber,$data){
         $this->db->update('user',$data,array('mobileNumber' => $mobileNumber));
     }
 
     // 补全用户信息
-    public  function completeInfo($data_arr,$where)
+    public function completeInfo($data_arr,$where)
     {
         return $this->db->update('user',$data_arr,$where);
     }
@@ -51,7 +51,7 @@ class User_model extends CI_Model {
     {
         return $this->db->select('mobileNumber,email,name,schoolName,professional,grade,personalProfil')->from('user')->where($where)->get()->result_array();
     }
-    
+
     //后台删除用户
     public function del_user($mobileNumber){
         $this->db->delete('user', array('mobileNumber'=>$mobileNumber));
