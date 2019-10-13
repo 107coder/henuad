@@ -1,51 +1,51 @@
 var provinceList = [];
-
+var urlRoot = "http://henuad.cuisf.top/index.php";
 function initPageEvent() {
     var scnLastGetTime = Date.now();
     // 点击提交按钮
     $('#saveUserInfo').on('click', function () {
         var parameter = {
-            Name: $('#name').val(),
-            Email: $('#email').val(),
+            name: $('#name').val(),
+            email: $('#email').val(),
             SchoolID: $('#schoolName').attr('data-guid'),
-            SchoolName: $('#schoolName').val(),
-            Major: $('#major').val(),
-            Grade: $('#grade').val(),
-            Remark: $('#remark').val(),
+            schoolName: $('#schoolName').val(),
+            professional: $('#major').val(),
+            grade: $('#grade').val(),
+            personalProfil: $('#remark').val(),
         };
-        if (!parameter.Name) {
+        if (!parameter.name) {
             layer.msg('请输入您的姓名');
             return;
         }
-        if (/^\d{1,}$/.test(parameter.Name)) {
+        if (/^\d{1,}$/.test(parameter.name)) {
             layer.msg('请输入正确的姓名');
             return;
         }
-        if (!parameter.Email) {
+        if (!parameter.email) {
             layer.msg('请输入您的邮箱');
             return;
         }
-        if (!REGEXP.email.test(parameter.Email)) {
+        if (!REGEXP.email.test(parameter.email)) {
             layer.msg('请输入正确的邮箱格式');
             return;
         }
-        if (!parameter.SchoolName) {
+        if (!parameter.schoolName) {
             layer.msg('请输入您的学校名称');
             return;
         }
-        if (!parameter.SchoolID) {
-            layer.msg('学校id不能为空');
-            return;
-        }
-        if (!parameter.Major) {
+        // if (!parameter.SchoolID) {
+        //     layer.msg('学校id不能为空');
+        //     return;
+        // }
+        if (!parameter.professional) {
             layer.msg('请输入您的所在专业');
             return;
         }
-        if (!parameter.Grade) {
+        if (!parameter.grade) {
             layer.msg('请输入您的所在年级');
             return;
         }
-        if (!parameter.Remark) {
+        if (!parameter.personalProfil) {
             layer.msg('请输入您的个人简介');
             return;
         }
@@ -109,44 +109,46 @@ function initPageEvent() {
 
     getUserInfo(function (data) {
         $('.user-no').text(data.No || '---');
-        $('#name').val(data.Name);
-        $('#email').val(data.Email);
+        $('#name').val(data.name);
+        $('#email').val(data.email);
         $('#phoneNumber').html(data.Tel);
-        $('#schoolName').attr('data-guid', data.SchoolID);
-        $('#schoolName').val(data.SchoolName);
-        $('#major').val(data.Major);
-        $('#grade').val(data.Grade);
-        $('#remark').val(data.Remark);
+        $('#schoolName').attr('data-guid', data.schoolID);
+        $('#schoolName').val(data.schoolName);
+        $('#major').val(data.professional);
+        $('#grade').val(data.grade);
+        $('#remark').val(data.personalProfil);
         // 000
     });
 }
 
 function getUserInfo(callback) {
-    Request_.ajax({
-        // key: '/api/UserCenter/GetUserData',
-        // type: 'POST',
-        key: '',
-        type: '',
+    $.ajax({
+        url: urlRoot+'/index/PrivateAction/getInfoAPI',
+        type: 'post',
         data: {},
+        dataType:'json',
         success: function (resp) {
             if (resp.Stata == '10000') {
+                console.log(resp);
                 if (resp.Data) {
                     callback(resp.Data)
                 }
             } else {
                 layer.msg(resp.Message);
             }
+        },
+        error:function (){
+            console.log('error');
         }
     })
 }
 
 function updateUserInfo(parameter) {
-    Request_.ajax({
-        // key: '/api/UserCenter/UpdateUserData',
-        // type: 'POST',
-        key: '',
-        type: '',
+    $.ajax({
+        url:urlRoot+"/index/PrivateAction/updateUserInfo",
+        type: 'POST',
         data: parameter,
+        dataType:'json',
         success: function (resp) {
             if (resp.Stata == '10000') {
                 layer.msg('提交成功');

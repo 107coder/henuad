@@ -1,5 +1,5 @@
 var mobileNum='';
-
+var urlRoot = "http://henuad.cuisf.top/index.php";
 function initPage(){
     $('.form-input').on('click',function(){
         $(this).find('input[type="text"]').focus();
@@ -58,18 +58,14 @@ function initStep2(){
         $(this).find('input[type="password"]').focus();
     })
      $('#register_suc').on('click',function(){ 
-         window.location.href = window.location.origin + '/index.html'; 
+         window.location.href = window.location.origin; 
      })
 }
 
 
 function sendCode(mobile,element){
-    console.log(mobile);
     $.ajax({
-        // key: '/api/Account/SendRestigerSms',
-        // type: 'POST',
-        // key: '',
-        url:'<?php echo site_url("index/PublicView/sendCode");?>',
+        url: urlRoot+'/index/PublicView/sendCode',
         type: 'post',
         data: {
             phoneNumber: mobile,
@@ -77,28 +73,27 @@ function sendCode(mobile,element){
         },
         dataType:'json',
         success: function (resp) {
-            console.log(resp);
             if(resp.Stata=='10000'){
+                console.log(resp.Code);
                 setTime(element);
             }else{
-                console.log('resp');
                 layer.msg(resp.Message);
             }
         },
         error: function()
         {
-            console.log('error');
+            // console.log('error');
         }
     })
 }
 
 
 function checkRegStep1(mobile,code,sucCallback){
-    Request_.ajax({
+    $.ajax({
         // key: '/api/Account/CheckSmsCode',
         // type: 'POST',
-        key: '',
-        type: '',
+        url: urlRoot+'/index/UserAction/register_checkCode',
+        type: 'post',
         data: {
             tel: mobile,
             code: code
@@ -115,11 +110,12 @@ function checkRegStep1(mobile,code,sucCallback){
 }
 
 function setPassWord(mobile,password,sucCallback){
-    Request_.ajax({
+    $.ajax({
         // key: '/api/Account/Register',
         // type: 'POST',
-        key: '',
-        type: '',
+        url: urlRoot+'/index/UserAction/register_setPassword',
+        type: 'post',
+        dataType:'json',
         data: {
             tel: mobile,
             password: password

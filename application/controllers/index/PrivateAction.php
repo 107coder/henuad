@@ -20,7 +20,7 @@ class PrivateAction extends CI_Controller
     }
 
 //    补全个人信息
-    public function completeInfo()
+    public function updateUserInfo()
     {
         $this->load->model('User_model','user'); // 载入数据库类
         $mobile = $this->session->mobile;
@@ -41,18 +41,16 @@ class PrivateAction extends CI_Controller
         );
         $where = array('mobileNumber'=>$mobile);
 
-        $status = $this->user->completeInfo($data_arr,$where);
+        $status = $this->user->updateUserInfo($data_arr,$where);
 
         if($status)
         {
-            $url = 'index/PrivateView/userInfo';
-            $msg = "保存成功";
-            success($url,$msg);
+            printWithJson('10000','保存成功');
         }
         else
         {
-            $msg = "保存失败！";
-            error($msg);
+            printWithJson('00000','保存失败');
+            exit;
         }
     }
 
@@ -101,4 +99,18 @@ class PrivateAction extends CI_Controller
 
     }
 
+    // 向前端发送个人信息
+    public function getInfoAPI()
+    {
+        $this->load->model('User_model','user');
+        $mobile = $this->session->mobile;
+        $where = ['mobileNumber'=>$mobile];
+        $data = $this->user->getInfo($where);
+        if(!empty($data))
+        {
+            printWithJson('10000','',$data[0]);
+        }else{
+            printWithJson('=0000','服务器错误');
+        }
+    }
 }

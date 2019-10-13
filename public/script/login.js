@@ -1,4 +1,6 @@
 var loginTimer = null;
+var urlRoot = "http://henuad.cuisf.top/index.php";
+
 function initPageEvent(){
     $('.form-input').on('click',function(){
         $(this).find('input[type="text"]').focus();
@@ -44,7 +46,7 @@ function initPageEvent(){
                     clearTimeout(loginTimer);
                 }
                 loginTimer = setTimeout(function() {
-                    window.location.href='../../index.html';
+                    window.location.href=urlRoot;
                 }, 1000)
                 
             })
@@ -68,7 +70,7 @@ function initPageEvent(){
                     clearTimeout(loginTimer);
                 }
                 loginTimer = setTimeout(function() {
-                    window.location.href='../../index.html';
+                    window.location.href= urlRoot;
                 }, 1000) 
             })
           }else{
@@ -83,17 +85,14 @@ function loginWithPassWord(mobile,password,sucCallback){
         tel:mobile,
         token:''
     }
-    Request_.ajax({
-        // key: '/api/Account/Login',
-        // type: 'POST',
-        key: '',
-        type: '',
+    $.ajax({
+        url: urlRoot+'/index/UserAction/login_password',
+        type: 'post',
         data: {
             tel: mobile,
             password: password
         }, 
         dataType: "json",
-        
         success: function (resp) {
             if(resp.Stata=='10000'||resp.Stata=='200'){
                 userInfo.token=resp.Message;
@@ -111,11 +110,11 @@ function loginWithCode(mobile,code,sucCallback){
         tel:mobile,
         token:''
     }
-    Request_.ajax({
+    $.ajax({
         // key: '/api/Account/LoginByCode',
         // type: 'POST',
-        key: '',
-        type: '',
+        url: urlRoot+'/index/UserAction/login_checkCode',
+        type: 'post',
         data: {
             tel: mobile,
             code: code
@@ -133,16 +132,17 @@ function loginWithCode(mobile,code,sucCallback){
 }
 
 function sendCode(mobile,element){
-    Request_.ajax({
-        // key: '/api/Account/SendLoginSms',
-        // type: 'POST',
-        key: '',
-        type: '',
+    $.ajax({
+        url: urlRoot+'/index/PublicView/sendCode',
+        type: 'post',
         data: {
-            tel: mobile
-        }, 
+            phoneNumber: mobile,
+            action:'login'
+        },
+        dataType:'json',
         success: function (resp) {
             if(resp.Stata=='10000'){
+                console.log(resp.Code);
                 setTime(element);
             }else{
                 layer.msg(resp.Message);

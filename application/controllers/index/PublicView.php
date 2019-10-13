@@ -90,34 +90,44 @@ class PublicView extends CI_Controller {
         $this->load->model('user_model','user');
         $exist = $this->user->checkMobile($mobile);
         $data_arr = array();
-        if($exist != 0 && $action == "register")
+        $method = [NULL,'register','login'];
+        if(!in_array($action,$method))
         {
-            $data_arr['status'] = '00000';
-            $data_arr['message'] = "用户已存在";
+            $data_arr["Stata"] = '00001';
+            $data_arr['Message'] = '数据错误';
+            echo json_encode($data_arr);  
+            return false;
+        }
+        else if($exist != 0 && $action == "register")
+        {
+            $data_arr['Stata'] = '00000';
+            $data_arr['Message'] = "用户已存在";
             echo json_encode($data_arr);  
             return false;
         }else if($exist == 0 && $action == 'login')
         {
-            $data_arr['status'] = '00000';
-            $data_arr['message'] = "用户不存在";
+            $data_arr['Stata'] = '00000';
+            $data_arr['Message'] = "用户不存在";
             echo json_encode($data_arr);
             return false;
+        }else{
+            $data = array('mobile_number'=>$mobile);
+            $this->session->set_userdata($data);
+            $code = rand(123456,987654);
+            $this->session->set_tempdata('code',$code,60*15);
+            $param = "{$code},{60*15}";
+    
+            $data_arr = array(
+                'Stata'=>'10000',
+                'Message' => '发送成功',
+                'Code'    => $code
+            );
+            echo json_encode($data_arr);
+            //$this->load->library('sms');
+            //$sms_code = $this->sms->send($param,$mobile);
+            // echo $sms_code;
         }
-        $data = array('mobile_number'=>$mobile);
-        $this->session->set_userdata($data);
-        $code = rand(123456,987654);
-        $this->session->set_tempdata('code',$code,60);
-        $param = "{$code},60";
 
-        $data_arr = array(
-            'status'=>'10000',
-            'message' => '登录成功',
-            'code'    => $code
-        );
-        echo json_encode($data_arr);
-        //$this->load->library('sms');
-        //$sms_code = $this->sms->send($param,$mobile);
-        // echo $sms_code;
     }
 
 

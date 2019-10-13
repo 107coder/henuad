@@ -904,3 +904,14 @@ function upload_file($path,$name)
 }
 
 
+
+function printWithJson($Stata,$Message,$Data='')
+{
+    $data = array(
+        'Stata' => $Stata,
+        'Message' => $Message,
+        'Data' => $Data
+    );
+    echo json_encode($data,JSON_UNESCAPED_UNICODE);
+}
+

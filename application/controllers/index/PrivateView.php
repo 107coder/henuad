@@ -19,11 +19,7 @@ class PrivateView extends CI_Controller
 
     public function userInfo()
     {
-        $this->load->model('User_model','user');
-        $mobile = $this->session->mobile;
-        $where = ['mobileNumber'=>$mobile];
-        $data['userInfo'] = $this->user->getInfo($where);
-        $this->load->view('index/pages/user-info.html',$data);
+        $this->load->view('index/pages/user-info.html');
     }
     //上传作品
     public function upload()

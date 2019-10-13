@@ -49,18 +49,30 @@ class UserAction extends CI_Controller {
         {
             if( $this->checkCode($code) )
             {
-                echo "right";
+                $data = array(
+                    'Stata'=>10000,
+                    'Message'=>"验证码正确"
+                );
+                echo json_encode($data,JSON_UNESCAPED_UNICODE);
                 return true;
             }
             else
             {
-                echo "error";
+                $data = array(
+                    'Stata'=>00000,
+                    'Message'=>"验证码错误"
+                );
+                echo json_encode($data,JSON_UNESCAPED_UNICODE);
                 return false;
             }
         }
         else
         {
-            echo "length error";
+            $data = array(
+                'Stata'=>00000,
+                'Message'=>"验证码错误"
+            );
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
             return false;
         }
     }
@@ -71,36 +83,36 @@ class UserAction extends CI_Controller {
         $this->load->model('User_model','user');
 
         $password = $this->input->post('password');
-        $confirmPassword = $this->input->post('confirmPassword');
         $mobile = $this->session->userdata('mobile_number');
 
-        if(empty($password) || empty($confirmPassword))
+        $data_arr = array(
+            'password' => $this->pwdhash->HashPassword($password),
+            'mobileNumber' => $mobile,
+            'registerTime' => time()
+        );
+        $aff_rows = $this->user->register($data_arr);
+        if($aff_rows == 1)
         {
-            echo "empty";
-            return false;
-        } 
-        if($password == $confirmPassword)
-        {
-            $data_arr = array(
-                'password' => $this->pwdhash->HashPassword($password),
-                'mobileNumber' => $mobile,
-                'registerTime' => time()
+            $sess_data  = array(
+                'mobile' => $mobile,
+                'eomplete' => 0
             );
-            $aff_rows = $this->user->register($data_arr);
-            if($aff_rows == 1)
-            {
-                $sess_data  = array(
-                    'mobile' => $mobile,
-                    'eomplete' => 0
-                );
-                $this->session->set_userdata($sess_data);
+            $this->session->set_userdata($sess_data);
 
-                echo "right";
-            }
-        }
-        else 
+            $data = array(
+                'Stata'=>10000,
+                'Message' => '注册成功'
+            );
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die;
+        }else 
         {
-            echo "error";
+            $data = array(
+                'Stata'=>00000,
+                'Message' => '注册失败'
+            );
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die;
         }
 
     }
@@ -118,12 +130,15 @@ class UserAction extends CI_Controller {
         $data = $this->user->checkLogin($data_arr);
         if(empty($data))
         {
-            $msg = "手机号不存在，请先注册！";
-            error($msg);
+            $data = array(
+                'Stata' => '00001',
+                'Message' => "手机号不存在，请先注册！"
+            );
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
             return false;
         }
         
-        $code = $this->input->post('mobileCode');
+        $code = $this->input->post('code');
         if(strlen($mobile) == 11 && strlen($code) == 6)
         {
             if( $this->checkCode($code) )
@@ -134,22 +149,30 @@ class UserAction extends CI_Controller {
                 }
                 $sess_data['mobile'] = $mobile;
                 $this->session->set_userdata($sess_data);
-                $url = "";
-                $msg = "登录成功！";
-                success($url,$msg);
+                $data = array(
+                    'Stata' => '10000',
+                    'Message' => "登录成功"
+                );
+                echo json_encode($data,JSON_UNESCAPED_UNICODE);
                 return true;
             }
             else
             {
-                $msg = "验证码不正确！";
-                error($msg);
+                $data = array(
+                    'Stata' => '00002',
+                    'Message' => "您输入的验证码不正确"
+                );
+                echo json_encode($data,JSON_UNESCAPED_UNICODE);
                 return false;
             }
         }
         else
         {
-            $msg = "对不起，输入有误！";
-            error($msg);
+            $data = array(
+                'Stata' => '00004',
+                'Message' => "对不起，输入有误"
+            );
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
             return false;
         }
     }
@@ -161,13 +184,13 @@ class UserAction extends CI_Controller {
         $this->load->model('User_model','user');
 
         $password = $this->input->post('password');
-        $mobile = $this->input->post('mobile1');
+        $mobile = $this->input->post('tel');
 
         // 判断是否为空
         if(empty($password) || empty($mobile))
         {
-            $msg = "账号或密码不能为空！";
-            error($msg);
+            printWithJson('00001','账号或密码不能为空！');
+            exit;
         } 
         $data_arr = array(
             'mobileNumber' => $mobile
@@ -175,8 +198,7 @@ class UserAction extends CI_Controller {
         $data = $this->user->checkLogin($data_arr);
         if(empty($data))
         {
-            $msg = "手机号不存在，请先注册！";
-            error($msg);
+            printWithJson('00002','手机号不存在，请先注册！');
             return false;
         }
         if($this->pwdhash->CheckPassword($password,$data[0]['password']))
@@ -187,14 +209,13 @@ class UserAction extends CI_Controller {
             }
             $sess_data['mobile'] = $mobile;
             $this->session->set_userdata($sess_data);
-            $url = "";
-            $msg = "登录成功！";
-            success($url,$msg);
+            printWithJson('10000','登录成功');
+            exit();
         }
         else 
         {
-            $msg = "用户名或密码错误，请重新登录！";
-            error($msg);
+            printWithJson('00404','用户名或密码错误，请重新登录！');
+            exit();
         }
        
        
