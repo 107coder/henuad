@@ -1,5 +1,4 @@
 var provinceList = [];
-var urlRoot = "http://henuad.cuisf.top/index.php";
 function initPageEvent() {
     var scnLastGetTime = Date.now();
     // 点击提交按钮
@@ -108,7 +107,7 @@ function initPageEvent() {
     })
 
     getUserInfo(function (data) {
-        $('.user-no').text(data.No || '---');
+        $('.user-no').text(data.personalNumber || '---');
         $('#name').val(data.name);
         $('#email').val(data.email);
         $('#phoneNumber').html(data.Tel);

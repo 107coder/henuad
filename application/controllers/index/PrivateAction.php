@@ -59,6 +59,7 @@ class PrivateAction extends CI_Controller
     {
         $this->load->library('pwdhash'); // 载入加密类
         $this->load->model('User_model','user'); // 载入数据库类
+
         $mobile = $this->session->mobile;
         $passwordOld = $this->input->post('OldPwd');
         $passwordNew = $this->input->post('NewPwd');
@@ -73,20 +74,20 @@ class PrivateAction extends CI_Controller
                 'Stata'=>'00000',
                 'Message' => '原密码错误'
             );
-            echo json_encode($result);
+            echo json_encode($result,JSON_UNESCAPED_UNICODE);
             return;
         }
         if($this->pwdhash->checkPassword($passwordOld,$data[0]['password']))
         {
             $data_arr = array('password'=>$password);
-            $status = $this->user->completeInfo($data_arr,$where);
+            $status = $this->user->updateUserInfo($data_arr,$where);
             if($status)
             {
                 $result = array(
                     'Stata'=>'10000',
                     'Message' => '修改成功'
                 );
-                echo json_encode($result);
+                echo json_encode($result,JSON_UNESCAPED_UNICODE);
                 session_destroy();
                 return true;
             }
@@ -95,7 +96,7 @@ class PrivateAction extends CI_Controller
             'Stata'=>'00000',
             'Message' => '原密码错误'
         );
-        echo json_encode($result);
+        echo json_encode($result,JSON_UNESCAPED_UNICODE);
 
     }
 
@@ -108,9 +109,10 @@ class PrivateAction extends CI_Controller
         $data = $this->user->getInfo($where);
         if(!empty($data))
         {
+            $data[0]['IsOk'] = 'OK';
             printWithJson('10000','',$data[0]);
         }else{
-            printWithJson('=0000','服务器错误');
+            printWithJson('00000','服务器错误');
         }
     }
 }

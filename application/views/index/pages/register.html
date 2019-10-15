@@ -20,9 +20,10 @@
     <link rel="stylesheet" href="./public/styles/header.css">
     <link rel="stylesheet" href="./public/styles/footer.css">
     <link rel="stylesheet" href="./public/assets/swiper/swiper.min.css">
+
+    <script src="./public/assets/jquery-1.12.4.js"></script>
     <script src="./public/utils/common.js"></script>
-     
-    <script src="./public/assets/jquery-1.12.4.js"></script> 
+    <script src="./public/script/config.js"></script>
     <!-- <script src="../public/assets/bootstrap/js/bootstrap.min.js"></script> -->
     <script src="./public/assets/layer/layer.js"></script>
     <script src="./public/utils/render.request.js"></script>
@@ -30,7 +31,9 @@
     <script src="./public/assets/baiduTemplate.js"></script>
     <script src="./public/assets/swiper/swiper.min.js"></script>
     <link rel="stylesheet" href="./public/styles/register.css">
-    <script src="./public/assets/jquery-1.12.4.js"></script>
+    <script>
+        console.log(urlRoot);
+    </script>
 </head>
 
 <body>
@@ -85,7 +88,7 @@
                 <!-- </form> -->
                 </div>
                 <div class="tips-guide">
-                    已有账号？<a href="login.html">马上登录</a>
+                    已有账号？<a href="<?=site_url('index/PublicView/login');?>">马上登录</a>
                 </div>
             </div>
             <!-- step2 -->

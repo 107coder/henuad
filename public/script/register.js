@@ -1,5 +1,5 @@
 var mobileNum='';
-var urlRoot = "http://henuad.cuisf.top/index.php";
+
 function initPage(){
     $('.form-input').on('click',function(){
         $(this).find('input[type="text"]').focus();
