@@ -115,16 +115,16 @@ class PublicView extends CI_Controller {
             $this->session->set_userdata($data);
             $code = rand(123456,987654);
             $this->session->set_tempdata('code',$code,60*15);
-            $param = "{$code},{60*15}";
+            $param = "{$code},900";
     
             $data_arr = array(
                 'Stata'=>'10000',
                 'Message' => '发送成功',
                 'Code'    => $code
             );
-            echo json_encode($data_arr);
-            //$this->load->library('sms');
-            //$sms_code = $this->sms->send($param,$mobile);
+//            $this->load->library('sms');
+//            $sms_code = $this->sms->send($param,$mobile);
+            echo json_encode($data_arr,JSON_UNESCAPED_UNICODE);
             // echo $sms_code;
         }
 

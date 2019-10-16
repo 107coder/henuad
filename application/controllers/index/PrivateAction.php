@@ -109,7 +109,11 @@ class PrivateAction extends CI_Controller
         $data = $this->user->getInfo($where);
         if(!empty($data))
         {
-            $data[0]['IsOk'] = 'OK';
+            $info = $data[0];
+            if($info['name']!=null && $info['email']!=null && $info['schoolName']!=null && $info['professional']!=null)
+            {
+                $data[0]['IsOk'] = 'OK';
+            }
             printWithJson('10000','',$data[0]);
         }else{
             printWithJson('00000','服务器错误');

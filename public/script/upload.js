@@ -54,11 +54,11 @@ function IsInsertProduct() {
         data: {},
         dataType: "json",
         success: function(info) {
-            if (info && info.Stata === 10000) {
+            if (info && info.Stata === '10000') {
                 if(!info.Data.IsOk) {
                     // 跳回个人信息
                     layer.alert('请完善名字或学校信息', function(){
-                        location.href = "<?=site_url('index/PrivateView/userInfo');?>";
+                        location.href = urlRoot+"/index/PrivateView/userInfo";
                     });
                 }
             } else {
