@@ -42,11 +42,15 @@
 
         text-decoration: none;
     }
+    .product{
+        display: block;
+        width:400px;
+    }
 </style>
 <body>
 <div class="admin-content-body">
     <div class="am-cf am-padding am-padding-bottom-0">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">用户管理</strong><small></small></div>
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">命题上传</strong><small></small></div>
     </div>
 
     <hr>
@@ -55,7 +59,7 @@
         <div class="am-u-sm-12 am-u-md-6">
             <div class="am-btn-toolbar">
                 <div class="am-btn-group am-btn-group-xs">
-                    <button type="button" class="am-btn am-btn-default"><a style="color:#000" href="javascript:void(0)"  onclick="addUser('添加管理员',1)"><span class="am-icon-plus"></span> 新增</a></button>
+                    <button type="button" class="am-btn am-btn-default"><a style="display: inline-block;color:#000;" href="<?php echo site_url() .'/admin/proposition/upload_proposition' ;?>"><span class="am-icon-plus"></span> 新增</a></button>
                 </div>
             </div>
         </div>
@@ -64,10 +68,9 @@
         </div>
         <div class="am-u-sm-12 am-u-md-3">
             <div class="am-input-group am-input-group-sm">
-                <input type="text" class="am-form-field" placeholder="请输入用户姓名">
+                <input type="text" class="am-form-field" placeholder="请输入命题标题">
                 <span class="am-input-group-btn">
-            <button class="am-btn am-btn-default" type="button">搜索</button>
-          </span>
+                            <button class="am-btn am-btn-default" type="button">搜索</button></span>
             </div>
         </div>
     </div>
@@ -78,38 +81,39 @@
                     <thead>
                     <tr>
                         <th class="table-check"><input type="checkbox"></th>
-                        <th class="table-type">用户名</th>
-                        <th class="table-title">姓名</th>
-                        <th class="table-author am-hide-sm-only">邮箱</th>
-                        <th class="table-type">注册时间</th>
+                        <th class="table-id">ID</th>
+                        <th class="table-title">命题标题</th>
+                        <th class="table-type">类别</th>
+                        <th class="table-date am-hide-sm-only">上传日期</th>
                         <th class="table-set">操作</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($user as $v):?>
+                    <?php foreach ($proposition as $v):?>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td><?=$v['mobileNumber'] ?></td>
+                            <td><?=$v['FileId']?></td>
                             <td>
-                                <a href="#"><?=$v['name'] ?></a>
+                                <a href="#"><?=$v['Title']?></a>
                             </td>
-                            <td><?=$v['email'] ?></td>
-                            <td><?php $datestring = '%Y-%m-%d %h:%i';echo mdate($datestring,$v['registerTime'])?></td>
+                            <td><?=$v['FileType']?></td>
+                            <td class="am-hide-sm-only"><?php  $datestring = '%Y年%m月%d日 %h:%i';echo mdate($datestring,$v['Time']); ?></td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" <?php if($v['isAdmin']==1) echo 'disabled'?>><a class="am-text-danger" href="<?php echo site_url('admin/users/user_del/' . $v['mobileNumber']) ?>"><span class="am-icon-trash-o"></span> 删除</a></button>
+                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><a style="display: block;" href="<?php echo site_url('/admin/news/edit/' . $v['FileId']) ?>"><span class="am-icon-pencil-square-o"></span> 编辑</a></button>
+                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><a style="display: block;" href="<?php echo site_url('/admin/news/news_del/' . $v['FileId']) ?>"><span class="am-icon-trash-o"></span> 删除</a></button>
                                     </div>
                                 </div>
                             </td>
                         </tr>
-                    <?php endforeach;?>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
                 <div class="am-cf">
-                    共 <?php if(isset($total))echo $total-1?> 条记录
+                    共 <?php if(isset($total)) echo $total;?> 条记录
                     <div class="am-fr">
-                        <?php echo $links?>
+                        <?php echo $links;?>
                     </div>
                 </div>
                 <hr>
@@ -117,18 +121,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="<?php  echo base_url('style/admin/');?>js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="<?php  echo base_url('style/admin/');?>myplugs/js/plugs.js"></script>
-<script type="text/javascript">
-    //添加编辑弹出层
-    function addUser(title, id) {
-        $.jq_Panel({
-            title: title,
-            iframeWidth: 500,
-            iframeHeight: 300,
-            url: "<?php echo site_url() .'/admin/admin_user/add_admin' ?>"
-        });
-    }
-</script>
 </body>
 </html>

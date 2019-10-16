@@ -28,7 +28,7 @@ $(function () {
                     el: ".swiper-pagination",
                     clickable: !0
                 },
-                navigation: {
+                    navigation: {
                     nextEl: ".header_right",
                     prevEl: ".header_left"
                 }

@@ -28,7 +28,7 @@ function getPeriodType() {
                 JudgesTypeList = info.Data;
                 updataView('t:_JudgesTypeList', 'JudgesTypeList', { list: JudgesTypeList });
             } else {
-                layer.msg(info.Message);  
+                layer.msg(info.Message);
             }
         }
     }).fail(function(err) {

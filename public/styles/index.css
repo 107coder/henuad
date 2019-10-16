@@ -757,7 +757,7 @@
     cursor: pointer
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div {
+#bannerBox .cansaixuzhi .banner_icon> a{
     height: 170px;
     width: 100%;
     background: #fff;
@@ -769,47 +769,47 @@
     align-items: center
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div:last-child {
+#bannerBox .cansaixuzhi .banner_icon>a:last-child {
     margin-right: 0
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div p {
+#bannerBox .cansaixuzhi .banner_icon>a p {
     color: #FFAC2AFF;
     text-align: center;
     padding-top: .04rem
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div:hover p,
+#bannerBox .cansaixuzhi .banner_icon>a:hover p,
 .university .left.carousel-control span,
 .university .right.carousel-control span {
     color: #fff
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div .icon {
+#bannerBox .cansaixuzhi .banner_icon>a .icon {
     margin: 0 auto;
     width: 80px;
     height: 60px;
     border: 1px dashed #888
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div .icon img {
+#bannerBox .cansaixuzhi .banner_icon>a .icon img {
     height: 60px
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div .icon img:last-child {
+#bannerBox .cansaixuzhi .banner_icon>a .icon img:last-child {
     display: none;
     height: 60rem
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div:hover {
+#bannerBox .cansaixuzhi .banner_icon>a:hover {
     background: #FFAC2A
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div:hover .icon img:first-child {
+#bannerBox .cansaixuzhi .banner_icon>a:hover .icon img:first-child {
     display: none
 }
 
-#bannerBox .cansaixuzhi .banner_icon>div:hover .icon img:last-child {
+#bannerBox .cansaixuzhi .banner_icon>a:hover .icon img:last-child {
     height: 60px;
     display: block
 }
