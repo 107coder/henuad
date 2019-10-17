@@ -33,38 +33,38 @@
 
     <div id="bannerBox">
         <div class="container cansaixuzhi">
-            <div class="banner_icon col-sm-4 col-xs-4">
-                <a  href="<?=site_url() .'/index/PublicView/know' ?>">
-
-                    <div class="icon">
-                        <img src="./images/csxz.png" alt="">
-                        <img src="./images/csxz2.png" alt="">
+            <div onclick="locateTo('index/PublicView/know')" class="banner_icon col-sm-4 col-xs-4">
+                <!--<a  href="<?=site_url() .'/index/PublicView/know' ?>">-->
+                    <div>
+                        <div class="icon">
+                            <img src="./images/csxz.png" alt="">
+                            <img src="./images/csxz2.png" alt="">
+                        </div>
+                        <p>参赛须知</p>
                     </div>
-                    <p>参赛须知</p>
-
-                </a>
+                <!--</a>-->
             </div>
-            <div class="banner_icon col-sm-4 col-xs-4">
-                <a href="<?=site_url() .'/index/PublicView/load' ?>">
-
-                    <div class="icon">
-                        <img src="./images/mtxz.png" alt="">
-                        <img src="./images/mtxz2.png" alt="">
+            <div onclick="locateTo('index/PublicView/load')" class="banner_icon col-sm-4 col-xs-4">
+                <!--<a href="<?=site_url() .'/index/PublicView/load' ?>">-->
+                    <div>
+                        <div class="icon">
+                            <img src="./images/mtxz.png" alt="">
+                            <img src="./images/mtxz2.png" alt="">
+                        </div>
+                        <p>命题下载</p>
                     </div>
-                    <p>命题下载</p>
-
-                </a>
+                <!--</a>-->
             </div>
-            <div class="banner_icon col-sm-4 col-xs-4">
-                <a href="<?=site_url('index/PrivateView/upload')?>">
-
-                    <div class="icon">
-                        <img src="./images/zpsc.png" alt="">
-                        <img src="./images/zpsc2.png" alt="">
-                    </div>
-                    <p>作品上传</p>
-
-                </a>
+            <div onclick="locateTo('index/PrivateView/upload')" class="banner_icon col-sm-4 col-xs-4">
+                <!--<a href="<?=site_url('index/PrivateView/upload')?>">-->
+                    <div>
+                        <div class="icon">
+                            <img src="./images/zpsc.png" alt="">
+                            <img src="./images/zpsc2.png" alt="">
+                        </div>
+                        <p>作品上传</p>
+                </div>
+                <!--</a>-->
             </div>
         </div>
         <div id="commonBanner">
@@ -689,6 +689,9 @@
 
     // })
 
+    function locateTo(url) {
+        location.href = "<?=site_url('/');?>"+url;
+    }
 </script>
 
 </html>

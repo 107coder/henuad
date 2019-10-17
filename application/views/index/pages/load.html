@@ -47,7 +47,7 @@
             <div class="control_right">
                 <div>
                     <p class="fileLoader">
-                        <a href="download/广告节命题策略单.zip" target="_blank" download="download/广告节命题策略单.zip">
+                        <a href="<?php echo base_url('propositions_File/第十八届大学生广告节命题策略单.zip');?>" target="_blank" >
 
                             <img src="./images/loadeicon.png" alt=""><span>文件下载</span>
                         </a>
@@ -56,99 +56,35 @@
                         <div class="load clearfix">
                             <div class="">
                                 <p>命题类</p>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 1})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">独家总冠名中原消费金融——下一站,等你</p>
-                                        <p class="txt_cut_2">品牌命题独家总冠名中原消费金融——下一站,等你</p>
+                                <?php foreach ($type as $v):?>
+                                <a style="display: block;list-style: none" href="<?php echo site_url() .'/index/PublicView/proposition_detail/'.$v['FileId'] ?>">
+                                    <div class="itemC"
+                                         onclick="">
+                                        <img src="<?php echo base_url('propositions_Icon/'.$v['Icon']);?>"
+                                             alt="">
+                                        <div class="display">
+                                            <p class="one_txt_cut"> <?=$v['Title']?></p>
+                                            <p class="txt_cut_2"> <?=$v['Title']?></p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 1})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">独家视频平台战略合作伙伴 爱奇艺——青春有你</p>
-                                        <p class="txt_cut_2">品牌命题独家视频平台战略合作伙伴 爱奇艺——青春有你</p>
-                                    </div>
-                                </div>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 1})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">新飘影植觉系列创意大赛</p>
-                                        <p class="txt_cut_2">品牌命题新飘影植觉系列创意大赛</p>
-                                    </div>
-                                </div>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 2})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">上海市市场监督管理局公益命题——祝贺祖国70华诞</p>
-                                        <p class="txt_cut_2">公益命题上海市市场监督管理局公益命题——祝贺祖国70华诞</p>
-                                    </div>
-                                </div>
+                                </a>
+                                <?php endforeach;?>
                             </div>
                             <div class="flet">
                                 <p>非命题类</p>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 0})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">视觉广告</p>
-                                        <p class="txt_cut_2">视觉广告</p>
+                                <?php foreach ($type1 as $v):?>
+                                <a style="display: block;list-style:none" href="<?php echo site_url() .'/index/PublicView/proposition_detail/'.$v['FileId'] ?>">
+                                    <div class="itemC"
+                                         onclick="navTo('brandProposition', {guid: '', topicType: 0})">
+                                        <img src="<?php echo base_url('propositions_Icon/'.$v['Icon']);?>"
+                                             alt="">
+                                        <div class="display">
+                                            <p class="one_txt_cut"><?=$v['Title']?></p>
+                                            <p class="txt_cut_2"><?=$v['Title']?></p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 0})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">短视频广告</p>
-                                        <p class="txt_cut_2">短视频广告</p>
-                                    </div>
-                                </div>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 0})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">影视广告</p>
-                                        <p class="txt_cut_2">影视广告</p>
-                                    </div>
-                                </div>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 0})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">营销策划</p>
-                                        <p class="txt_cut_2">营销策划</p>
-                                    </div>
-                                </div>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 0})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">文创作品</p>
-                                        <p class="txt_cut_2">文创作品</p>
-                                    </div>
-                                </div>
-                                <div class="itemC"
-                                    onclick="navTo('brandProposition', {guid: '', topicType: 0})">
-                                    <img src="https://heguanhjie."
-                                        alt="">
-                                    <div class="display">
-                                        <p class="one_txt_cut">互动广告</p>
-                                        <p class="txt_cut_2">互动广告</p>
-                                    </div>
-                                </div>
+                                </a>
+                                <?php endforeach;?>
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ class Proposition_model extends CI_Model
         //加载数据库的分组
         $this->load->database('default');
     }
-    //发表新闻
+    //上传命题
 
     public function add($data){
         $this->db->insert('file', $data);
@@ -22,36 +22,21 @@ class Proposition_model extends CI_Model
         order_by('Time', 'desc')->get()->result_array();
         return $data;
     }
-    //查看某一分类下的新闻
-    public function news_type1($TypeId){
-        $data = $this->db->select('newsId,Title,Date,Author,Picture')->from('news')->
-        join('type', 'news.TypeId=type.TypeId')->where(array('news.TypeId'=>$TypeId))->order_by('Date', 'desc')->get()->result_array();
+    //查看某一类下的命题
+    public function file_type($FileId){
+        $data = $this->db->select('FileId,Title,Time,Icon,Path')->from('file')
+        ->where(array('FileType'=>$FileId))->order_by('Time', 'desc')->get()->result_array();
         return $data;
     }
-    //前台显示最近时间发布的开闭幕式一个新闻
-    public function news_recent(){
-        $data = $this->db->select('Title,Date,Content,Picture')->from('news')->
-        join('type', 'news.TypeId=type.TypeId')->where(array('TypeName'=>'开闭幕式'))->limit(1)->get()->result_array();
+
+    //查询对应的命题
+    public function found_proposition($FileId){
+        $data = $this->db->where(array('FileId'=>$FileId))->get('file')->result_array();
         return $data;
     }
-    //前台显示最近时间发布的两个新闻
-    public function news_recent1(){
-        $data = $this->db->select('Title,Date,Content,Picture')->from('news')->
-        order_by('Date', 'desc')->limit(2)->get()->result_array();
-        return $data;
-    }
-    //查询对应的新闻
-    public function check_news($newsId){
-        $data = $this->db->where(array('newsId'=>$newsId))->get('news')->result_array();
-        return $data;
-    }
-    //修改新闻
-    public function update_news($newsId, $data){
-        $this->db->update('news', $data, array('newsId'=>$newsId));
-    }
-    //删除新闻
-    public function del_news($newsId){
-        $this->db->delete('news', array('newsId'=>$newsId));
+    //删除命题
+    public function del_proposition($FileId){
+        $this->db->delete('file', array('FileId'=>$FileId));
     }
 
 }

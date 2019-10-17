@@ -227,9 +227,7 @@ class UserAction extends CI_Controller {
     function loginOut()
     {
         session_destroy();
-        $msg = "退出成功！";
-        $url = "";
-
-        success($url,$msg);
+        redirect(site_url());
+        exit();
     }
 }

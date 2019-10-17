@@ -36,31 +36,34 @@ class Proposition extends CI_Controller
     }
     //上传命题验证
     public function proposition_verity(){
+        $this->load->library('upload');
         //配置图标
         $config['upload_path']   = './propositions_Icon/';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
         $config['max_size']     = 10000;
         $config['file_name'] = time() - mt_rand(1000,9999);
         //载入上传类
-        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
         $this->upload->do_upload('Icon');
+        $wrong = $this->upload->display_errors();
+        if($wrong){
+            error($wrong);
+        }
+        $info = $this->upload->data();
         //配置文件
         $config1['upload_path']   = './propositions_File/';
-        $config1['allowed_types']    = 'zip|rar';
+        $config1['allowed_types']    = 'zip|rar|docx';
         $config1['max_size']   = 10000;
         $config1['file_name'] = time() - mt_rand(1000,9999);
         //载入上传类
-        $this->load->library('upload', $config1);
+        $this->upload->initialize($config1);
         $this->upload->do_upload('Path');
         $wrong = $this->upload->display_errors();
        if($wrong){
             error($wrong);
        }
-
         //返回信息
-        $info = $this->upload->data();
-        print_r($info);die;
-
+        $info1 = $this->upload->data();
         //载入表单验证类
         $this->load->library('form_validation');
 
@@ -70,9 +73,10 @@ class Proposition extends CI_Controller
             $data = array(
                 'Title' => $this->input->post('Title'),
                 'FileType' => $this->input->post('FileType'),
-                'Icon'	=> $info[0]['file_name'],
-                'Path'=> $info[0]['file_name'],
-                'Time'	=> time()
+                'Icon'	=> $info['file_name'],
+                'Path'=> $info1['file_name'],
+                'Time'	=> time(),
+                'Content' => $this->input->post('Content')
             );
             $this->Proposition_model->add($data);
             success('admin/proposition/index', '上传成功');
@@ -81,6 +85,15 @@ class Proposition extends CI_Controller
             $this->load->view('admin/add_proposition');
         };
 
+    }
+
+    //删除命题
+
+    public function proposition_del()
+    {
+        $FileId = $this->uri->segment(4);
+        $this->Proposition_model->del_proposition($FileId);
+        success('admin/proposition/index', '删除成功');
     }
 
 }

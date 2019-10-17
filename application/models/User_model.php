@@ -49,7 +49,7 @@ class User_model extends CI_Model {
     // 获取用户信息
     public function getInfo($where)
     {
-        return $this->db->select('mobileNumber,email,name,schoolName,professional,grade,personalProfil')->from('user')->where($where)->get()->result_array();
+        return $this->db->select('mobileNumber,email,name,schoolName,professional,grade,personalProfil,personalNumber,isAdmin')->from('user')->where($where)->get()->result_array();
     }
 
     //后台删除用户

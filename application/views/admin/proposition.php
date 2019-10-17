@@ -101,8 +101,8 @@
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><a style="display: block;" href="<?php echo site_url('/admin/news/edit/' . $v['FileId']) ?>"><span class="am-icon-pencil-square-o"></span> 编辑</a></button>
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><a style="display: block;" href="<?php echo site_url('/admin/news/news_del/' . $v['FileId']) ?>"><span class="am-icon-trash-o"></span> 删除</a></button>
+                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><a style="display: block;" href="<?php echo site_url('/admin/proposition/edit/' . $v['FileId']) ?>"><span class="am-icon-pencil-square-o"></span> 编辑</a></button>
+                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><a style="display: block;" href="<?php echo site_url('/admin/proposition/proposition_del/' . $v['FileId']) ?>"><span class="am-icon-trash-o"></span> 删除</a></button>
                                     </div>
                                 </div>
                             </td>

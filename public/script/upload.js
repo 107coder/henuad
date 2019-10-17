@@ -48,11 +48,9 @@ if (productionGuid) {
 // 是否允许添加作品
 IsInsertProduct();
 function IsInsertProduct() {
-    Request_.ajax({
-        // key: '/api/UserCenter/IsInsertProduct',
-        // type: 'POST',
-        key: '',
-         type: '',
+    $.ajax({
+        url: urlRoot+'/index/PrivateAction/getInfoAPI',
+        type: 'post',
         data: {},
         dataType: "json",
         success: function(info) {
@@ -60,7 +58,7 @@ function IsInsertProduct() {
                 if(!info.Data.IsOk) {
                     // 跳回个人信息
                     layer.alert('请完善名字或学校信息', function(){
-                        navTo('user-info');
+                        location.href = "<?=site_url('index/PrivateView/userInfo');?>";
                     });
                 }
             } else {

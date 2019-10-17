@@ -1,6 +1,5 @@
 var loginTimer = null;
 var urlRoot = "http://ad.cuisf.top:8088/henuad/index.php";
-
 function initPageEvent(){
     $('.form-input').on('click',function(){
         $(this).find('input[type="text"]').focus();
@@ -86,7 +85,7 @@ function loginWithPassWord(mobile,password,sucCallback){
         token:''
     }
     $.ajax({
-        url: urlRoot+'/index/UserAction/login_password',
+        url: window.urlRoot+'/index/UserAction/login_password',
         type: 'post',
         data: {
             tel: mobile,
@@ -113,7 +112,7 @@ function loginWithCode(mobile,code,sucCallback){
     $.ajax({
         // key: '/api/Account/LoginByCode',
         // type: 'POST',
-        url: urlRoot+'/index/UserAction/login_checkCode',
+        url: window.urlRoot+'/index/UserAction/login_checkCode',
         type: 'post',
         data: {
             tel: mobile,
@@ -133,7 +132,7 @@ function loginWithCode(mobile,code,sucCallback){
 
 function sendCode(mobile,element){
     $.ajax({
-        url: urlRoot+'/index/PublicView/sendCode',
+        url: window.urlRoot+'/index/PublicView/sendCode',
         type: 'post',
         data: {
             phoneNumber: mobile,
