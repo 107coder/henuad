@@ -139,12 +139,17 @@ function sendCode(mobile,element){
         },
         dataType:'json',
         success: function (resp) {
-            if(resp.Stata=='10000'){
+            console.log(resp);
+            if (resp.Stata == '10000') {
                 console.log(resp.Code);
                 setTime(element);
-            }else{
+            } else {
                 layer.msg(resp.Message);
             }
+        },
+        error:function ()
+        {
+            console.log('error');
         }
     })
 }

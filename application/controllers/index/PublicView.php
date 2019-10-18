@@ -84,50 +84,64 @@ class PublicView extends CI_Controller {
     // 发送验证码
     public function sendCode()
     {
+
         $action = $this->input->post('action');
         $mobile = $this->input->post('phoneNumber');
+        $action = 'login';
+        $mobile = '17334813723';
         // 引入数据库，验证手机号是否已经注册
         $this->load->model('user_model','user');
         $exist = $this->user->checkMobile($mobile);
         $data_arr = array();
-        $method = [NULL,'register','login'];
-        if(!in_array($action,$method))
+        $method = ['register','login'];
+        if(!in_array($action,$method) || $mobile == NULL)             // 如果用户的操作不是 注册 或者 登陆
         {
             $data_arr["Stata"] = '00001';
             $data_arr['Message'] = '数据错误';
-            echo json_encode($data_arr);  
+            echo json_encode($data_arr,JSON_UNESCAPED_UNICODE);
             return false;
         }
         else if($exist != 0 && $action == "register")
         {
             $data_arr['Stata'] = '00000';
             $data_arr['Message'] = "用户已存在";
-            echo json_encode($data_arr);  
+            echo json_encode($data_arr,JSON_UNESCAPED_UNICODE);
             return false;
         }else if($exist == 0 && $action == 'login')
         {
             $data_arr['Stata'] = '00000';
             $data_arr['Message'] = "用户不存在";
-            echo json_encode($data_arr);
+            echo json_encode($data_arr,JSON_UNESCAPED_UNICODE);
             return false;
         }else{
             $data = array('mobile_number'=>$mobile);
             $this->session->set_userdata($data);
             $code = rand(123456,987654);
             $this->session->set_tempdata('code',$code,60*15);
-            $param = "{$code},900";
-    
+            $param = "{$code},15";
+//            引入发送短信的第三方库 执行发送短信的操作
+//            $this->load->library('Sms');
+//            $this->sms->send($param,$mobile);
+//            $sms_code = $this->sms->send($param,$mobile);
+//
             $data_arr = array(
                 'Stata'=>'10000',
                 'Message' => '发送成功',
                 'Code'    => $code
             );
-//            $this->load->library('sms');
-//            $sms_code = $this->sms->send($param,$mobile);
+//            print_r($data_arr);
             echo json_encode($data_arr,JSON_UNESCAPED_UNICODE);
-            // echo $sms_code;
+//             echo $sms_code
+            return ;
         }
 
+    }
+
+    public function test()
+    {
+        $this->load->library('Sms');
+//        $data = ['Stata'=>'10000'];
+//        echo json_encode($data);
     }
 
 
