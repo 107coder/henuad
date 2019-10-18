@@ -55,8 +55,11 @@
                                     <a href="<?php echo site_url() .'/admin/judges/index' ?>" target="right">评委管理</a>
                                 </dd>
 								<dd>
-									<a href="<?php echo site_url() .'/admin/users/index' ?>" target="right">用户管理</a>
-								</dd>
+                                    <a href="<?php echo site_url() .'/admin/users/index' ?>" target="right">用户管理</a>
+                                </dd>
+                                <dd>
+                                    <a href="<?php echo site_url() .'/admin/proposition/index' ?>" target="right">命题上传</a>
+                                </dd>
 								<dd>
 									<a href="javascript:void(0)"  onclick="updatePwd('修改密码',1)">修改密码</a>
 								</dd>

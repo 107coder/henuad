@@ -1,4 +1,5 @@
-var loginTimer = null
+var loginTimer = null;
+var urlRoot = "http://ad.cuisf.top:8088/henuad/index.php";
 function initPageEvent(){
     $('.form-input').on('click',function(){
         $(this).find('input[type="text"]').focus();

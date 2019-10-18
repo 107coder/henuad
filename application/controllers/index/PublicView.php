@@ -8,6 +8,7 @@ class PublicView extends CI_Controller {
         $this->load->model('News_model');
         $this->load->model('Judge_model');
         $this->load->model('Type_model');
+        $this->load->model('Proposition_model');
     }
     public function index()
     {
@@ -37,10 +38,26 @@ class PublicView extends CI_Controller {
     {
         $this->load->view('index/pages/know.html');
     }
-    //命题下载
+    //命题页面
     public function load()
     {
-        $this->load->view('index/pages/load.html');
+        $this->load->helper('date');
+        $data['type'] = $this->Proposition_model->file_type('命题类');
+        $data['type1'] = $this->Proposition_model->file_type('非命题类');
+        $this->load->view('index/pages/load.html',$data);
+    }
+    //某一命题下载
+    public function download($url){
+        //$this->load->library('zip');
+        $this->load->helper('download');
+        force_download($url,NULL,TRUE);
+        //$this->zip->download('latest_stuff.zip');//renamed
+    }
+    //某一命题页面
+    public function proposition_detail(){
+        $FileId = $this->uri->segment(4);
+        $data['type'] = $this->Proposition_model->found_proposition($FileId);
+        $this->load->view('',$data);
     }
     //前台新闻动态及更多新闻
     public function news_more()
