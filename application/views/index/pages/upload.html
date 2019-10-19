@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<iframe src="./components/heade.html" frameborder="0"></iframe>
 <head>
     <title>个人中心</title>
     <meta name="description" content="河南大学广告节">
@@ -57,11 +58,74 @@
                         </div>
                     </div>
                     <!-- 非命题 -->
-                    <div id="NotTopicList"></div>
+                    <div id="NotTopicList" style="display: none;">
+                        <div class="select_item" id="NotTopicList0">
+                            <div class="select_name">命题：</div>
+                            <div class="select_main">
+                                <div class="check_box" onclick="changeSelect('NotTopicList', 0, 0)"> <span
+                                        class="check_btn active_btn" data-guid="082509d0-fa90-4084-b66b-129dfd430fe3"
+                                        data-name="互动广告"></span>互动广告 </div>
+                                <div class="check_box" onclick="changeSelect('NotTopicList', 0, 1)"> <span
+                                        class="check_btn " data-guid="582509d0-fa90-4084-b66b-129dfd430fe8"
+                                        data-name="视觉广告"></span>视觉广告 </div>
+                                <div class="check_box" onclick="changeSelect('NotTopicList', 0, 2)"> <span
+                                        class="check_btn " data-guid="682509d0-fa90-4084-b66b-129dfd430fe9"
+                                        data-name="短视频广告"></span>短视频广告 </div>
+                                <div class="check_box" onclick="changeSelect('NotTopicList', 0, 3)"> <span
+                                        class="check_btn " data-guid="782509d0-fa90-4084-b66b-129dfd430fe0"
+                                        data-name="影视广告"></span>影视广告 </div>
+                                <div class="check_box" onclick="changeSelect('NotTopicList', 0, 4)"> <span
+                                        class="check_btn " data-guid="882509d0-fa90-4084-b66b-129dfd430fe1"
+                                        data-name="营销策划"></span>营销策划 </div>
+                                <div class="check_box" onclick="changeSelect('NotTopicList', 0, 5)"> <span
+                                        class="check_btn " data-guid="982509d0-fa90-4084-b66b-129dfd430fe2"
+                                        data-name="文创作品"></span>文创作品 </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- 命题 -->
-                    <div id="TopicList"></div>
+                    <div id="TopicList">
+                        <div class="select_item" id="TopicList0">
+                            <div class="select_name" style="white-space: nowrap">品牌命题：</div>
+                            <div class="select_main">
+                                <div class="check_box" onclick="changeSelect('TopicList', 0, 0)"> <span
+                                        class="check_btn active_btn" data-guid="182509d0-fa90-4084-b66b-129dfd430fe4"
+                                        data-name="独家总冠名中原消费金融——下一站,等你"></span>独家总冠名中原消费金融——下一站,等你 </div>
+                                <div class="check_box" onclick="changeSelect('TopicList', 0, 1)"> <span
+                                        class="check_btn " data-guid="282509d0-fa90-4084-b66b-129dfd430fe5"
+                                        data-name="独家视频平台战略合作伙伴 爱奇艺——青春有你"></span>独家视频平台战略合作伙伴 爱奇艺——青春有你 </div>
+                                <div class="check_box" onclick="changeSelect('TopicList', 0, 2)"> <span
+                                        class="check_btn " data-guid="382509d0-fa90-4084-b66b-129dfd430fe6"
+                                        data-name="新飘影植觉系列创意大赛"></span>新飘影植觉系列创意大赛 </div>
+                            </div>
+                        </div>
+                        <div class="select_item" id="TopicList1">
+                            <div class="select_name" style="white-space: nowrap">公益命题：</div>
+                            <div class="select_main">
+                                <div class="check_box" onclick="changeSelect('TopicList', 1, 0)"> <span
+                                        class="check_btn " data-guid="482509d0-fa90-4084-b66b-129dfd430fe7"
+                                        data-name="上海市市场监督管理局公益命题——祝贺祖国70华诞"></span>上海市市场监督管理局公益命题——祝贺祖国70华诞 </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- 作品格式 -->
-                    <div id="ProductionFormat"></div>
+                    <div id="ProductionFormat">
+                        <div class="select_item" id="ProductionFormatList">
+                            <div class="select_name">作品格式：</div>
+                            <div class="select_main">
+                                <div class="check_box" onclick="changeSelect('ProductionFormat', 0)"> <span
+                                        class="check_btn active_btn"
+                                        data-guid="970877c3-73d5-4dcb-b51f-a2210bd6f11a"></span>活动创意类(PDF,JPG/PNG)
+                                </div>
+                                <div class="check_box" onclick="changeSelect('ProductionFormat', 1)"> <span
+                                        class="check_btn "
+                                        data-guid="24d11639-8b30-4cbe-aabc-bc7ee819010f"></span>平面设计类(JPG/PNG) </div>
+                                <div class="check_box" onclick="changeSelect('ProductionFormat', 2)"> <span
+                                        class="check_btn "
+                                        data-guid="ae8fc460-335e-4f1e-a9d2-5f0c7e06f40c"></span>视频类(MP4) </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="write_info">
                     <!-- 作品信息 work information -->
@@ -107,14 +171,124 @@
                             </div>
                             <div class="info_item">
                                 <div class="item_name">上传作品/Upload works</div>
-                                <div id="uploadProduction"></div>
+                                <div id="uploadProduction">
+                                    <div class="upload require">
+                                        <div class="upload_box upload_works " id="upload_works">
+                                            <div class="upload_icon"></div> <span class="upload_txt">pdf</span> <input
+                                                id="uploadWorks0" name="uploadInputs" type="file"
+                                                style="cursor: pointer;" data-types="pdf" data-num="1" data-size="15"
+                                                data-index="0">
+                                        </div>
+                                        <div class="upload_right">
+                                            <div class="workLists" id="workLists0"></div> <span
+                                                class="size_tips">单个作品最大15M,每次最多1个作品,仅支持PDF格式</span>
+                                        </div>
+                                    </div>
+                                    <div class="upload ">
+                                        <div class="upload_box upload_works " id="upload_works">
+                                            <div class="upload_icon"></div> <span class="upload_txt">jpg/png</span>
+                                            <input id="uploadWorks1" name="uploadInputs" type="file"
+                                                   style="cursor: pointer;" data-types="jpg/png" data-num="10"
+                                                   data-size="10" data-index="1">
+                                        </div>
+                                        <div class="upload_right">
+                                            <div class="workLists" id="workLists1"></div> <span
+                                                class="size_tips">单个作品最大10M,每次最多10个作品,仅支持jpg、png格式</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- 主创人员 creative staff -->
                     <div class="creative_staf info_items">
                         <div class="info_head">主创人员/Creative staff</div>
-                        <div class="info_content" id="CreativeStaf"></div>
+                        <div class="info_content" id="CreativeStaf">
+                            <div class="info_item_row person_info">
+                                <div class="info_item item_row">
+                                    <div class="item_name require">姓名</div>
+                                    <input type="text" class="input_box" name="stafname" data-guid="" value="网哈哈" placeholder="姓名"
+                                                                                   onfocus="selectActiveStaf(0)">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">联系方式</div>
+                                    <input type="text" class="input_box" name="stafphone" value="18300715108" placeholder="联系方式" onfocus="selectActiveStaf(0)" oninput="value=value.replace(/[^\d]/g,'')"
+                                                                                     maxlength="11">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require school_item_name"
+                                         data-schoolid="00414a74-4a5c-4897-b7e8-a8b16b2b7ee5">院校</div>
+                                    <input type="text" class="input_box" name="stafschool" value="南京财经大学" placeholder="院校名称"
+                                           onfocus="selectActiveStaf(0)" onkeyup="inputSchool(value, 0, 'staf', event)" onpaste="pasteSearchSchoolInfo(0, 'staf', event)">
+                                    <div class="schoolbox" id="schoolbox0" style="display: none;"></div>
+                                    <div class="select_arrow"></div>
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">专业</div>
+                                    <input type="text" class="input_box" name="stafmajor" value="计算机" placeholder="所学专业" onfocus="selectActiveStaf(0)">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">年级</div>
+                                    <input type="text" class="input_box" name="stafgrade" value="18" placeholder="所在年级" onfocus="selectActiveStaf(0)">
+                                </div>
+                            </div>
+                            <div class="info_item_row person_info">
+                                <div class="info_item item_row">
+                                    <div class="item_name require">姓名</div>
+                                    <input type="text" class="input_box" name="stafname" data-guid="" value="" placeholder="姓名"
+                                                                                   onfocus="selectActiveStaf(1)">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">联系方式</div>
+                                    <input type="text" class="input_box" name="stafphone" value="" placeholder="联系方式" onfocus="selectActiveStaf(1)"
+                                                                                     oninput="value=value.replace(/[^\d]/g,'')" maxlength="11">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require school_item_name" data-schoolid="">院校</div> <input
+                                        type="text" class="input_box" name="stafschool" value="" placeholder="院校名称"
+                                        onfocus="selectActiveStaf(1)" onkeyup="inputSchool(value, 1, 'staf', event)"
+                                        onpaste="pasteSearchSchoolInfo(1, 'staf', event)">
+                                    <div class="schoolbox" id="schoolbox1" style="display: none;"></div>
+                                    <div class="select_arrow"></div>
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">专业</div> <input type="text" class="input_box"
+                                                                                   name="stafmajor" value="" placeholder="所学专业" onfocus="selectActiveStaf(1)">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">年级</div> <input type="text" class="input_box"
+                                                                                   name="stafgrade" value="" placeholder="所在年级" onfocus="selectActiveStaf(1)">
+                                </div>
+                            </div>
+                            <div class="info_item_row person_info">
+                                <div class="info_item item_row">
+                                    <div class="item_name require">姓名</div> <input type="text" class="input_box"
+                                                                                   name="stafname" data-guid="" value="" placeholder="姓名"
+                                                                                   onfocus="selectActiveStaf(2)">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">联系方式</div> <input type="text" class="input_box"
+                                                                                     name="stafphone" value="" placeholder="联系方式" onfocus="selectActiveStaf(2)"
+                                                                                     oninput="value=value.replace(/[^\d]/g,'')" maxlength="11">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require school_item_name" data-schoolid="">院校</div> <input
+                                        type="text" class="input_box" name="stafschool" value="" placeholder="院校名称"
+                                        onfocus="selectActiveStaf(2)" onkeyup="inputSchool(value, 2, 'staf', event)"
+                                        onpaste="pasteSearchSchoolInfo(2, 'staf', event)">
+                                    <div class="schoolbox" id="schoolbox2" style="display: none;"></div>
+                                    <div class="select_arrow"></div>
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">专业</div> <input type="text" class="input_box"
+                                                                                   name="stafmajor" value="" placeholder="所学专业" onfocus="selectActiveStaf(2)">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">年级</div> <input type="text" class="input_box"
+                                                                                   name="stafgrade" value="" placeholder="所在年级" onfocus="selectActiveStaf(2)">
+                                </div>
+                            </div>
+                        </div>
                         <div class="info_item_row operate_btn">
                             <div class="left_tips">最多可添加<span class="theme_red">5</span>名主创人员</div>
                             <div class="right_btn">
@@ -127,7 +301,33 @@
                     <!-- 指导老师 guidance teacher -->
                     <div class="others info_items">
                         <div class="info_head">指导老师/Guidance teacher</div>
-                        <div class="info_content" id="GuidanceTeacher"></div>
+                        <div class="info_content" id="GuidanceTeacher">
+                            <div class="info_item_row person_info">
+                                <div class="info_item item_row">
+                                    <div class="item_name require">姓名</div> <input type="text" class="input_box"
+                                                                                   name="teachername" data-guid="" value="" onfocus="selectActiveTeacher(0)"
+                                                                                   placeholder="姓名">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">联系方式</div> <input type="text" class="input_box"
+                                                                                     name="teacherphone" value="" onfocus="selectActiveTeacher(0)" placeholder="联系方式"
+                                                                                     oninput="value=value.replace(/[^\d]/g,'')" maxlength="11">
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require school_item_name" data-schoolid="">院校</div> <input
+                                        type="text" class="input_box" name="teacherschool" value=""
+                                        onfocus="selectActiveTeacher(0)"
+                                        onkeyup="inputSchool(value, 0, 'teacher', event)" contenteditable="'true'"
+                                        onpaste="pasteSearchSchoolInfo(0, 'teacher', event)" placeholder="院校名称">
+                                    <div class="schoolbox" id="teacherSchoolbox0" style="display: none;"></div>
+                                    <div class="select_arrow"></div>
+                                </div>
+                                <div class="info_item item_row">
+                                    <div class="item_name require">职务</div> <input type="text" class="input_box"
+                                                                                   name="teacherjob" value="" onfocus="selectActiveTeacher(0)" placeholder="担任职务">
+                                </div>
+                            </div>
+                        </div>
                         <div class="info_item_row operate_btn">
                             <div class="left_tips">最多可添加<span class="theme_red">2</span>名指导老师</div>
                             <div class="right_btn">
@@ -255,39 +455,290 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     <?php $this->load->view('index/commonFooter')?>
-    <script>
-        // 获取首页底部公司赞助相关信息
-        var CompanyListData = { result: null };
-        function getCompanyInfos() {
-            Request_.ajax({
-                // key: '/api/WebPage/IndexCompanyList',
-                // type: 'GET',
-                key: '',
-                type: '',
-                data: {}, 
-                dataType: "json",
-                success: function (info) {
-                    if (info && info.Stata === 10000) {
-                        CompanyListData.result = info.Data;
-                        $.each(CompanyListData.result, function(k, v) {
-                            if (v.Title) {
-    
-                            }
-                        });
-                        // updataView('t:_CompanyList', 'CompanyList', CompanyListData);
-                    }
-                }
-            })
-        }
-        getCompanyInfos();
+    <script id="t:_CompanyList" type="text/template">
+        <%for(var i = 0; i < result.length; i++){%>
+        <p>
+            <span><%=result[i].Title%>:</span>
+            <span style="margin-left: 3px;">
+                    <%for(var j = 0; j < result[i].Name.length; j++){%>
+                        <a href="<%=result[i].LinkUrl[j]%>" style="color: #fff"><%=result[i].Name[j]%></a>
+                        <span style="color: #fff"><%=j < result[i].Name.length - 1 ? '、' : ''%></span>
+                    <%}%>
+                </span>
+
+        </p>
+        <%}%>
     </script>
     <script src="./public/script/upload.js" ></script>
-   
+    <script type="text/template" id="t:_TopicList">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="select_item" id="TopicList<%=i%>"><!-- PPMT -->
+            <div class="select_name" style="white-space: nowrap"><%=list[i].TopicNumberName%>：</div>
+            <div class="select_main">
+                <%for(var j = 0; j < list[i].TopicDataList.length; j++){%>
+                <div class="check_box" onclick="changeSelect('TopicList', <%=i%>, <%=j%>)">
+                    <span class="check_btn <%=list[i].TopicDataList[j].isChecked ? 'active_btn' : ''%>" data-guid="<%=list[i].TopicDataList[j].Guid%>" data-name="<%=list[i].TopicDataList[j].Name%>"></span><%=list[i].TopicDataList[j].Name%>
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <%}%>
+    </script>
+    <!-- 非命题类 -->
+    <script type="text/template" id="t:_NotTopicList">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="select_item" id="NotTopicList<%=i%>">
+            <div class="select_name"><%=list[i].TopicNumberName%>：</div>
+            <div class="select_main">
+                <%for(var j = 0; j < list[i].TopicDataList.length; j++){%>
+                <div class="check_box" onclick="changeSelect('NotTopicList', <%=i%>, <%=j%>)">
+                    <span class="check_btn <%=list[i].TopicDataList[j].isChecked ? 'active_btn' : ''%>" data-guid="<%=list[i].TopicDataList[j].Guid%>" data-name="<%=list[i].TopicDataList[j].Name%>"></span><%=list[i].TopicDataList[j].Name%>
+                </div>
+                <%}%>
+            </div>
+        </div>
+        </div>
+        <%}%>
+    </script>
+    <!-- 作品格式 -->
+    <script type="text/template" id="t:_ProductionFormat">
+        <div class="select_item" id="ProductionFormatList">
+            <div class="select_name">作品格式：</div>
+            <div class="select_main">
+                <%for(var i = 0; i < list.length; i++){%>
+                <div class="check_box" onclick="changeSelect('ProductionFormat', <%=i%>)">
+                    <span class="check_btn <%=list[i].Guid ? (i === 0 ? 'active_btn' : '') : (list[i].IsCheck ? 'active_btn' : '')%>" data-guid="<%=list[i].Guid || list[i].formatGuid%>"></span><%=list[i].Name%>(<%=list[i].ShortName%>)
+                </div>
+                <%}%>
+            </div>
+        </div>
+        </div>
+    </script>
+    <!-- 上传作品list -->
+    <script type="text/template" id="t:_uploadProduction">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="upload <%=list[i].isCheck === 1 ? 'require' : ''%>">
+            <div class="upload_box upload_works <%=list[i].formatShortName === 'url' ? 'isInputUrl' : ''%>" id="upload_works">
+                <%if(list[i].formatShortName !== 'url') {%>
+                <div class="upload_icon"></div>
+                <span class="upload_txt"><%=list[i].formatShortName%></span>
+                <input id="uploadWorks<%=i%>" name="uploadInputs" type="file" style="cursor: pointer;"
+                       data-types="<%=list[i].formatShortName%>" data-num="<%=list[i].formatMaxNumber%>" data-size="<%=list[i].formatSize%>"
+                       data-index="<%=i%>">
+                <%}else{%>
+                <div class="myIsInputUrlBox">
+                    <label for="" class="InputUrlLabel">抖音视频链接：</label>
+                    <input class="myIsInputUrl" type="text" placeholder="请输入<%=list[i].Name%>的url地址链接" onchange="inputDouyinUrl(value, <%=i%>)">
+                </div>
+                <%}%>
+            </div>
+            <%if(list[i].formatShortName !== 'url') {%>
+            <div class="upload_right">
+                <div class="workLists" id="workLists<%=i%>"></div>
+                <span class="size_tips"><%=list[i].formatRemark || ''%></span>
+            </div>
+            <%}%>
+        </div>
+        <%if(list[i].formatShortName === 'url') {%>
+        <div class="size_tips" style="margin-left: 15px;color: #d60f43;margin-top: 15px;"><%=list[i].formatRemark%></div>
+        <%}%>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_workLists0">
+        <%for(var i=0; i < workListsArr.length; i++){%>
+        <div class="worksPicBox" onmouseenter="enterMyWorks(<%=i%>, 0)"
+             onmouseleave="leaveMyWorks(<%=i%>, 0)" data-guid="<%=workListsArr[i].guid || ''%>">
+            <%if(types === 1){%>
+            <img class="worksPic" src="<%=workListsArr[i].fileResult%>" alt="">
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 0)"></span>
+            <%}else{%>
+            <div class="noImageFiles" style="background: #ccc;"><%=workListsArr[i].fileName%></div>
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 0, '<%=workListsArr[i].fileName%>')"></span>
+            <%}%>
+        </div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_workLists1">
+        <%for(var i=0; i < workListsArr.length; i++){%>
+        <div class="worksPicBox" onmouseenter="enterMyWorks(<%=i%>, 1)"
+             onmouseleave="leaveMyWorks(<%=i%>, 1)" data-guid="<%=workListsArr[i].guid || ''%>">
+            <%if(types === 1){%>
+            <img class="worksPic" src="<%=workListsArr[i].fileResult%>" alt="">
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 1)"></span>
+            <%}else{%>
+            <div class="noImageFiles" style="background: #ccc;"><%=workListsArr[i].fileName%></div>
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 1, '<%=workListsArr[i].fileName%>')"></span>
+            <%}%>
+        </div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_workLists2">
+        <%for(var i=0; i < workListsArr.length; i++){%>
+        <div class="worksPicBox" onmouseenter="enterMyWorks(<%=i%>, 2)"
+             onmouseleave="leaveMyWorks(<%=i%>, 2)" data-guid="<%=workListsArr[i].guid || ''%>">
+            <%if(types === 1){%>
+            <img class="worksPic" src="<%=workListsArr[i].fileResult%>" alt="">
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 2)"></span>
+            <%}else{%>
+            <div class="noImageFiles" style="background: #ccc;"><%=workListsArr[i].fileName%></div>
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 2, '<%=workListsArr[i].fileName%>')"></span>
+            <%}%>
+
+        </div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_workLists3">
+        <%for(var i=0; i < workListsArr.length; i++){%>
+        <div class="worksPicBox" onmouseenter="enterMyWorks(<%=i%>, 3)"
+             onmouseleave="leaveMyWorks(<%=i%>, 3)" data-guid="<%=workListsArr[i].guid || ''%>">
+            <%if(types === 1){%>
+            <img class="worksPic" src="<%=workListsArr[i].fileResult%>" alt="">
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 3)"></span>
+            <%}else{%>
+            <div class="noImageFiles" style="background: #ccc;"><%=workListsArr[i].fileName%></div>
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 3, '<%=workListsArr[i].fileName%>')"></span>
+            <%}%>
+        </div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_workLists4">
+        <%for(var i=0; i < workListsArr.length; i++){%>
+        <div class="worksPicBox" onmouseenter="enterMyWorks(<%=i%>, 4)"
+             onmouseleave="leaveMyWorks(<%=i%>, 4)" data-guid="<%=workListsArr[i].guid || ''%>">
+            <%if(types === 1){%>
+            <img class="worksPic" src="<%=workListsArr[i].fileResult%>" alt="">
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 4)"></span>
+            <%}else{%>
+            <div class="noImageFiles" style="background: #ccc;"><%=workListsArr[i].fileName%></div>
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 4, '<%=workListsArr[i].fileName%>')"></span>
+            <%}%>
+            <span class="closeWorks" onClick="closeActivePic(<%=i%>, 4)"></span>
+        </div>
+        <%}%>
+    </script>
+    <!-- 主创人员 -->
+    <script type="text/template" id="t:_CreativeStaf">
+        <%for(var i=0; i < list.length; i++){%>
+        <div class="info_item_row person_info" >
+            <div class="info_item item_row">
+                <div class="item_name require">姓名</div>
+                <input type="text" class="input_box" name="stafname" data-guid="<%=list[i].guid || ''%>" value="<%=list[i].name%>" placeholder="姓名" onfocus="selectActiveStaf(<%=i%>)"/>
+            </div>
+            <div class="info_item item_row">
+                <div class="item_name require">联系方式</div>
+                <input type="text" class="input_box" name="stafphone" value="<%=list[i].tel%>" placeholder="联系方式" onfocus="selectActiveStaf(<%=i%>)" oninput="value=value.replace(/[^\d]/g,'')" maxlength="11"/>
+            </div>
+            <div class="info_item item_row">
+                <div class="item_name require school_item_name" data-schoolid="<%=list[i].schoolID%>">院校</div>
+                <input type="text" class="input_box" name="stafschool" value="<%=list[i].school%>" placeholder="院校名称" onfocus="selectActiveStaf(<%=i%>)" onkeyup="inputSchool(value, <%=i%>, 'staf', event)" onpaste="pasteSearchSchoolInfo(<%=i%>, 'staf', event)"/>
+                <div class="schoolbox" id="schoolbox<%=i%>"></div>
+                <div class="select_arrow"></div>
+            </div>
+            <div class="info_item item_row">
+                <div class="item_name require">专业</div>
+                <input type="text" class="input_box" name="stafmajor" value="<%=list[i].major%>" placeholder="所学专业" onfocus="selectActiveStaf(<%=i%>)"/>
+            </div>
+            <div class="info_item item_row">
+                <div class="item_name require">年级</div>
+                <input type="text" class="input_box" name="stafgrade" value="<%=list[i].grade%>" placeholder="所在年级" onfocus="selectActiveStaf(<%=i%>)"/>
+            </div>
+        </div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_schoolbox0">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="schoolitem" onClick="selectActiveSchoolData('staf', 0, <%=i%>)"><%=list[i].Name%></div>
+        <%}%>
+        <%if(list.length <= 0){%>
+        <div class="schoolitem nohover">没有匹配到合适的数据</div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_schoolbox1">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="schoolitem" onClick="selectActiveSchoolData('staf', 1, <%=i%>)"><%=list[i].Name%></div>
+        <%}%>
+        <%if(list.length <= 0){%>
+        <div class="schoolitem nohover">没有匹配到合适的数据</div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_schoolbox2">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="schoolitem" onClick="selectActiveSchoolData('staf', 2, <%=i%>)"><%=list[i].Name%></div>
+        <%}%>
+        <%if(list.length <= 0){%>
+        <div class="schoolitem nohover">没有匹配到合适的数据</div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_schoolbox3">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="schoolitem" onClick="selectActiveSchoolData('staf', 3, <%=i%>)"><%=list[i].Name%></div>
+        <%}%>
+        <%if(list.length <= 0){%>
+        <div class="schoolitem nohover">没有匹配到合适的数据</div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_schoolbox4">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="schoolitem" onClick="selectActiveSchoolData('staf', 4, <%=i%>)"><%=list[i].Name%></div>
+        <%}%>
+        <%if(list.length <= 0){%>
+        <div class="schoolitem nohover">没有匹配到合适的数据</div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_teacherSchoolbox0">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="schoolitem" onClick="selectActiveSchoolData('teacher', 0, <%=i%>)"><%=list[i].Name%></div>
+        <%}%>
+        <%if(list.length <= 0){%>
+        <div class="schoolitem nohover">没有匹配到合适的数据</div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_teacherSchoolbox1">
+        <%for(var i = 0; i < list.length; i++){%>
+        <div class="schoolitem" onClick="selectActiveSchoolData('teacher', 1, <%=i%>)"><%=list[i].Name%></div>
+        <%}%>
+        <%if(list.length <= 0){%>
+        <div class="schoolitem nohover">没有匹配到合适的数据</div>
+        <%}%>
+    </script>
+    <script type="text/template" id="t:_GuidanceTeacher">
+        <%for(var i=0; i < list.length; i++){%>
+        <div class="info_item_row person_info">
+            <div class="info_item item_row">
+                <div class="item_name require">姓名</div>
+                <input type="text" class="input_box" name="teachername" data-guid="<%=list[i].guid || ''%>" value="<%=list[i].name%>" onfocus="selectActiveTeacher(<%=i%>)" placeholder="姓名"/>
+            </div>
+            <div class="info_item item_row">
+                <div class="item_name require">联系方式</div>
+                <input type="text" class="input_box" name="teacherphone" value="<%=list[i].tel%>" onfocus="selectActiveTeacher(<%=i%>)" placeholder="联系方式" oninput="value=value.replace(/[^\d]/g,'')" maxlength="11"/>
+            </div>
+            <div class="info_item item_row">
+                <div class="item_name require school_item_name" data-schoolid="<%=list[i].schoolID%>">院校</div>
+                <input type="text" class="input_box" name="teacherschool" value="<%=list[i].school%>" onfocus="selectActiveTeacher(<%=i%>)" onkeyup="inputSchool(value, <%=i%>, 'teacher', event)" contenteditable='true' onpaste="pasteSearchSchoolInfo(<%=i%>, 'teacher', event)" placeholder="院校名称"/>
+                <div class="schoolbox" id="teacherSchoolbox<%=i%>"></div>
+                <div class="select_arrow"></div>
+            </div>
+            <div class="info_item item_row">
+                <div class="item_name require">职务</div>
+                <input type="text" class="input_box" name="teacherjob" value="<%=list[i].duty%>" onfocus="selectActiveTeacher(<%=i%>)" placeholder="担任职务"/>
+            </div>
+        </div>
+        <%}%>
+    </script>
     <script>
-        // $('.control_left').load('./components/UserCenterSideMenu.html', null, function() {
-        //     userCenterSiderActiveClass('upload');
-        // });
-        // $('#commonFooter').load('./components/footer.html')
+    </script>
+
+   <!--
+    <script>
+        $('#commonHeader').load('./components/newHeader.html', null, function() {
+            selectHeaderActiveClass('upload');
+            // 登录按钮和登陆头像的显示隐藏逻辑
+            loginBtnAndUserImg();
+        })
+        $('.control_left').load('./components/UserCenterSideMenu.html', null, function() {
+            userCenterSiderActiveClass('upload');
+        });
+        $('#commonFooter').load('./components/footer.html')
 
         var loadingTime= 5;//默认遮罩时间
         function showLoading(loadText) {
@@ -299,7 +750,7 @@
         function hideLoading () {
             $('#loadingModal').modal('hide');
         }
-    </script>
+    </script>-->
 </body>
 
 </html>
