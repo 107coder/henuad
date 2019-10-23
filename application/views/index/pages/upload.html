@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./public/styles/footer.css">
     <link rel="stylesheet" href="./public/styles/upload.css">
     <script src="./public/assets/jquery-3.2.1.js"></script>
+    <script src="./public/script/config.js"></script>
     <script src="./public/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="./public/assets/detepicker/bootstrap-datepicker.js"></script>
     <script src="./public/assets/detepicker/bootstrap-datepicker.zh-CN.js"></script>
@@ -171,7 +172,7 @@
                             </div>
                             <div class="info_item">
                                 <div class="item_name">上传作品/Upload works</div>
-                                <div id="uploadProduction">
+                                <div id="">
                                     <div class="upload require">
                                         <div class="upload_box upload_works " id="upload_works">
                                             <div class="upload_icon"></div> <span class="upload_txt">pdf</span> <input
@@ -397,7 +398,7 @@
             <div class="upload_submit_btn" style="display: none;">
                 <div class="submit_btn confirm_submit active_btn" onclick="submitProductionInfo(2)">提交作品</div>
                 <div class="submit_btn save_box" onclick="submitProductionInfo(1)">存入草稿箱</div>
-               
+
             </div>
             <div class="footer_tips" id="already-start" style="display: none;">
                 征稿正在进行中，如有疑问请联系：<span class="theme_blue">021-61102103</span>
@@ -455,20 +456,6 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     <?php $this->load->view('index/commonFooter')?>
-    <script id="t:_CompanyList" type="text/template">
-        <%for(var i = 0; i < result.length; i++){%>
-        <p>
-            <span><%=result[i].Title%>:</span>
-            <span style="margin-left: 3px;">
-                    <%for(var j = 0; j < result[i].Name.length; j++){%>
-                        <a href="<%=result[i].LinkUrl[j]%>" style="color: #fff"><%=result[i].Name[j]%></a>
-                        <span style="color: #fff"><%=j < result[i].Name.length - 1 ? '、' : ''%></span>
-                    <%}%>
-                </span>
-
-        </p>
-        <%}%>
-    </script>
     <script src="./public/script/upload.js" ></script>
     <script type="text/template" id="t:_TopicList">
         <%for(var i = 0; i < list.length; i++){%>
