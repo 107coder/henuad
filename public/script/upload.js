@@ -380,11 +380,11 @@ function uploadFiles(el, fileObj, type, idx) {
     _FormData.append("file", fileObj);
     _FormData.append("FileType", fileType);
     showLoading('文件上传中，请耐心等候...');
-    Request_.ajax({
+    $.ajax({
         // key: '/api/UserCenter/UploadUserProductionFile',
         // type: 'POST',
-        key: '',
-        type: '',
+        url: urlRoot+'/index/PrivateAction/UploadFile',
+        type: 'post',
         data: _FormData,
         contentType: false,
         processData: false,

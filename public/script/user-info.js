@@ -1,5 +1,4 @@
 var provinceList = [];
-var urlRoot = "http://ad.cuisf.top:8088/henuad/index.php";
 function initPageEvent() {
     var scnLastGetTime = Date.now();
     // 点击提交按钮

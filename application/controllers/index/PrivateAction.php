@@ -119,4 +119,9 @@ class PrivateAction extends CI_Controller
             printWithJson('00000','服务器错误');
         }
     }
+
+    public function UploadFile()
+    {
+        $this->input->post();
+    }
 }
