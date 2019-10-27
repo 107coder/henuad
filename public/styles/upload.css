@@ -123,7 +123,7 @@ body {
 }
 
 .upload_main .upload_content .upload_select .select_item .select_main .check_box .active_btn {
-    background: url(../../images/icon/upload/checkbox@2x.png)
+    background: url(henuad/images/icon/upload/checkbox@2x.png)
       
     ;
     background-size: 100%;
@@ -173,7 +173,7 @@ body {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url(../../images/icon/upload/date@2x.png)
+    background: url(henuad/images/icon/upload/date@2x.png)
        
     ;
     background-size: 100%
@@ -363,7 +363,7 @@ body {
 .upload_main .upload_content .write_info .info_content .upload .upload_box .upload_icon {
     width: 28px;
     height: 28px;
-    background: url(../../images/icon/upload/upload@2x.png)
+    background: url(henuad/images/icon/upload/upload@2x.png)
       
     ;
     background-size: 100%;
@@ -474,7 +474,7 @@ body {
     text-align: center;
     line-height: 18px;
     opacity: 0;
-    background: url(../../images/icon/upload/deletIcon@2x.png)
+    background: url(henuad/images/icon/upload/deletIcon@2x.png)
         
     ;
     background-size: 100%
@@ -550,7 +550,7 @@ body {
     display: inline-block;
     width: 14px;
     height: 14px;
-    background: url(../../images/icon/upload/tip@2x.png)
+    background: url(henuad/images/icon/upload/tip@2x.png)
     
         center;
     background-size: 100%;
@@ -568,7 +568,7 @@ body {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: url(../../images/icon/upload/add@2x.png)
+    background: url(henuad/images/icon/upload/add@2x.png)
      
         center;
     background-size: 100%;
@@ -577,7 +577,7 @@ body {
 }
 
 .upload_main .upload_content .write_info .operate_btn .right_btn .btn_del:before {
-    background-image: url(../../images/icon/upload/delet@2x.png)
+    background-image: url(henuad/images/icon/upload/delet@2x.png)
       
 }
 
@@ -636,7 +636,7 @@ body {
 }
 
 .upload_main .upload_content .upload_copy_right .checkbox_icon.active_btn {
-    background: url(../../images/icon/upload/checkbox@2x.png)
+    background: url(henuad/images/icon/upload/checkbox@2x.png)
        
     ;
     background-size: 100%;

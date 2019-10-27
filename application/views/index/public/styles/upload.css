@@ -123,9 +123,7 @@ body {
 }
 
 .upload_main .upload_content .upload_select .select_item .select_main .check_box .active_btn {
-    background: url(../../images/icon/upload/checkbox@2x.png)
-      
-    ;
+    background: url(images/icon/upload/checkbox@2x.png);
     background-size: 100%;
     border: none
 }
