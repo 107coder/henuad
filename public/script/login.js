@@ -147,9 +147,9 @@ function sendCode(mobile,element){
                 layer.msg(resp.Message);
             }
         },
-        error:function ()
+        error:function (resError)
         {
-            console.log('error');
+            console.log(resError);
         }
     })
 }

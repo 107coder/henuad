@@ -104,8 +104,7 @@ class PublicView extends CI_Controller {
 
         $action = $this->input->post('action');
         $mobile = $this->input->post('phoneNumber');
-        $action = 'login';
-        $mobile = '17334813723';
+
         // 引入数据库，验证手机号是否已经注册
         $this->load->model('user_model','user');
         $exist = $this->user->checkMobile($mobile);
@@ -137,10 +136,12 @@ class PublicView extends CI_Controller {
             $this->session->set_tempdata('code',$code,60*15);
             $param = "{$code},15";
 //            引入发送短信的第三方库 执行发送短信的操作
-//            $this->load->library('Sms');
-//            $this->sms->send($param,$mobile);
+            $this->load->library('sms');
+            $this->sms->send($param,$mobile);
 //            $sms_code = $this->sms->send($param,$mobile);
+//            $this->sms->send($param,$mobile);
 //
+            ob_clean();
             $data_arr = array(
                 'Stata'=>'10000',
                 'Message' => '发送成功',
@@ -151,7 +152,7 @@ class PublicView extends CI_Controller {
 //             echo $sms_code
             return ;
         }
-
+//        echo "{'code':'0'}";
     }
 
     public function test()
